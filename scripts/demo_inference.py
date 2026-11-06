@@ -14,31 +14,31 @@ NOTE: Uses synthetic demonstration inputs only. The quarantined test partition i
 """
 
 import sys
-import os
 import json
+from pathlib import Path
 import numpy as np
 import pandas as pd
 
 # Add project root to sys.path
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.models.final_registry import get_default_registry
-from src.models.feature_schema import ADVANCED_FEATURE_COLUMNS
-from src.models.inference import (
+from ml.models.final_registry import get_default_registry
+from ml.models.feature_schema import ADVANCED_FEATURE_COLUMNS
+from ml.models.inference import (
     predict_soh,
     predict_rul,
     predict_all,
     format_presentation_output,
     PIPELINE_VERSION
 )
-from src.models.input_validation import (
+from ml.models.input_validation import (
     validate_inference_input,
     InputValidationError,
     DataLeakageError
 )
-from backend.app.services.interpretation import interpret_battery_health
+from backend.services.interpretation import interpret_battery_health
 
 
 def print_banner(title: str):

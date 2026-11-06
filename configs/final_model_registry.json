@@ -47,7 +47,7 @@
         "cum_capacity_fade_rate",
         "cum_resistance_growth_rate"
       ],
-      "artifact_path": "artifacts/models/task_2m/soh/xgboost_32f.joblib",
+      "artifact_path": "ml/artifacts/models/task_2m/soh/xgboost_32f.joblib",
       "artifact_sha256": "f5dbd8339e1a81c61806edbac127cd289b940e0c9654211383f750704d7614d1",
       "validation_rmse": 0.5654,
       "validation_mae": 0.3347,
@@ -109,7 +109,7 @@
         "cum_capacity_fade_rate",
         "cum_resistance_growth_rate"
       ],
-      "artifact_path": "artifacts/models/task_2m/rul/catboost_32f.joblib",
+      "artifact_path": "ml/artifacts/models/task_2m/rul/catboost_32f.joblib",
       "artifact_sha256": "67ecc6e5767ab4c6306fd02cc0bcf9d6ebc9c2baad990ba5d4097ab74bf4d0dc",
       "validation_rmse": 233.06,
       "validation_mae": 129.42,

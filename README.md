@@ -6,25 +6,21 @@
 
 ```
 EcoCycle-AI/
-├── configs/          # Experiment, training, data, and model YAML configurations
-├── data/             # Raw, interim, processed, and feature datasets (git-ignored)
-├── notebooks/        # Jupyter notebooks for exploratory data analysis and validation
-├── src/              # Core modular pipeline source code
-│   ├── data/
+├── backend/
+│   ├── main.py       # FastAPI app, exception handlers, and router registration
+│   ├── routes/       # Prediction and second-life decision endpoints
+│   ├── services/     # Interpretation and decision business logic
+│   └── schemas/      # Pydantic request and response models
+├── ml/
+│   ├── data/         # Processed train, validation, and test partitions
+│   ├── models/       # Validation, inference, training, and model registry code
 │   ├── preprocessing/
-│   ├── features/
-│   ├── models/       # Baseline, Classical ML, and Deep Learning models
 │   ├── training/
 │   ├── evaluation/
-│   ├── inference/
-│   └── decision/     # Second-life decision matrix logic
-├── artifacts/        # Serialized model checkpoints, preprocessors, and metadata
-├── experiments/      # Experiment tracking logs and registries
-├── backend/          # FastAPI backend services and schemas
-├── frontend/         # Web dashboard UI
-├── tests/            # Unit, integration, and validation tests
-├── docs/             # Technical architecture, dataset, and API documentation
-└── reports/          # Data audit, experimental, and final comparison reports
+│   └── artifacts/    # Preserved model binaries and preprocessors
+├── configs/          # Locked model registry and pipeline configuration
+├── tests/            # Unit and API tests
+└── reports/          # Audit and model evaluation reports
 ```
 
 ## Setup & Environment
@@ -45,10 +41,8 @@ EcoCycle-AI/
    ```bash
    pip install -r requirements.txt
    ```
-4. Copy `.env.example` to `.env` and adjust configuration parameters:
-   ```bash
-   cp .env.example .env
-   ```
+The application uses the repository-local model artifacts and data files. No
+external database is required.
 
 ## Workflow Progression
 
@@ -66,7 +60,7 @@ The current application is a FastAPI backend. Run the following commands from th
 project root on Windows PowerShell:
 
 ```powershell
-cd "D:\MCA\Sem 5\Minor Project\EcoCycle-AI\EcoCycle-AI"
+# Run from the repository root
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -83,7 +77,7 @@ pip install catboost
 Start the API:
 
 ```powershell
-python -m uvicorn backend.app.api.main:app --reload
+python -m uvicorn backend.main:app --reload
 ```
 
 Open the interactive API documentation at <http://127.0.0.1:8000/docs>.

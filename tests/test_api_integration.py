@@ -27,9 +27,9 @@ import os
 import pytest
 import numpy as np
 from fastapi.testclient import TestClient
-from backend.app.api.main import app
-from src.models.feature_schema import ADVANCED_FEATURE_COLUMNS
-from src.models.final_registry import get_default_registry
+from backend.main import app
+from ml.models.feature_schema import ADVANCED_FEATURE_COLUMNS
+from ml.models.final_registry import get_default_registry
 
 client = TestClient(app)
 

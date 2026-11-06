@@ -15,23 +15,24 @@ import os
 import sys
 import hashlib
 import json
+from pathlib import Path
 
-BASE_DIR = r"C:\Users\patid\.gemini\antigravity\scratch\EcoCycle-AI"
-sys.path.insert(0, BASE_DIR)
+BASE_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE_DIR))
 
-from src.models.config import (
+from ml.models.config import (
     RANDOM_SEED, EXPECTED_RAW_SHA256, RAW_DATA_PATH,
     PROCESSED_DATA_PATHS, EXPECTED_PARTITIONS
 )
-from src.models.advanced_models import (
+from ml.models.advanced_models import (
     create_soh_advanced_models, create_rul_advanced_models,
     MODEL_ARCHITECTURAL_RATIONALE
 )
-from src.models.tuning_config import (
+from ml.models.tuning_config import (
     ADVANCED_SEARCH_SPACES, TUNING_PROTOCOL,
     LOCKED_BASELINE_BENCHMARKS, TEST_PARTITION_QUARANTINE
 )
-from src.models.feature_engineering import (
+from ml.models.feature_engineering import (
     BASELINE_FEATURE_COLUMNS, CANDIDATE_CAUSAL_FEATURES,
     ADVANCED_FEATURE_COLUMNS, FORBIDDEN_COLUMNS,
     validate_causality_rules
@@ -121,15 +122,15 @@ assert LOCKED_BASELINE_BENCHMARKS["SOH"]["test_rmse"] == 0.5896
 assert LOCKED_BASELINE_BENCHMARKS["RUL"]["val_rmse"] == 247.95
 assert LOCKED_BASELINE_BENCHMARKS["RUL"]["test_rmse"] == 174.33
 # Check that baseline model files still exist
-soh_base_path = os.path.join(BASE_DIR, "models", "baseline", "soh_hist_gradient_boosting.joblib")
-rul_base_path = os.path.join(BASE_DIR, "models", "baseline", "rul_hist_gradient_boosting.joblib")
+soh_base_path = BASE_DIR / "ml" / "artifacts" / "models" / "task_2l" / "soh_hist_gradient_boosting.joblib"
+rul_base_path = BASE_DIR / "ml" / "artifacts" / "models" / "task_2l" / "rul_hist_gradient_boosting.joblib"
 assert os.path.exists(soh_base_path), f"Baseline model missing: {soh_base_path}"
 assert os.path.exists(rul_base_path), f"Baseline model missing: {rul_base_path}"
 print("  [PASS] Baseline model files and benchmarks preserved intact.")
 
 # 9. Config JSON File Alignment
 print("[CHECK 9] Validating reports/modeling/task_2m_1_config.json...")
-config_path = os.path.join(BASE_DIR, "reports", "modeling", "task_2m_1_config.json")
+config_path = BASE_DIR / "reports" / "modeling" / "task_2m_1_config.json"
 assert os.path.exists(config_path), f"Missing config file: {config_path}"
 with open(config_path, "r") as f:
     cfg = json.load(f)
@@ -140,7 +141,7 @@ print("  [PASS] Machine-readable config JSON verified.")
 
 # 10. Design Markdown Report Alignment
 print("[CHECK 10] Validating reports/modeling/task_2m_1_advanced_model_design.md...")
-report_path = os.path.join(BASE_DIR, "reports", "modeling", "task_2m_1_advanced_model_design.md")
+report_path = BASE_DIR / "reports" / "modeling" / "task_2m_1_advanced_model_design.md"
 assert os.path.exists(report_path), f"Missing report: {report_path}"
 with open(report_path, "r", encoding="utf-8") as f:
     rep_text = f.read()

@@ -22,8 +22,8 @@ Tests for the POST /decision/assess endpoint:
 
 import pytest
 from fastapi.testclient import TestClient
-from backend.app.api.main import app
-from src.models.feature_schema import ADVANCED_FEATURE_COLUMNS
+from backend.main import app
+from ml.models.feature_schema import ADVANCED_FEATURE_COLUMNS
 
 client = TestClient(app)
 

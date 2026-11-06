@@ -7,8 +7,8 @@ import os
 import pytest
 import numpy as np
 import pandas as pd
-from src.models.feature_schema import ADVANCED_FEATURE_COLUMNS
-from src.models.inference import (
+from ml.models.feature_schema import ADVANCED_FEATURE_COLUMNS
+from ml.models.inference import (
     predict_soh,
     predict_rul,
     predict_all,

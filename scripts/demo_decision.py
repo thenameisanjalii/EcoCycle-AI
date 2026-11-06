@@ -16,21 +16,21 @@ NOTE: Uses synthetic demonstration inputs only. The quarantined test partition i
 """
 
 import sys
-import os
 import json
+from pathlib import Path
 import numpy as np
 
 # Add project root to sys.path
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
+    sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.models.final_registry import get_default_registry
-from src.models.feature_schema import ADVANCED_FEATURE_COLUMNS
-from src.models.input_validation import validate_inference_input, DataLeakageError, InputValidationError
-from src.models.inference import predict_all
-from src.decision.engine import get_default_decision_engine
-from src.decision.constants import (
+from ml.models.final_registry import get_default_registry
+from ml.models.feature_schema import ADVANCED_FEATURE_COLUMNS
+from ml.models.input_validation import validate_inference_input, DataLeakageError, InputValidationError
+from ml.models.inference import predict_all
+from backend.services.decision.engine import get_default_decision_engine
+from backend.services.decision.constants import (
     DECISION_PRIMARY_OPERATION,
     DECISION_SECOND_LIFE_CANDIDATE,
     DECISION_MATERIAL_RECYCLING,

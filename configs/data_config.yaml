@@ -1,9 +1,9 @@
 # EcoCycle AI - Data Pipeline Configuration
 data_paths:
-  raw: "data/raw"
-  interim: "data/interim"
-  processed: "data/processed"
-  features: "data/features"
+  raw: "ml/data/raw"
+  interim: "ml/data/interim"
+  processed: "ml/data"
+  features: "ml/data/features"
 
 split_ratio:
   train: 0.70

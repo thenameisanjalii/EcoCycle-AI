@@ -7,7 +7,7 @@ import os
 import pytest
 import tempfile
 import json
-from src.models.final_registry import (
+from ml.models.final_registry import (
     FinalModelRegistry,
     ModelRegistryError,
     get_default_registry

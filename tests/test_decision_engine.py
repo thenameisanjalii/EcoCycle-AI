@@ -4,7 +4,7 @@ Tests decision matrix, regime mapping, boundary cases, determinism, and raw pres
 """
 
 import pytest
-from src.decision.constants import (
+from backend.services.decision.constants import (
     SOH_HEALTHY_MIN,
     SOH_DEGRADED_MIN,
     RUL_EARLY_LIFE_MIN,
@@ -27,13 +27,13 @@ from src.decision.constants import (
     STRENGTH_REVIEW_REQUIRED,
     DECISION_DISCLAIMER
 )
-from src.decision.rules import (
+from backend.services.decision.rules import (
     get_soh_regime,
     get_rul_regime,
     evaluate_second_life_decision
 )
-from src.decision.engine import get_default_decision_engine, SecondLifeDecisionEngine
-from src.decision.schemas import SecondLifeAssessmentResponse
+from backend.services.decision.engine import get_default_decision_engine, SecondLifeDecisionEngine
+from backend.services.decision.schemas import SecondLifeAssessmentResponse
 
 
 # =========================================================================

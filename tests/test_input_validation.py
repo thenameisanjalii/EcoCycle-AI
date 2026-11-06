@@ -6,8 +6,8 @@ Task 2M.4 — Final Model Packaging & Inference Pipeline
 import pytest
 import numpy as np
 import pandas as pd
-from src.models.feature_schema import ADVANCED_FEATURE_COLUMNS
-from src.models.input_validation import (
+from ml.models.feature_schema import ADVANCED_FEATURE_COLUMNS
+from ml.models.input_validation import (
     validate_inference_input,
     InputValidationError,
     DataLeakageError
