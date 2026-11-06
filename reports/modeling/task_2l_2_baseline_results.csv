@@ -1,0 +1,9 @@
+target,model,train_rows,validation_rows,mae,rmse,r2,training_time_seconds
+SOH,soh_dummy,81545,16606,3.6626,5.0492,-0.0024,0.0017
+SOH,soh_ridge,81545,16606,0.8096,1.2373,0.9398,0.0743
+SOH,soh_random_forest,81545,16606,0.4255,0.7047,0.9805,14.0988
+SOH,soh_hist_gradient_boosting,81545,16606,0.4245,0.6805,0.9818,3.5057
+RUL,rul_dummy,81545,16606,286.5486,367.5413,-0.002,0.0007
+RUL,rul_ridge,81545,16606,202.5094,273.2028,0.4463,0.0561
+RUL,rul_random_forest,81545,16606,135.9016,257.5131,0.5081,14.2852
+RUL,rul_hist_gradient_boosting,81545,16606,130.9945,247.9533,0.544,0.9072

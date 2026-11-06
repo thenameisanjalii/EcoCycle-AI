@@ -1,0 +1,111 @@
+{
+  "task": "Task 2L \u2014 Baseline ML Training",
+  "status": "COMPLETE",
+  "verdict": "PASS",
+  "raw_dataset_hash": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "raw_dataset_unmodified": true,
+  "soh_best_model": {
+    "model_name": "soh_hist_gradient_boosting",
+    "selection_criterion": "Lowest Validation RMSE",
+    "val_MAE": 0.4245,
+    "val_RMSE": 0.6805,
+    "val_R2": 0.9818,
+    "test_MAE": 0.3442,
+    "test_RMSE": 0.5896,
+    "test_R2": 0.9815
+  },
+  "rul_best_model": {
+    "model_name": "rul_hist_gradient_boosting",
+    "selection_criterion": "Lowest Validation RMSE",
+    "val_MAE": 130.99,
+    "val_RMSE": 247.95,
+    "val_R2": 0.544,
+    "test_MAE": 113.79,
+    "test_RMSE": 174.33,
+    "test_R2": 0.8449
+  },
+  "validation_checks_12": {
+    "1_raw_sha256_unchanged": true,
+    "2_raw_row_count_116663": true,
+    "3_raw_col_count_11": true,
+    "4_raw_data_unmodified": true,
+    "5_no_nans_infs_in_matrices": true,
+    "6_battery_sets_disjoint": true,
+    "7_no_forbidden_features": true,
+    "8_model_artifacts_loadable": true,
+    "9_predictions_no_nan_inf": true,
+    "10_metrics_reproducible_on_reload": true,
+    "11_test_set_not_used_for_selection": true,
+    "12_task_2k_artifacts_unchanged": true
+  },
+  "prediction_timings": {
+    "soh_dummy": {
+      "val_pred_time_s": 0.0005,
+      "val_latency_ms_per_sample": 3e-05,
+      "test_pred_time_s": 0.0004,
+      "test_latency_ms_per_sample": 2e-05
+    },
+    "soh_ridge": {
+      "val_pred_time_s": 0.0105,
+      "val_latency_ms_per_sample": 0.00063,
+      "test_pred_time_s": 0.0106,
+      "test_latency_ms_per_sample": 0.00057
+    },
+    "soh_random_forest": {
+      "val_pred_time_s": 0.0987,
+      "val_latency_ms_per_sample": 0.00594,
+      "test_pred_time_s": 0.0978,
+      "test_latency_ms_per_sample": 0.00528
+    },
+    "soh_hist_gradient_boosting": {
+      "val_pred_time_s": 0.0769,
+      "val_latency_ms_per_sample": 0.00463,
+      "test_pred_time_s": 0.0787,
+      "test_latency_ms_per_sample": 0.00425
+    },
+    "rul_dummy": {
+      "val_pred_time_s": 0.0001,
+      "val_latency_ms_per_sample": 1e-05,
+      "test_pred_time_s": 0.0001,
+      "test_latency_ms_per_sample": 1e-05
+    },
+    "rul_ridge": {
+      "val_pred_time_s": 0.0079,
+      "val_latency_ms_per_sample": 0.00048,
+      "test_pred_time_s": 0.0079,
+      "test_latency_ms_per_sample": 0.00043
+    },
+    "rul_random_forest": {
+      "val_pred_time_s": 0.0706,
+      "val_latency_ms_per_sample": 0.00425,
+      "test_pred_time_s": 0.0932,
+      "test_latency_ms_per_sample": 0.00503
+    },
+    "rul_hist_gradient_boosting": {
+      "val_pred_time_s": 0.0848,
+      "val_latency_ms_per_sample": 0.00511,
+      "test_pred_time_s": 0.0939,
+      "test_latency_ms_per_sample": 0.00507
+    }
+  },
+  "prediction_files": {
+    "val_soh_predictions": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\task_2l\\task_2l_soh_val_predictions.csv",
+    "test_soh_predictions": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\task_2l\\task_2l_soh_test_predictions.csv",
+    "val_rul_predictions": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\task_2l\\task_2l_rul_val_predictions.csv",
+    "test_rul_predictions": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\task_2l\\task_2l_rul_test_predictions.csv"
+  },
+  "models_directory_artifacts": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\artifacts\\models\\task_2l",
+  "models_directory_alt": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\models\\task_2l",
+  "model_parameters_file": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\task_2l\\task_2l_model_parameters.json",
+  "independent_verification": {
+    "raw_dataset_sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+    "raw_dataset_rows": 116663,
+    "raw_dataset_cols": 11,
+    "raw_dataset_unmodified": true,
+    "zero_battery_overlap": true,
+    "no_forbidden_features": true,
+    "no_test_derived_parameters": true,
+    "bit_exact_reproducibility": true,
+    "overall_integrity_verdict": "PASS"
+  }
+}

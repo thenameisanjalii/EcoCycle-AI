@@ -1,0 +1,4 @@
+regime,sample_count,pct_of_test,mae,rmse,r2
+Near-EOL (RUL < 300),6300,34.03,66.65,96.27,-0.2358
+Mid-Life (300 <= RUL < 800),7957,42.98,116.92,165.45,-0.3382
+Early-Life (RUL >= 800),4255,22.99,226.59,293.57,0.376

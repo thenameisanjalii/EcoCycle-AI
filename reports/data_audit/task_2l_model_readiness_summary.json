@@ -1,0 +1,885 @@
+{
+  "task": "Task 2L \u2014 Final Pre-Model Data Validation & Model-Readiness Gate",
+  "status": "COMPLETE",
+  "checks": {
+    "raw_data_integrity": {
+      "sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+      "expected_sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+      "sha256_match": true,
+      "rows": 116663,
+      "cols": 11,
+      "expected_rows": 116663,
+      "expected_cols": 11,
+      "pass": true
+    },
+    "processed_files_integrity": {
+      "all_files_exist_and_valid": true,
+      "pass": true
+    },
+    "train_val_test_isolation": {
+      "train_batteries": 97,
+      "val_batteries": 21,
+      "test_batteries": 21,
+      "total_batteries": 139,
+      "train_val_overlap": [],
+      "train_test_overlap": [],
+      "val_test_overlap": [],
+      "zero_overlap": true,
+      "train_rows": 81545,
+      "val_rows": 16606,
+      "test_rows": 18512,
+      "pass": true
+    },
+    "feature_matrix_schema": {
+      "soh_features_count": 17,
+      "rul_features_count": 17,
+      "expected_feature_count": 17,
+      "soh_features_match_expected": true,
+      "rul_features_match_expected": true,
+      "soh_contains_forbidden": false,
+      "rul_contains_forbidden": false,
+      "pass": true
+    },
+    "target_integrity": {
+      "soh": {
+        "min": 74.55272866405737,
+        "max": 104.79245284946096,
+        "mean": 96.40723075322988,
+        "std": 4.5204903948811985,
+        "gt_100_count": 10784,
+        "continuous_and_unclipped": true,
+        "pass": true
+      },
+      "rul": {
+        "min": 0,
+        "max": 2236,
+        "rul_matches_formula": true,
+        "terminal_zeros_count": 139,
+        "expected_terminal_zeros": 139,
+        "exact_one_terminal_zero_per_battery": true,
+        "negative_rul_count": 0,
+        "pass": true
+      },
+      "pass": true
+    },
+    "causal_feature_engineering": {
+      "cycle_1_lag_equals_curr": true,
+      "cycle_1_deltas_zero": true,
+      "ir_lag1_matches_causal_shift": true,
+      "ir_delta_matches_causal_diff": true,
+      "source_code_leakage_matches": {},
+      "pass": true
+    },
+    "preprocessor_fitting": {
+      "soh_preprocessor_exists": true,
+      "rul_preprocessor_exists": true,
+      "soh_preprocessor_type": "RobustScaler",
+      "rul_preprocessor_type": "RobustScaler",
+      "soh_scaler_matches_train_only": true,
+      "rul_scaler_matches_train_only": true,
+      "val_test_not_used_in_scaler": true,
+      "pass": true
+    },
+    "imputation_and_anomalies": {
+      "ir_is_zero_flags_count": 4922,
+      "temp_sensor_fault_flags_count": 99,
+      "battery_85_fault_count": 99,
+      "remaining_nans_total": 0,
+      "pass": true
+    },
+    "outlier_policy": {
+      "raw_rows": 116663,
+      "processed_rows_sum": 116663,
+      "rows_deleted": 0,
+      "no_rows_deleted_for_generic_outliers": true,
+      "raw_extremes_represented": true,
+      "pass": true
+    },
+    "feature_distributions": {
+      "computed_all_17_features": true,
+      "shift_alerts_count": 2,
+      "pass": true
+    },
+    "continuous_regression_nature": {
+      "soh_unique_values": 116529,
+      "rul_unique_values": 2237,
+      "soh_is_continuous": true,
+      "rul_is_continuous": true,
+      "no_artificial_classes": true,
+      "pass": true
+    }
+  },
+  "file_inventory": {
+    "train_soh": {
+      "path": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\data\\processed\\train_soh.csv",
+      "sha256": "3057eedfae3da11cc8f4d63c0c942147cb98acd4222b69f0807745f5c0143ad5",
+      "rows": 81545,
+      "cols": 19,
+      "expected_rows": 81545,
+      "rows_match": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "dup_rows": 0,
+      "dup_keys": 0,
+      "cols_match": true,
+      "target": "SOH",
+      "has_target": true,
+      "features_present": true,
+      "dtypes": {
+        "battery_id": "int64",
+        "IR": "float64",
+        "QCharge": "float64",
+        "Tavg": "float64",
+        "Tmax": "float64",
+        "Tmin": "float64",
+        "chargetime": "float64",
+        "cycle": "float64",
+        "IR_is_zero": "int64",
+        "temp_sensor_fault": "int64",
+        "IR_lag1": "float64",
+        "IR_delta": "float64",
+        "QCharge_lag1": "float64",
+        "QCharge_delta": "float64",
+        "Tavg_lag1": "float64",
+        "Tavg_delta": "float64",
+        "chargetime_lag1": "float64",
+        "chargetime_delta": "float64",
+        "SOH": "float64"
+      },
+      "pass": true
+    },
+    "val_soh": {
+      "path": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\data\\processed\\val_soh.csv",
+      "sha256": "0710d9e2f8bba2e8480cfee3f363b242b5685f80e14b21519885213721ea13bc",
+      "rows": 16606,
+      "cols": 19,
+      "expected_rows": 16606,
+      "rows_match": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "dup_rows": 0,
+      "dup_keys": 0,
+      "cols_match": true,
+      "target": "SOH",
+      "has_target": true,
+      "features_present": true,
+      "dtypes": {
+        "battery_id": "int64",
+        "IR": "float64",
+        "QCharge": "float64",
+        "Tavg": "float64",
+        "Tmax": "float64",
+        "Tmin": "float64",
+        "chargetime": "float64",
+        "cycle": "float64",
+        "IR_is_zero": "int64",
+        "temp_sensor_fault": "int64",
+        "IR_lag1": "float64",
+        "IR_delta": "float64",
+        "QCharge_lag1": "float64",
+        "QCharge_delta": "float64",
+        "Tavg_lag1": "float64",
+        "Tavg_delta": "float64",
+        "chargetime_lag1": "float64",
+        "chargetime_delta": "float64",
+        "SOH": "float64"
+      },
+      "pass": true
+    },
+    "test_soh": {
+      "path": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\data\\processed\\test_soh.csv",
+      "sha256": "b2fcbcbfde05a21147f6fca7b5cfeaa736b1f92068603679217f1f537dba67bd",
+      "rows": 18512,
+      "cols": 19,
+      "expected_rows": 18512,
+      "rows_match": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "dup_rows": 0,
+      "dup_keys": 0,
+      "cols_match": true,
+      "target": "SOH",
+      "has_target": true,
+      "features_present": true,
+      "dtypes": {
+        "battery_id": "int64",
+        "IR": "float64",
+        "QCharge": "float64",
+        "Tavg": "float64",
+        "Tmax": "float64",
+        "Tmin": "float64",
+        "chargetime": "float64",
+        "cycle": "float64",
+        "IR_is_zero": "int64",
+        "temp_sensor_fault": "int64",
+        "IR_lag1": "float64",
+        "IR_delta": "float64",
+        "QCharge_lag1": "float64",
+        "QCharge_delta": "float64",
+        "Tavg_lag1": "float64",
+        "Tavg_delta": "float64",
+        "chargetime_lag1": "float64",
+        "chargetime_delta": "float64",
+        "SOH": "float64"
+      },
+      "pass": true
+    },
+    "train_rul": {
+      "path": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\data\\processed\\train_rul.csv",
+      "sha256": "3c59a4e3593f8cdccd518c9187d48d58d982808cec1ad81c67c3c75f5f724aa1",
+      "rows": 81545,
+      "cols": 19,
+      "expected_rows": 81545,
+      "rows_match": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "dup_rows": 0,
+      "dup_keys": 0,
+      "cols_match": true,
+      "target": "RUL",
+      "has_target": true,
+      "features_present": true,
+      "dtypes": {
+        "battery_id": "int64",
+        "IR": "float64",
+        "QCharge": "float64",
+        "Tavg": "float64",
+        "Tmax": "float64",
+        "Tmin": "float64",
+        "chargetime": "float64",
+        "cycle": "float64",
+        "IR_is_zero": "int64",
+        "temp_sensor_fault": "int64",
+        "IR_lag1": "float64",
+        "IR_delta": "float64",
+        "QCharge_lag1": "float64",
+        "QCharge_delta": "float64",
+        "Tavg_lag1": "float64",
+        "Tavg_delta": "float64",
+        "chargetime_lag1": "float64",
+        "chargetime_delta": "float64",
+        "RUL": "float64"
+      },
+      "pass": true
+    },
+    "val_rul": {
+      "path": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\data\\processed\\val_rul.csv",
+      "sha256": "445bf33a623fa247704a64d600c57eb42744c4e321638ea6bcd5f94f712cc30c",
+      "rows": 16606,
+      "cols": 19,
+      "expected_rows": 16606,
+      "rows_match": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "dup_rows": 0,
+      "dup_keys": 0,
+      "cols_match": true,
+      "target": "RUL",
+      "has_target": true,
+      "features_present": true,
+      "dtypes": {
+        "battery_id": "int64",
+        "IR": "float64",
+        "QCharge": "float64",
+        "Tavg": "float64",
+        "Tmax": "float64",
+        "Tmin": "float64",
+        "chargetime": "float64",
+        "cycle": "float64",
+        "IR_is_zero": "int64",
+        "temp_sensor_fault": "int64",
+        "IR_lag1": "float64",
+        "IR_delta": "float64",
+        "QCharge_lag1": "float64",
+        "QCharge_delta": "float64",
+        "Tavg_lag1": "float64",
+        "Tavg_delta": "float64",
+        "chargetime_lag1": "float64",
+        "chargetime_delta": "float64",
+        "RUL": "float64"
+      },
+      "pass": true
+    },
+    "test_rul": {
+      "path": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\data\\processed\\test_rul.csv",
+      "sha256": "cdd7e7cc749c6875a66f9fb16f43cefdf5dd9e3434680ca24490942bc3084298",
+      "rows": 18512,
+      "cols": 19,
+      "expected_rows": 18512,
+      "rows_match": true,
+      "nan_count": 0,
+      "inf_count": 0,
+      "dup_rows": 0,
+      "dup_keys": 0,
+      "cols_match": true,
+      "target": "RUL",
+      "has_target": true,
+      "features_present": true,
+      "dtypes": {
+        "battery_id": "int64",
+        "IR": "float64",
+        "QCharge": "float64",
+        "Tavg": "float64",
+        "Tmax": "float64",
+        "Tmin": "float64",
+        "chargetime": "float64",
+        "cycle": "float64",
+        "IR_is_zero": "int64",
+        "temp_sensor_fault": "int64",
+        "IR_lag1": "float64",
+        "IR_delta": "float64",
+        "QCharge_lag1": "float64",
+        "QCharge_delta": "float64",
+        "Tavg_lag1": "float64",
+        "Tavg_delta": "float64",
+        "chargetime_lag1": "float64",
+        "chargetime_delta": "float64",
+        "RUL": "float64"
+      },
+      "pass": true
+    }
+  },
+  "feature_distributions": {
+    "IR": {
+      "train": {
+        "min": 0.0096521955,
+        "max": 0.022639817,
+        "mean": 0.016507887321380834,
+        "median": 0.0163213845,
+        "std": 0.0014156437740707865,
+        "Q1": 0.015449635,
+        "Q3": 0.017066058
+      },
+      "validation": {
+        "min": 0.013937969,
+        "max": 0.022255138,
+        "mean": 0.016285637412019754,
+        "median": 0.0162200535,
+        "std": 0.0010683430830175915,
+        "Q1": 0.0156154105,
+        "Q3": 0.016667555
+      },
+      "test": {
+        "min": 0.013169404,
+        "max": 0.021940453,
+        "mean": 0.016072245605661194,
+        "median": 0.0158252875,
+        "std": 0.0010396565673927338,
+        "Q1": 0.015346147,
+        "Q3": 0.01687812925
+      }
+    },
+    "QCharge": {
+      "train": {
+        "min": 0.82887155,
+        "max": 1.9679104,
+        "mean": 1.039683807886811,
+        "median": 1.0527123,
+        "std": 0.04907211049885902,
+        "Q1": 1.0239908,
+        "Q3": 1.0704848
+      },
+      "validation": {
+        "min": 0.82966197,
+        "max": 1.1282696,
+        "mean": 1.0368799051342887,
+        "median": 1.05248045,
+        "std": 0.05065615937404874,
+        "Q1": 1.0193921750000001,
+        "Q3": 1.070441025
+      },
+      "test": {
+        "min": 0.84762615,
+        "max": 1.1698282,
+        "mean": 1.0370203311722126,
+        "median": 1.0505487,
+        "std": 0.048025543460236346,
+        "Q1": 1.018239475,
+        "Q3": 1.0685071000000002
+      }
+    },
+    "Tavg": {
+      "train": {
+        "min": 0.5578701672807845,
+        "max": 73.5537788966189,
+        "mean": 34.48469082496406,
+        "median": 34.29249959884456,
+        "std": 2.008126122524614,
+        "Q1": 33.17020137658935,
+        "Q3": 35.86560385990342
+      },
+      "validation": {
+        "min": 29.68669913561321,
+        "max": 39.58673154705568,
+        "mean": 34.37388127166974,
+        "median": 33.89061878321978,
+        "std": 1.8827142810917532,
+        "Q1": 33.03381892818885,
+        "Q3": 35.8654876200015
+      },
+      "test": {
+        "min": 27.32457592054793,
+        "max": 39.203477705625616,
+        "mean": 33.781273633886954,
+        "median": 33.759127578353926,
+        "std": 1.9053166793717888,
+        "Q1": 32.59221901953812,
+        "Q3": 34.90618623465096
+      }
+    },
+    "Tmax": {
+      "train": {
+        "min": 4.128928340854818,
+        "max": 77.12483707019292,
+        "mean": 38.02490432041714,
+        "median": 38.294422,
+        "std": 2.5746823178390685,
+        "Q1": 36.461014,
+        "Q3": 39.851753
+      },
+      "validation": {
+        "min": 31.209373,
+        "max": 43.113594,
+        "mean": 37.811883897335505,
+        "median": 37.932464398315894,
+        "std": 2.49413832771885,
+        "Q1": 35.6674755,
+        "Q3": 39.72512691306785
+      },
+      "test": {
+        "min": 29.528459674719223,
+        "max": 43.772045,
+        "mean": 36.99534312814401,
+        "median": 36.765973891292205,
+        "std": 2.4459413621075714,
+        "Q1": 35.540877,
+        "Q3": 38.44272412196666
+      }
+    },
+    "Tmin": {
+      "train": {
+        "min": -2.49200460617228,
+        "max": 70.50390412316582,
+        "mean": 31.583936008938476,
+        "median": 31.52363045047501,
+        "std": 1.5743414476975914,
+        "Q1": 30.425837,
+        "Q3": 32.61834
+      },
+      "validation": {
+        "min": 25.7875,
+        "max": 35.80724,
+        "mean": 31.575589809241713,
+        "median": 31.482447055135857,
+        "std": 1.3517412790486005,
+        "Q1": 30.514474741645024,
+        "Q3": 32.43501483584392
+      },
+      "test": {
+        "min": 24.603552,
+        "max": 35.14284192176762,
+        "mean": 31.29262909026054,
+        "median": 31.37605347734339,
+        "std": 1.3836541469613486,
+        "Q1": 30.19485180993702,
+        "Q3": 32.27695875
+      }
+    },
+    "chargetime": {
+      "train": {
+        "min": 6.474444999999832,
+        "max": 3934.705166666666,
+        "mean": 11.386374395017066,
+        "median": 10.348428333333382,
+        "std": 36.47880979871468,
+        "Q1": 10.045473333333696,
+        "Q3": 11.207925000000008
+      },
+      "validation": {
+        "min": 10.023244999999102,
+        "max": 3932.50703,
+        "mean": 10.966847891625507,
+        "median": 10.096774166666485,
+        "std": 30.562219973442904,
+        "Q1": 10.043396666666982,
+        "Q3": 10.469470833335073
+      },
+      "test": {
+        "min": 8.896579999999995,
+        "max": 3933.840303333333,
+        "mean": 11.82900750504178,
+        "median": 11.036859999998706,
+        "std": 50.046524342419794,
+        "Q1": 10.172555000001257,
+        "Q3": 11.35756625000116
+      }
+    },
+    "cycle": {
+      "train": {
+        "min": 1.0,
+        "max": 2237.0,
+        "mean": 490.9116070881109,
+        "median": 430.0,
+        "std": 356.33317955002144,
+        "Q1": 213.0,
+        "Q3": 700.0
+      },
+      "validation": {
+        "min": 1.0,
+        "max": 1934.0,
+        "mean": 474.12387089003977,
+        "median": 396.0,
+        "std": 367.1607485125192,
+        "Q1": 198.0,
+        "Q3": 671.75
+      },
+      "test": {
+        "min": 1.0,
+        "max": 2189.0,
+        "mean": 550.9866032843561,
+        "median": 443.0,
+        "std": 442.611428208086,
+        "Q1": 221.0,
+        "Q3": 770.0
+      }
+    },
+    "IR_is_zero": {
+      "train": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.018774909559139127,
+        "median": 0.0,
+        "std": 0.13573001970855722,
+        "Q1": 0.0,
+        "Q3": 0.0
+      },
+      "validation": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.1444056365169216,
+        "median": 0.0,
+        "std": 0.3515111511012629,
+        "Q1": 0.0,
+        "Q3": 0.0
+      },
+      "test": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.053640881590319794,
+        "median": 0.0,
+        "std": 0.2253137362810914,
+        "Q1": 0.0,
+        "Q3": 0.0
+      }
+    },
+    "temp_sensor_fault": {
+      "train": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0012140535900423079,
+        "median": 0.0,
+        "std": 0.03482232809811526,
+        "Q1": 0.0,
+        "Q3": 0.0
+      },
+      "validation": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "Q1": 0.0,
+        "Q3": 0.0
+      },
+      "test": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "Q1": 0.0,
+        "Q3": 0.0
+      }
+    },
+    "IR_lag1": {
+      "train": {
+        "min": 0.0096521955,
+        "max": 0.022639817,
+        "mean": 0.0165045308144828,
+        "median": 0.0163213845,
+        "std": 0.0014116217062379473,
+        "Q1": 0.015449258,
+        "Q3": 0.017062478
+      },
+      "validation": {
+        "min": 0.013937969,
+        "max": 0.022255138,
+        "mean": 0.016281672636577142,
+        "median": 0.016219241500000002,
+        "std": 0.0010609039386856635,
+        "Q1": 0.015615332249999999,
+        "Q3": 0.01666424
+      },
+      "test": {
+        "min": 0.013169404,
+        "max": 0.021886513,
+        "mean": 0.016069162954570008,
+        "median": 0.015824096000000003,
+        "std": 0.001034950165515685,
+        "Q1": 0.015345791000000001,
+        "Q3": 0.01687440775
+      }
+    },
+    "IR_delta": {
+      "train": {
+        "min": -0.0050430535,
+        "max": 0.0052912594999999,
+        "mean": 3.356506898031204e-06,
+        "median": 3.899999999994186e-07,
+        "std": 9.455312775972833e-05,
+        "Q1": -1.0327999999998684e-05,
+        "Q3": 1.4375000000000498e-05
+      },
+      "validation": {
+        "min": -0.0012567389999999,
+        "max": 0.001587789,
+        "mean": 3.964775442610543e-06,
+        "median": 0.0,
+        "std": 8.358112422426096e-05,
+        "Q1": -8.780749999999504e-06,
+        "Q3": 1.4502999999999044e-05
+      },
+      "test": {
+        "min": -0.0032112769999999,
+        "max": 0.0031128979999999,
+        "mean": 3.082651091183605e-06,
+        "median": 5.064999999988135e-07,
+        "std": 7.312563386367036e-05,
+        "Q1": -8.33100000000031e-06,
+        "Q3": 1.1802499999998863e-05
+      }
+    },
+    "QCharge_lag1": {
+      "train": {
+        "min": 0.82971907,
+        "max": 1.9679104,
+        "mean": 1.0399061588724017,
+        "median": 1.0528029,
+        "std": 0.04880100519708438,
+        "Q1": 1.0242211,
+        "Q3": 1.0705264
+      },
+      "validation": {
+        "min": 0.83071733,
+        "max": 1.1282696,
+        "mean": 1.0371428881193545,
+        "median": 1.0525692,
+        "std": 0.05032696858325171,
+        "Q1": 1.019710425,
+        "Q3": 1.07046785
+      },
+      "test": {
+        "min": 0.84819138,
+        "max": 1.1698282,
+        "mean": 1.037227173912057,
+        "median": 1.0506400999999999,
+        "std": 0.04777932039835831,
+        "Q1": 1.018410475,
+        "Q3": 1.0685392249999999
+      }
+    },
+    "QCharge_delta": {
+      "train": {
+        "min": -0.8987994000000001,
+        "max": 0.1508210199999999,
+        "mean": -0.000222350985590761,
+        "median": -8.769999999991285e-05,
+        "std": 0.0038666501124396437,
+        "Q1": -0.0003577000000001,
+        "Q3": -2.5000000001274003e-06
+      },
+      "validation": {
+        "min": -0.1134409,
+        "max": 0.1092611999999999,
+        "mean": -0.0002629829850656197,
+        "median": -0.00010514999999995,
+        "std": 0.0018520875561725675,
+        "Q1": -0.000385522500000025,
+        "Q3": -7.92499999996421e-06
+      },
+      "test": {
+        "min": -0.1920912799999999,
+        "max": 0.18595788,
+        "mean": -0.00020684273984440733,
+        "median": -9.650000000005488e-05,
+        "std": 0.002979309983656781,
+        "Q1": -0.00030869999999995,
+        "Q3": 1.29999999992636e-06
+      }
+    },
+    "Tavg_lag1": {
+      "train": {
+        "min": 0.5578701672807845,
+        "max": 73.5537788966189,
+        "mean": 34.48389685500358,
+        "median": 34.291343008957035,
+        "std": 2.0091345563921807,
+        "Q1": 33.169523778058874,
+        "Q3": 35.86387001955989
+      },
+      "validation": {
+        "min": 29.68669913561321,
+        "max": 39.58673154705568,
+        "mean": 34.372956420018504,
+        "median": 33.890161099030635,
+        "std": 1.8821860812550553,
+        "Q1": 33.03354412948421,
+        "Q3": 35.86383115754453
+      },
+      "test": {
+        "min": 27.32457592054793,
+        "max": 39.203477705625616,
+        "mean": 33.78036656726599,
+        "median": 33.75755711934984,
+        "std": 1.9046457643859966,
+        "Q1": 32.591971108335756,
+        "Q3": 34.90563011632538
+      }
+    },
+    "Tavg_delta": {
+      "train": {
+        "min": -48.61921191942529,
+        "max": 51.42821261572722,
+        "mean": 0.0007939699604880975,
+        "median": 0.0027728400933213,
+        "std": 0.5017719166141585,
+        "Q1": -0.040772826387716,
+        "Q3": 0.0492005291860273
+      },
+      "validation": {
+        "min": -4.801476842707039,
+        "max": 4.703899840069845,
+        "mean": 0.0009248516512325574,
+        "median": 0.00237405079905525,
+        "std": 0.22877724711590958,
+        "Q1": -0.05164003586455295,
+        "Q3": 0.05936196357341478
+      },
+      "test": {
+        "min": -3.459986717934818,
+        "max": 3.964192236875345,
+        "mean": 0.000907066620955598,
+        "median": 0.0022792044492945,
+        "std": 0.23771331411057045,
+        "Q1": -0.039056130085716824,
+        "Q3": 0.047222220644343275
+      }
+    },
+    "chargetime_lag1": {
+      "train": {
+        "min": 6.474444999999832,
+        "max": 3934.705166666666,
+        "mean": 11.376472444601143,
+        "median": 10.344610000000102,
+        "std": 36.47767429188892,
+        "Q1": 10.04545166666697,
+        "Q3": 11.207879999999813
+      },
+      "validation": {
+        "min": 10.023244999999102,
+        "max": 3932.50703,
+        "mean": 10.954785723132193,
+        "median": 10.096709999999963,
+        "std": 30.56052815198969,
+        "Q1": 10.04339499999963,
+        "Q3": 10.465452499999081
+      },
+      "test": {
+        "min": 8.896579999999995,
+        "max": 3933.840303333333,
+        "mean": 11.819692519626912,
+        "median": 11.036850833334029,
+        "std": 50.045906196088076,
+        "Q1": 10.172508750000269,
+        "Q3": 11.345426250008558
+      }
+    },
+    "chargetime_delta": {
+      "train": {
+        "min": -3924.456536666666,
+        "max": 3924.469283333333,
+        "mean": 0.009901950415925068,
+        "median": 0.0001683333335673,
+        "std": 51.52124021719083,
+        "Q1": -0.0005800000003848,
+        "Q3": 0.0028583333323091
+      },
+      "validation": {
+        "min": -3922.4662966666665,
+        "max": 3922.466426666667,
+        "mean": 0.01206216849331509,
+        "median": 0.00022499999807475,
+        "std": 43.15142190723632,
+        "Q1": -0.00043166666679845,
+        "Q3": 0.00195166666526295
+      },
+      "test": {
+        "min": -3923.669846666666,
+        "max": 3923.670385,
+        "mean": 0.009314985414866006,
+        "median": 0.00018833333339689999,
+        "std": 70.76733187634063,
+        "Q1": -0.00047166666675695,
+        "Q3": 0.002762083333315875
+      }
+    }
+  },
+  "distribution_shifts": [
+    {
+      "feature": "IR_is_zero",
+      "train_mean": 0.018774909559139127,
+      "val_mean": 0.1444056365169216,
+      "val_shift_pct": 669.14,
+      "test_mean": 0.053640881590319794,
+      "test_shift_pct": 185.71,
+      "type": "NATURAL_BATTERY_LEVEL_VARIATION"
+    },
+    {
+      "feature": "temp_sensor_fault",
+      "train_mean": 0.0012140535900423079,
+      "val_mean": 0.0,
+      "val_shift_pct": 100.0,
+      "test_mean": 0.0,
+      "test_shift_pct": 100.0,
+      "type": "NATURAL_BATTERY_LEVEL_VARIATION"
+    }
+  ],
+  "reproducibility": {
+    "processed_hashes": {
+      "train_soh": "3057eedfae3da11cc8f4d63c0c942147cb98acd4222b69f0807745f5c0143ad5",
+      "val_soh": "0710d9e2f8bba2e8480cfee3f363b242b5685f80e14b21519885213721ea13bc",
+      "test_soh": "b2fcbcbfde05a21147f6fca7b5cfeaa736b1f92068603679217f1f537dba67bd",
+      "train_rul": "3c59a4e3593f8cdccd518c9187d48d58d982808cec1ad81c67c3c75f5f724aa1",
+      "val_rul": "445bf33a623fa247704a64d600c57eb42744c4e321638ea6bcd5f94f712cc30c",
+      "test_rul": "cdd7e7cc749c6875a66f9fb16f43cefdf5dd9e3434680ca24490942bc3084298"
+    },
+    "pass": true
+  },
+  "source_code_leakage_scan": {},
+  "gate_checklist": {
+    "RAW_DATA_INTEGRITY": "PASS",
+    "TRAIN_VAL_TEST_ISOLATION": "PASS",
+    "NO_DATA_LEAKAGE": "PASS",
+    "NO_TARGET_LEAKAGE": "PASS",
+    "NO_FUTURE_LEAKAGE": "PASS",
+    "CAUSAL_FEATURES": "PASS",
+    "TARGET_INTEGRITY": "PASS",
+    "IMPUTATION_INTEGRITY": "PASS",
+    "SCALER_INTEGRITY": "PASS",
+    "NO_UNAUTHORIZED_ROW_DELETION": "PASS",
+    "NO_UNEXPECTED_NAN_INF": "PASS",
+    "FEATURE_SCHEMA": "PASS",
+    "REPRODUCIBILITY": "PASS"
+  },
+  "final_verdict": "MODEL_READY"
+}

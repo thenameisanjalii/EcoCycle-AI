@@ -1,0 +1,12 @@
+column,meaning,unit,definition_source,confidence
+cycle,Sequential charge/discharge cycle count,dimensionless integer,Severson et al. (2019) Nature Energy / MATR summary struct,VERIFIED
+QDischarge,Discharge capacity measured during the cycle,Ampere-hours (Ah),Severson et al. (2019) Nature Energy / MATR summary struct,VERIFIED
+QCharge,Charge capacity delivered to cell during the cycle,Ampere-hours (Ah),Severson et al. (2019) Nature Energy / MATR summary struct,VERIFIED
+IR,Internal resistance of cell measured during charging,Ohms (Ω),Severson et al. (2019) Nature Energy / MATR summary struct,VERIFIED
+Tavg,Average cell surface temperature over the cycle,degrees Celsius (°C),Severson et al. (2019) Nature Energy / MATR summary struct,VERIFIED
+Tmax,Maximum cell surface temperature recorded during cycle,degrees Celsius (°C),Severson et al. (2019) Nature Energy / MATR summary struct,VERIFIED
+Tmin,Minimum cell surface temperature recorded during cycle,degrees Celsius (°C),Severson et al. (2019) Nature Energy / MATR summary struct,VERIFIED
+chargetime,Duration of the charging phase for that cycle,minutes (min),Severson et al. (2019) Nature Energy / MATR summary struct,VERIFIED
+battery_id,Sequential synthetic identifier assigned across batch files (1–139),integer identifier,"build_master_dataset.py (lines 12, 66)",VERIFIED
+SOH,State of Health defined relative to mean discharge capacity of first 50 cycles,percentage (%),build_master_dataset.py (lines 51-58),VERIFIED
+RUL,Remaining Useful Life defined as cycles remaining until final recorded cycle,cycles,build_master_dataset.py (lines 61-63),VERIFIED

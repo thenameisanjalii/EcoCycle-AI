@@ -1,0 +1,126 @@
+{
+  "task": "Task 2L.2 \u2014 Baseline Model Training & Validation",
+  "status": "COMPLETE",
+  "raw_dataset_hash": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "raw_dataset_unmodified": true,
+  "test_partition_accessed": false,
+  "soh_comparison": [
+    {
+      "target": "SOH",
+      "model": "soh_hist_gradient_boosting",
+      "train_rows": 81545,
+      "validation_rows": 16606,
+      "mae": 0.4245,
+      "rmse": 0.6805,
+      "r2": 0.9818,
+      "training_time_seconds": 3.5057
+    },
+    {
+      "target": "SOH",
+      "model": "soh_random_forest",
+      "train_rows": 81545,
+      "validation_rows": 16606,
+      "mae": 0.4255,
+      "rmse": 0.7047,
+      "r2": 0.9805,
+      "training_time_seconds": 14.0988
+    },
+    {
+      "target": "SOH",
+      "model": "soh_ridge",
+      "train_rows": 81545,
+      "validation_rows": 16606,
+      "mae": 0.8096,
+      "rmse": 1.2373,
+      "r2": 0.9398,
+      "training_time_seconds": 0.0743
+    },
+    {
+      "target": "SOH",
+      "model": "soh_dummy",
+      "train_rows": 81545,
+      "validation_rows": 16606,
+      "mae": 3.6626,
+      "rmse": 5.0492,
+      "r2": -0.0024,
+      "training_time_seconds": 0.0017
+    }
+  ],
+  "rul_comparison": [
+    {
+      "target": "RUL",
+      "model": "rul_hist_gradient_boosting",
+      "train_rows": 81545,
+      "validation_rows": 16606,
+      "mae": 130.9945,
+      "rmse": 247.9533,
+      "r2": 0.544,
+      "training_time_seconds": 0.9072
+    },
+    {
+      "target": "RUL",
+      "model": "rul_random_forest",
+      "train_rows": 81545,
+      "validation_rows": 16606,
+      "mae": 135.9016,
+      "rmse": 257.5131,
+      "r2": 0.5081,
+      "training_time_seconds": 14.2852
+    },
+    {
+      "target": "RUL",
+      "model": "rul_ridge",
+      "train_rows": 81545,
+      "validation_rows": 16606,
+      "mae": 202.5094,
+      "rmse": 273.2028,
+      "r2": 0.4463,
+      "training_time_seconds": 0.0561
+    },
+    {
+      "target": "RUL",
+      "model": "rul_dummy",
+      "train_rows": 81545,
+      "validation_rows": 16606,
+      "mae": 286.5486,
+      "rmse": 367.5413,
+      "r2": -0.002,
+      "training_time_seconds": 0.0007
+    }
+  ],
+  "best_provisional_models": {
+    "SOH": {
+      "model": "soh_hist_gradient_boosting",
+      "val_rmse": 0.6805,
+      "selection_criterion": "Lowest Validation RMSE"
+    },
+    "RUL": {
+      "model": "rul_hist_gradient_boosting",
+      "val_rmse": 247.9533,
+      "selection_criterion": "Lowest Validation RMSE"
+    }
+  },
+  "artifacts_created": {
+    "models": [
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\models\\baseline\\soh_dummy.joblib",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\models\\baseline\\soh_ridge.joblib",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\models\\baseline\\soh_random_forest.joblib",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\models\\baseline\\soh_hist_gradient_boosting.joblib",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\models\\baseline\\rul_dummy.joblib",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\models\\baseline\\rul_ridge.joblib",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\models\\baseline\\rul_random_forest.joblib",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\models\\baseline\\rul_hist_gradient_boosting.joblib"
+    ],
+    "predictions": [
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\predictions\\soh_dummy_validation.csv",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\predictions\\soh_ridge_validation.csv",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\predictions\\soh_random_forest_validation.csv",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\predictions\\soh_hist_gradient_boosting_validation.csv",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\predictions\\rul_dummy_validation.csv",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\predictions\\rul_ridge_validation.csv",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\predictions\\rul_random_forest_validation.csv",
+      "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\predictions\\rul_hist_gradient_boosting_validation.csv"
+    ],
+    "results_csv": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\reports\\modeling\\task_2l_2_baseline_results.csv"
+  }
+}

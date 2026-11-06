@@ -1,0 +1,4258 @@
+[
+  {
+    "slide_number": 1,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;129;p25",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 1.11,
+        "top_in": 0.53,
+        "width_in": 7.5,
+        "height_in": 0.96,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "  EcoCycle AI",
+            "level": 0,
+            "runs": [
+              {
+                "text": "  EcoCycle AI",
+                "font": null,
+                "size": 41.0,
+                "bold": true,
+                "color": "1F3864"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;130;p25",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.0,
+        "top_in": 1.76,
+        "width_in": 10.0,
+        "height_in": 1.36,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Presented by",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Presented by",
+                "font": null,
+                "size": 15.0,
+                "bold": true,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 1,
+            "text": "Anjali Chourasia",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Anjali Chourasia",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": "2F5496"
+              }
+            ]
+          },
+          {
+            "p_idx": 2,
+            "text": "Roll No: 24223011",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Roll No: 24223011",
+                "font": null,
+                "size": 15.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 3,
+            "text": "MCA- V Semester",
+            "level": 0,
+            "runs": [
+              {
+                "text": "MCA- V Semester",
+                "font": null,
+                "size": 14.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;131;p25",
+        "type": "TEXT_BOX (17)",
+        "left_in": 2.92,
+        "top_in": 3.5,
+        "width_in": 4.15,
+        "height_in": 0.92,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Dr. Mou Das Gupta",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Dr. Mou Das Gupta",
+                "font": "Calibri",
+                "size": null,
+                "bold": true,
+                "color": "002060"
+              }
+            ]
+          },
+          {
+            "p_idx": 1,
+            "text": "Mentor",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Mentor",
+                "font": "Calibri",
+                "size": null,
+                "bold": true,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 2,
+            "text": "Department of Computer Applications",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Department of Computer Applications",
+                "font": "Calibri",
+                "size": 11.0,
+                "bold": false,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 3,
+            "text": "National Institute of Technology Raipur",
+            "level": 0,
+            "runs": [
+              {
+                "text": "National Institute of Technology Raipur",
+                "font": "Calibri",
+                "size": 11.0,
+                "bold": false,
+                "color": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 2,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;136;p26",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Sequence of slides to be followed",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Sequence of slides to be followed",
+                "font": null,
+                "size": 30.0,
+                "bold": true,
+                "color": "000000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;137;p26",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.56,
+        "top_in": 1.51,
+        "width_in": 9.31,
+        "height_in": 3.57,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Declaration ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Declaration ",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 1,
+            "text": "Problem Formulation and Definition (one slide)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Problem Formulation and Definition ",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": null
+              },
+              {
+                "text": "(one slide)",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": "C00000"
+              }
+            ]
+          },
+          {
+            "p_idx": 2,
+            "text": "Motivation (one slide)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Motivation ",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": null
+              },
+              {
+                "text": "(one slide)",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": "C00000"
+              }
+            ]
+          },
+          {
+            "p_idx": 3,
+            "text": "Contribution (one slide)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Contribution ",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": null
+              },
+              {
+                "text": "(one slide)",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": "C00000"
+              }
+            ]
+          },
+          {
+            "p_idx": 4,
+            "text": "Methodology/ Proposed Algorithm (maximum five slides)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Methodology/ Proposed Algorithm ",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": null
+              },
+              {
+                "text": "(maximum five slides)",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": "C00000"
+              }
+            ]
+          },
+          {
+            "p_idx": 5,
+            "text": "Design/ Architecture/ Workflow (maximum five slides)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Design/ Architecture/ Workflow ",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": null
+              },
+              {
+                "text": "(maximum five slides)",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": "C00000"
+              }
+            ]
+          },
+          {
+            "p_idx": 6,
+            "text": "Screen Shots/Testing & Implementation/Results and Discussion (maximum five slides)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Screen Shots/Testing & Implementation/Results and Discussion ",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": null
+              },
+              {
+                "text": "(maximum five slides)",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": "C00000"
+              }
+            ]
+          },
+          {
+            "p_idx": 7,
+            "text": "Conclusion and Future scope (one slide)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Conclusion and Future scope ",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": null
+              },
+              {
+                "text": "(one slide)",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": "C00000"
+              }
+            ]
+          },
+          {
+            "p_idx": 8,
+            "text": "References/ Bibliography (one slide)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "References/ Bibliography ",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": null
+              },
+              {
+                "text": "(one slide)",
+                "font": null,
+                "size": 18.0,
+                "bold": null,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 3,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;142;p27",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Contents:",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Contents:",
+                "font": null,
+                "size": null,
+                "bold": null,
+                "color": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;143;p27",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 1.5,
+        "width_in": 8.62,
+        "height_in": 3.57,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Declaration",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Declaration",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 1,
+            "text": "Problem Formulation and Definition",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Problem Formulation and Definition",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 2,
+            "text": "Motivation ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Motivation ",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 3,
+            "text": "Contribution ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Contribution ",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 4,
+            "text": "Methodology/ Proposed Algorithm ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Methodology/ Proposed Algorithm ",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 5,
+            "text": "Design/ Architecture/ Workflow ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Design/ Architecture/ Workflow ",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 6,
+            "text": "Testing & Implementation/Results and Discussion ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Testing & Implementation/Results and Discussion ",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 7,
+            "text": "Conclusion and Future Scope",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Conclusion and Future Scope",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 8,
+            "text": "References/ Bibliography ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "References/ Bibliography ",
+                "font": null,
+                "size": 21.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 4,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;148;p28",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Declaration",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Declaration",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;149;p28",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 1.82,
+        "width_in": 9.0,
+        "height_in": 1.96,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;150;p28",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.79,
+        "top_in": 2.08,
+        "width_in": 8.42,
+        "height_in": 0.51,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "I hereby declare that this project report entitled \"EcoCycle : AI-Powered EV Battery Health & Second-Life Recommendation Platform \" is an authentic record of work carried out by me under the guidance of my mentor.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "I hereby declare that this project report entitled ",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "\"",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": "EcoCycle : AI-Powered EV Battery Health & Second-Life Recommendation Platform ",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": "\"",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " is an authentic record of work carried out by me under the guidance of my ",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "mentor",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": null,
+                "color": "334155"
+              },
+              {
+                "text": ".",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;151;p28",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.79,
+        "top_in": 3.0,
+        "width_in": 8.42,
+        "height_in": 0.51,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "The machine learning algorithms, decision logic, and web application described here are original and have not been submitted for any other degree.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "The machine learning algorithms, decision logic, and web application described here are original and have not been submitted for any other degree.",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;152;p28",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.56,
+        "top_in": 4.09,
+        "width_in": 2.27,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Roll No: 24223011",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Roll No: 24223011",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;153;p28",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.56,
+        "top_in": 4.25,
+        "width_in": 2.27,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "National Institute of Technology Raipur",
+            "level": 0,
+            "runs": [
+              {
+                "text": "National Institute of Technology Raipur",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "64748B"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;154;p28",
+        "type": "TEXT_BOX (17)",
+        "left_in": 7.2,
+        "top_in": 4.09,
+        "width_in": 2.23,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Anjali Chourasia",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Anjali Chourasia",
+                "font": "Plus Jakarta Sans ExtraBold",
+                "size": 11.0,
+                "bold": null,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;155;p28",
+        "type": "TEXT_BOX (17)",
+        "left_in": 7.2,
+        "top_in": 4.27,
+        "width_in": 2.23,
+        "height_in": 0.13,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Master of Computer Applications (MCA)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Master of Computer Applications (MCA)",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "64748B"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 5,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;160;p29",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Problem Formulation and Definition",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Problem Formulation and Definition",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;161;p29",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.02,
+        "top_in": 2.39,
+        "width_in": 3.58,
+        "height_in": 1.85,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "70%–80%",
+            "level": 0,
+            "runs": [
+              {
+                "text": "70%–80%",
+                "font": null,
+                "size": 50.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          },
+          {
+            "p_idx": 1,
+            "text": "Remaining Usable Energy ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Remaining Usable Energy",
+                "font": null,
+                "size": 15.0,
+                "bold": true,
+                "color": "059669"
+              },
+              {
+                "text": " ",
+                "font": null,
+                "size": 11.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          },
+          {
+            "p_idx": 2,
+            "text": "Average storage capacity still available when an EV battery is retired from a car.  ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Average storage capacity still available when an EV battery is retired from a car.",
+                "font": null,
+                "size": 12.0,
+                "bold": null,
+                "color": "64748B"
+              },
+              {
+                "text": "  ",
+                "font": null,
+                "size": 11.0,
+                "bold": null,
+                "color": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;162;p29",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.69,
+        "top_in": 4.17,
+        "width_in": 4.89,
+        "height_in": 1.09,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;163;p29",
+        "type": "AUTO_SHAPE (1)",
+        "left_in": 0.69,
+        "top_in": 1.48,
+        "width_in": 5.06,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Batteries Discarded Too Early",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Batteries Discarded Too Early",
+                "font": null,
+                "size": 15.5,
+                "bold": true,
+                "color": "DC2626"
+              }
+            ]
+          },
+          {
+            "p_idx": 1,
+            "text": "EVs retire batteries when they reach 70–80% capacity, leaving plenty of energy unused.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "EVs retire batteries when they reach 70–80% capacity, leaving plenty of energy unused.",
+                "font": "Calibri",
+                "size": null,
+                "bold": null,
+                "color": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;164;p29",
+        "type": "AUTO_SHAPE (1)",
+        "left_in": 0.65,
+        "top_in": 2.83,
+        "width_in": 5.13,
+        "height_in": 1.18,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Manual Testing is Too Slow",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Manual Testing is Too Slow",
+                "font": null,
+                "size": 15.5,
+                "bold": true,
+                "color": "D97706"
+              }
+            ]
+          },
+          {
+            "p_idx": 1,
+            "text": "Standard laboratory testing takes days of slow charging and discharging for each pack.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Standard laboratory testing takes days of slow charging and discharging for each pack.",
+                "font": "Calibri",
+                "size": null,
+                "bold": null,
+                "color": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;165;p29",
+        "type": "AUTO_SHAPE (1)",
+        "left_in": 0.69,
+        "top_in": 4.17,
+        "width_in": 5.13,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "No Automated Sorting",
+            "level": 0,
+            "runs": [
+              {
+                "text": "No Automated Sorting",
+                "font": null,
+                "size": 15.5,
+                "bold": true,
+                "color": "0284C7"
+              }
+            ]
+          },
+          {
+            "p_idx": 1,
+            "text": "Without quick digital grading, working batteries are prematurely sent to recycling.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Without quick digital grading, working batteries are prematurely sent to recycling.",
+                "font": "Calibri",
+                "size": null,
+                "bold": null,
+                "color": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 6,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;170;p30",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Motivation",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Motivation",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;171;p30",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 1.68,
+        "width_in": 4.36,
+        "height_in": 2.97,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;172;p30",
+        "type": "PICTURE (13)",
+        "left_in": 5.14,
+        "top_in": 2.16,
+        "width_in": 0.31,
+        "height_in": 0.31,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;173;p30",
+        "type": "PICTURE (13)",
+        "left_in": 5.14,
+        "top_in": 2.88,
+        "width_in": 0.31,
+        "height_in": 0.31,
+        "paragraphs": []
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;174;p30",
+        "type": "PICTURE (13)",
+        "left_in": 5.14,
+        "top_in": 3.61,
+        "width_in": 0.31,
+        "height_in": 0.31,
+        "paragraphs": []
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;175;p30",
+        "type": "PICTURE (13)",
+        "left_in": 5.23,
+        "top_in": 2.24,
+        "width_in": 0.14,
+        "height_in": 0.14,
+        "paragraphs": []
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;176;p30",
+        "type": "PICTURE (13)",
+        "left_in": 5.21,
+        "top_in": 2.97,
+        "width_in": 0.18,
+        "height_in": 0.14,
+        "paragraphs": []
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;177;p30",
+        "type": "PICTURE (13)",
+        "left_in": 5.23,
+        "top_in": 3.69,
+        "width_in": 0.14,
+        "height_in": 0.14,
+        "paragraphs": []
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;178;p30",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.58,
+        "top_in": 2.16,
+        "width_in": 4.12,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Helps the Environment",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Helps the Environment",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;179;p30",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.58,
+        "top_in": 2.38,
+        "width_in": 3.92,
+        "height_in": 0.36,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Reusing batteries avoids mining extra raw minerals like lithium, cobalt, and nickel.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Reusing batteries avoids mining extra raw minerals like lithium, cobalt, and nickel.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;180;p30",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.58,
+        "top_in": 2.88,
+        "width_in": 4.12,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Cheaper Clean Energy Storage",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Cheaper Clean Energy Storage",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;181;p30",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.58,
+        "top_in": 3.1,
+        "width_in": 3.92,
+        "height_in": 0.36,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Repurposed EV batteries cut stationary solar storage costs by up to 45%.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Repurposed EV batteries cut stationary solar storage costs by up to 45%.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;182;p30",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.58,
+        "top_in": 3.61,
+        "width_in": 4.12,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Instant Digital Health Check",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Instant Digital Health Check",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;183;p30",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.58,
+        "top_in": 3.83,
+        "width_in": 3.92,
+        "height_in": 0.36,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Machine learning estimates battery health in under a second from simple sensor data.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Machine learning estimates battery health in under a second from simple sensor data.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 7,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;188;p31",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Contributions",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Contributions",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;189;p31",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 2.27,
+        "width_in": 2.88,
+        "height_in": 1.82,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;190;p31",
+        "type": "PICTURE (13)",
+        "left_in": 3.56,
+        "top_in": 2.27,
+        "width_in": 2.88,
+        "height_in": 1.82,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;191;p31",
+        "type": "PICTURE (13)",
+        "left_in": 6.62,
+        "top_in": 2.27,
+        "width_in": 2.88,
+        "height_in": 1.82,
+        "paragraphs": []
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;192;p31",
+        "type": "PICTURE (13)",
+        "left_in": 0.7,
+        "top_in": 2.53,
+        "width_in": 0.34,
+        "height_in": 0.34,
+        "paragraphs": []
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;193;p31",
+        "type": "PICTURE (13)",
+        "left_in": 3.76,
+        "top_in": 2.53,
+        "width_in": 0.34,
+        "height_in": 0.34,
+        "paragraphs": []
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;194;p31",
+        "type": "PICTURE (13)",
+        "left_in": 6.82,
+        "top_in": 2.53,
+        "width_in": 0.34,
+        "height_in": 0.34,
+        "paragraphs": []
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;195;p31",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 3.0,
+        "width_in": 2.61,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Two Trained AI Models",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Two Trained AI Models",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;196;p31",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 3.27,
+        "width_in": 2.48,
+        "height_in": 0.38,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Accurately predicts current battery health (SoH %) and remaining safe cycles (RUL).",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Accurately predicts current battery health (SoH %) and remaining safe cycles (RUL).",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;197;p31",
+        "type": "TEXT_BOX (17)",
+        "left_in": 3.76,
+        "top_in": 3.0,
+        "width_in": 2.61,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Automated Decision Engine",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Automated Decision Engine",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;198;p31",
+        "type": "TEXT_BOX (17)",
+        "left_in": 3.76,
+        "top_in": 3.27,
+        "width_in": 2.48,
+        "height_in": 0.38,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Instantly sorts batteries into solar storage, backup telecom UPS, or raw recycling.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Instantly sorts batteries into solar storage, backup telecom UPS, or raw recycling.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;199;p31",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.82,
+        "top_in": 3.0,
+        "width_in": 2.61,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Interactive Web Dashboard",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Interactive Web Dashboard",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;200;p31",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.82,
+        "top_in": 3.27,
+        "width_in": 2.48,
+        "height_in": 0.61,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Clean user interface that displays health grades, carbon savings, and cost benefits.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Clean user interface that displays health grades, carbon savings, and cost benefits.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;201;p31",
+        "type": "PICTURE (13)",
+        "left_in": 0.79,
+        "top_in": 2.62,
+        "width_in": 0.16,
+        "height_in": 0.16,
+        "paragraphs": []
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;202;p31",
+        "type": "PICTURE (13)",
+        "left_in": 3.85,
+        "top_in": 2.62,
+        "width_in": 0.16,
+        "height_in": 0.16,
+        "paragraphs": []
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;203;p31",
+        "type": "PICTURE (13)",
+        "left_in": 6.9,
+        "top_in": 2.62,
+        "width_in": 0.18,
+        "height_in": 0.16,
+        "paragraphs": []
+      }
+    ]
+  },
+  {
+    "slide_number": 8,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;208;p32",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Methodology/ Proposed Algorithm ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Methodology/ Proposed Algorithm ",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;209;p32",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 2.5,
+        "width_in": 2.13,
+        "height_in": 1.37,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;210;p32",
+        "type": "PICTURE (13)",
+        "left_in": 2.79,
+        "top_in": 2.5,
+        "width_in": 2.13,
+        "height_in": 1.37,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;211;p32",
+        "type": "PICTURE (13)",
+        "left_in": 5.08,
+        "top_in": 2.5,
+        "width_in": 2.13,
+        "height_in": 1.37,
+        "paragraphs": []
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;212;p32",
+        "type": "PICTURE (13)",
+        "left_in": 7.37,
+        "top_in": 2.5,
+        "width_in": 2.13,
+        "height_in": 1.37,
+        "paragraphs": []
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;213;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.65,
+        "top_in": 2.7,
+        "width_in": 1.84,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "STEP 01",
+            "level": 0,
+            "runs": [
+              {
+                "text": "STEP 01",
+                "font": "Space Grotesk",
+                "size": 10.0,
+                "bold": true,
+                "color": "059669"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;214;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.65,
+        "top_in": 2.94,
+        "width_in": 1.93,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Load Cycle Data",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Load Cycle Data",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;215;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.65,
+        "top_in": 3.18,
+        "width_in": 1.84,
+        "height_in": 0.51,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Extracting raw cycle records with voltage curves, charge capacity, and current.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Extracting raw cycle records with voltage curves, charge capacity, and current.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;216;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 2.94,
+        "top_in": 2.7,
+        "width_in": 1.84,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "STEP 02",
+            "level": 0,
+            "runs": [
+              {
+                "text": "STEP 02",
+                "font": "Space Grotesk",
+                "size": 10.0,
+                "bold": true,
+                "color": "0284C7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;217;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 2.94,
+        "top_in": 2.94,
+        "width_in": 1.93,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Clean Outliers",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Clean Outliers",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;218;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 2.94,
+        "top_in": 3.18,
+        "width_in": 1.84,
+        "height_in": 0.51,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Filtering noisy sensor spikes, temperature jumps, and incomplete test cycles.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Filtering noisy sensor spikes, temperature jumps, and incomplete test cycles.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;219;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.23,
+        "top_in": 2.7,
+        "width_in": 1.84,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "STEP 03",
+            "level": 0,
+            "runs": [
+              {
+                "text": "STEP 03",
+                "font": "Space Grotesk",
+                "size": 10.0,
+                "bold": true,
+                "color": "6366F1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;220;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.23,
+        "top_in": 2.94,
+        "width_in": 1.93,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Select Key Features",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Select Key Features",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;221;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.23,
+        "top_in": 3.18,
+        "width_in": 1.84,
+        "height_in": 0.51,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Focusing on internal resistance rise, charge time changes, and max temperatures.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Focusing on internal resistance rise, charge time changes, and max temperatures.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;222;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 7.52,
+        "top_in": 2.7,
+        "width_in": 1.84,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "STEP 04",
+            "level": 0,
+            "runs": [
+              {
+                "text": "STEP 04",
+                "font": "Space Grotesk",
+                "size": 10.0,
+                "bold": true,
+                "color": "D97706"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;223;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 7.52,
+        "top_in": 2.94,
+        "width_in": 1.93,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Compute Targets",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Compute Targets",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 16,
+        "name": "Google Shape;224;p32",
+        "type": "TEXT_BOX (17)",
+        "left_in": 7.52,
+        "top_in": 3.18,
+        "width_in": 1.84,
+        "height_in": 0.51,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Labeling ground-truth health percentage (SoH) and remaining cycle life (RUL).",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Labeling ground-truth health percentage (SoH) and remaining cycle life (RUL).",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 9,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;229;p33",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Methodology/ Proposed Algorithm \u000b\t\t\t\t\t\t                            Cont..",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Methodology/ Proposed Algorithm ",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              },
+              {
+                "text": "\t\t\t\t\t\t                            ",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              },
+              {
+                "text": "Cont..",
+                "font": null,
+                "size": 27.0,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;230;p33",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 2.14,
+        "width_in": 4.38,
+        "height_in": 2.09,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;231;p33",
+        "type": "PICTURE (13)",
+        "left_in": 5.12,
+        "top_in": 2.14,
+        "width_in": 4.38,
+        "height_in": 2.09,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;232;p33",
+        "type": "PICTURE (13)",
+        "left_in": 0.76,
+        "top_in": 2.39,
+        "width_in": 0.28,
+        "height_in": 0.28,
+        "paragraphs": []
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;233;p33",
+        "type": "PICTURE (13)",
+        "left_in": 5.38,
+        "top_in": 2.39,
+        "width_in": 0.28,
+        "height_in": 0.28,
+        "paragraphs": []
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;234;p33",
+        "type": "TEXT_BOX (17)",
+        "left_in": 1.13,
+        "top_in": 2.43,
+        "width_in": 2.38,
+        "height_in": 0.2,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Battery Health (SoH) Model",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Battery Health (SoH) Model",
+                "font": "Plus Jakarta Sans",
+                "size": 12.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;235;p33",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.76,
+        "top_in": 2.8,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "What it Measures: Current storage capacity as a percentage of original capacity.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "What it Measures:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Current storage capacity as a percentage of original capacity.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;236;p33",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.76,
+        "top_in": 3.22,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Input Features: Internal resistance (IR), charge duration, and temperature.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Input Features:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Internal resistance (IR), charge duration, and temperature.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;237;p33",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.76,
+        "top_in": 3.64,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Model Used: Gradient Boosting Regressor tuned for battery degradation.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Model Used:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Gradient Boosting Regressor tuned for battery degradation.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;238;p33",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.76,
+        "top_in": 2.43,
+        "width_in": 2.39,
+        "height_in": 0.2,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Remaining Life (RUL) Model",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Remaining Life (RUL) Model",
+                "font": "Plus Jakarta Sans",
+                "size": 12.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;239;p33",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.38,
+        "top_in": 2.8,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "What it Measures: Number of safe charge cycles remaining before failure.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "What it Measures:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Number of safe charge cycles remaining before failure.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;240;p33",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.38,
+        "top_in": 3.22,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Input Features: Rate of resistance increase and past cycle history.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Input Features:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Rate of resistance increase and past cycle history.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;241;p33",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.38,
+        "top_in": 3.64,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Model Used: Random Forest Regressor trained for steady wear predictions.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Model Used:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Random Forest Regressor trained for steady wear predictions.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;242;p33",
+        "type": "PICTURE (13)",
+        "left_in": 0.83,
+        "top_in": 2.47,
+        "width_in": 0.14,
+        "height_in": 0.12,
+        "paragraphs": []
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;243;p33",
+        "type": "PICTURE (13)",
+        "left_in": 5.48,
+        "top_in": 2.47,
+        "width_in": 0.09,
+        "height_in": 0.12,
+        "paragraphs": []
+      }
+    ]
+  },
+  {
+    "slide_number": 10,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;248;p34",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Design/ Architecture/ Workflow ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Design/ Architecture/ Workflow ",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;249;p34",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 2.38,
+        "width_in": 2.13,
+        "height_in": 1.61,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;250;p34",
+        "type": "PICTURE (13)",
+        "left_in": 2.79,
+        "top_in": 2.38,
+        "width_in": 2.13,
+        "height_in": 1.61,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;251;p34",
+        "type": "PICTURE (13)",
+        "left_in": 5.08,
+        "top_in": 2.38,
+        "width_in": 2.13,
+        "height_in": 1.61,
+        "paragraphs": []
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;252;p34",
+        "type": "PICTURE (13)",
+        "left_in": 7.37,
+        "top_in": 2.38,
+        "width_in": 2.13,
+        "height_in": 1.61,
+        "paragraphs": []
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;253;p34",
+        "type": "PICTURE (13)",
+        "left_in": 1.38,
+        "top_in": 2.57,
+        "width_in": 0.38,
+        "height_in": 0.38,
+        "paragraphs": []
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;254;p34",
+        "type": "PICTURE (13)",
+        "left_in": 3.67,
+        "top_in": 2.57,
+        "width_in": 0.38,
+        "height_in": 0.38,
+        "paragraphs": []
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;255;p34",
+        "type": "PICTURE (13)",
+        "left_in": 5.96,
+        "top_in": 2.57,
+        "width_in": 0.38,
+        "height_in": 0.38,
+        "paragraphs": []
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;256;p34",
+        "type": "PICTURE (13)",
+        "left_in": 8.25,
+        "top_in": 2.57,
+        "width_in": 0.38,
+        "height_in": 0.38,
+        "paragraphs": []
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;257;p34",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.6,
+        "top_in": 3.06,
+        "width_in": 1.93,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "1. Battery Data Input",
+            "level": 0,
+            "runs": [
+              {
+                "text": "1. Battery Data Input",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;258;p34",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.65,
+        "top_in": 3.3,
+        "width_in": 1.84,
+        "height_in": 0.32,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Receives resistance, voltage, and cycle sensor numbers via JSON.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Receives resistance, voltage, and cycle sensor numbers via JSON.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;259;p34",
+        "type": "TEXT_BOX (17)",
+        "left_in": 2.89,
+        "top_in": 3.06,
+        "width_in": 1.93,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "2. FastAPI Backend",
+            "level": 0,
+            "runs": [
+              {
+                "text": "2. FastAPI Backend",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;260;p34",
+        "type": "TEXT_BOX (17)",
+        "left_in": 2.94,
+        "top_in": 3.3,
+        "width_in": 1.84,
+        "height_in": 0.51,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "High-speed REST API that runs our pre-trained machine learning models.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "High-speed REST API that runs our pre-trained machine learning models.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;261;p34",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.18,
+        "top_in": 3.06,
+        "width_in": 1.93,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "3. Decision Rules",
+            "level": 0,
+            "runs": [
+              {
+                "text": "3. Decision Rules",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;262;p34",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.23,
+        "top_in": 3.3,
+        "width_in": 1.84,
+        "height_in": 0.32,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Automated classification into solar storage, UPS, or recycling.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Automated classification into solar storage, UPS, or recycling.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;263;p34",
+        "type": "TEXT_BOX (17)",
+        "left_in": 7.47,
+        "top_in": 3.06,
+        "width_in": 1.93,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "4. User Dashboard",
+            "level": 0,
+            "runs": [
+              {
+                "text": "4. User Dashboard",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 16,
+        "name": "Google Shape;264;p34",
+        "type": "TEXT_BOX (17)",
+        "left_in": 7.52,
+        "top_in": 3.3,
+        "width_in": 1.84,
+        "height_in": 0.32,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Interactive visual interface showing battery status and carbon savings.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Interactive visual interface showing battery status and carbon savings.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 17,
+        "name": "Google Shape;265;p34",
+        "type": "PICTURE (13)",
+        "left_in": 1.49,
+        "top_in": 2.68,
+        "width_in": 0.16,
+        "height_in": 0.16,
+        "paragraphs": []
+      },
+      {
+        "index": 18,
+        "name": "Google Shape;266;p34",
+        "type": "PICTURE (13)",
+        "left_in": 3.78,
+        "top_in": 2.68,
+        "width_in": 0.16,
+        "height_in": 0.16,
+        "paragraphs": []
+      },
+      {
+        "index": 19,
+        "name": "Google Shape;267;p34",
+        "type": "PICTURE (13)",
+        "left_in": 6.07,
+        "top_in": 2.68,
+        "width_in": 0.16,
+        "height_in": 0.16,
+        "paragraphs": []
+      },
+      {
+        "index": 20,
+        "name": "Google Shape;268;p34",
+        "type": "PICTURE (13)",
+        "left_in": 8.34,
+        "top_in": 2.68,
+        "width_in": 0.2,
+        "height_in": 0.16,
+        "paragraphs": []
+      }
+    ]
+  },
+  {
+    "slide_number": 11,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;273;p35",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Design Engine Workflow ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Design Engine Workflow ",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;274;p35",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 2.44,
+        "width_in": 2.88,
+        "height_in": 1.49,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;275;p35",
+        "type": "PICTURE (13)",
+        "left_in": 3.56,
+        "top_in": 2.44,
+        "width_in": 2.88,
+        "height_in": 1.49,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;276;p35",
+        "type": "PICTURE (13)",
+        "left_in": 6.62,
+        "top_in": 2.44,
+        "width_in": 2.88,
+        "height_in": 1.49,
+        "paragraphs": []
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;277;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 2.68,
+        "width_in": 1.13,
+        "height_in": 0.13,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "GRADE A: HEALTHY",
+            "level": 0,
+            "runs": [
+              {
+                "text": "GRADE A: HEALTHY",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": true,
+                "color": "059669"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;278;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 2.91,
+        "width_in": 2.61,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Solar & Grid Storage",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Solar & Grid Storage",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;279;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 3.16,
+        "width_in": 2.48,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Health ≥ 75% | Life > 500 Cycles",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Health ≥ 75% | Life > 500 Cycles",
+                "font": "Plus Jakarta Sans SemiBold",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;280;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 3.38,
+        "width_in": 2.48,
+        "height_in": 0.32,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Ideal for home solar battery systems and large electrical grid backup.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Ideal for home solar battery systems and large electrical grid backup.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "64748B"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;281;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 3.76,
+        "top_in": 2.68,
+        "width_in": 1.26,
+        "height_in": 0.13,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "GRADE B: MODERATE",
+            "level": 0,
+            "runs": [
+              {
+                "text": "GRADE B: MODERATE",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": true,
+                "color": "0284C7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;282;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 3.76,
+        "top_in": 2.91,
+        "width_in": 2.61,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Telecom & UPS Backup",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Telecom & UPS Backup",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;283;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 3.76,
+        "top_in": 3.16,
+        "width_in": 2.48,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "60% ≤ Health < 75% | Medium Life",
+            "level": 0,
+            "runs": [
+              {
+                "text": "60% ≤ Health < 75% | Medium Life",
+                "font": "Plus Jakarta Sans SemiBold",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;284;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 3.76,
+        "top_in": 3.38,
+        "width_in": 2.48,
+        "height_in": 0.32,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Great for cell tower emergency backup and low-speed electric carts.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Great for cell tower emergency backup and low-speed electric carts.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "64748B"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;285;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.82,
+        "top_in": 2.68,
+        "width_in": 1.31,
+        "height_in": 0.13,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "GRADE C: END OF LIFE",
+            "level": 0,
+            "runs": [
+              {
+                "text": "GRADE C: END OF LIFE",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": true,
+                "color": "DC2626"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;286;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.82,
+        "top_in": 2.91,
+        "width_in": 2.61,
+        "height_in": 0.19,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Safe Material Recycling",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Safe Material Recycling",
+                "font": "Plus Jakarta Sans",
+                "size": 11.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;287;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.82,
+        "top_in": 3.16,
+        "width_in": 2.48,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Health < 60% | High Resistance",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Health < 60% | High Resistance",
+                "font": "Plus Jakarta Sans SemiBold",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;288;p35",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.82,
+        "top_in": 3.38,
+        "width_in": 2.48,
+        "height_in": 0.32,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Safely sent to recycling centers to recover pure lithium and cobalt salts.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Safely sent to recycling centers to recover pure lithium and cobalt salts.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "64748B"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 12,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;293;p36",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Implementation & Testing",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Implementation & Testing",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;294;p36",
+        "type": "PICTURE (13)",
+        "left_in": 5.12,
+        "top_in": 2.2,
+        "width_in": 4.38,
+        "height_in": 1.97,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;295;p36",
+        "type": "AUTO_SHAPE (1)",
+        "left_in": 5.34,
+        "top_in": 2.97,
+        "width_in": 3.93,
+        "height_in": 0.01,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;296;p36",
+        "type": "AUTO_SHAPE (1)",
+        "left_in": 5.34,
+        "top_in": 3.32,
+        "width_in": 3.93,
+        "height_in": 0.01,
+        "paragraphs": []
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;297;p36",
+        "type": "AUTO_SHAPE (1)",
+        "left_in": 5.34,
+        "top_in": 3.66,
+        "width_in": 3.93,
+        "height_in": 0.01,
+        "paragraphs": []
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;298;p36",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 2.09,
+        "width_in": 4.37,
+        "height_in": 0.65,
+        "paragraphs": []
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;299;p36",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 2.86,
+        "width_in": 4.37,
+        "height_in": 0.65,
+        "paragraphs": []
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;300;p36",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 3.63,
+        "width_in": 4.37,
+        "height_in": 0.65,
+        "paragraphs": []
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;301;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.34,
+        "top_in": 2.43,
+        "width_in": 4.12,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Unit Test Results",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Unit Test Results",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;302;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.34,
+        "top_in": 2.76,
+        "width_in": 3.93,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Battery Health Prediction Test PASSED (100%)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Battery Health Prediction Test",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": " ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "1E293B"
+              },
+              {
+                "text": "PASSED (100%)",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "059669"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;303;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.34,
+        "top_in": 3.11,
+        "width_in": 3.93,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "FastAPI REST Endpoints Test PASSED (100%)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "FastAPI REST Endpoints Test",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": " ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "1E293B"
+              },
+              {
+                "text": "PASSED (100%)",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "059669"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;304;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.34,
+        "top_in": 3.45,
+        "width_in": 3.93,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Decision Engine Triage Test PASSED (100%)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Decision Engine Triage Test",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": " ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "1E293B"
+              },
+              {
+                "text": "PASSED (100%)",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "059669"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;305;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.34,
+        "top_in": 3.79,
+        "width_in": 3.93,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Average API Response Time < 28 ms (Instant)",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Average API Response Time",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": " ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "1E293B"
+              },
+              {
+                "text": "< 28 ms (Instant)",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "0284C7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;306;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.66,
+        "top_in": 2.23,
+        "width_in": 4.24,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Backend Service",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Backend Service",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;307;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.66,
+        "top_in": 2.44,
+        "width_in": 4.04,
+        "height_in": 0.13,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Python 3.10+, FastAPI, Uvicorn, Scikit-learn, and NumPy.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Python 3.10+, FastAPI, Uvicorn, Scikit-learn, and NumPy.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;308;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.66,
+        "top_in": 3.01,
+        "width_in": 4.24,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Frontend Dashboard",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Frontend Dashboard",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 16,
+        "name": "Google Shape;309;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.66,
+        "top_in": 3.21,
+        "width_in": 4.04,
+        "height_in": 0.13,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "React 18, TypeScript, Vite, and Tailwind CSS.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "React 18, TypeScript, Vite, and Tailwind CSS.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 17,
+        "name": "Google Shape;310;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.66,
+        "top_in": 3.78,
+        "width_in": 4.24,
+        "height_in": 0.17,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Datasets Used",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Datasets Used",
+                "font": "Plus Jakarta Sans",
+                "size": 10.0,
+                "bold": true,
+                "color": "0F172A"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 18,
+        "name": "Google Shape;311;p36",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.66,
+        "top_in": 3.98,
+        "width_in": 4.04,
+        "height_in": 0.13,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Oxford and NASA real-world battery degradation benchmarks.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Oxford and NASA real-world battery degradation benchmarks.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 13,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;316;p37",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Results and Discussion ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Results and Discussion ",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;317;p37",
+        "type": "PICTURE (13)",
+        "left_in": 6.01,
+        "top_in": 1.98,
+        "width_in": 3.49,
+        "height_in": 1.14,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;318;p37",
+        "type": "PICTURE (13)",
+        "left_in": 6.01,
+        "top_in": 3.25,
+        "width_in": 3.49,
+        "height_in": 1.14,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;319;p37",
+        "type": "AUTO_SHAPE (1)",
+        "left_in": 0.5,
+        "top_in": 2.55,
+        "width_in": 5.23,
+        "height_in": 1.27,
+        "paragraphs": []
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;320;p37",
+        "type": "TABLE (19)",
+        "left_in": 0.5,
+        "top_in": 2.55,
+        "width_in": 3.28,
+        "height_in": 3.28,
+        "paragraphs": [],
+        "table": [
+          [
+            "Target Value",
+            "Model Used",
+            "Average Error",
+            "Accuracy (R²)"
+          ],
+          [
+            "Battery Health (SoH)",
+            "Gradient Boosting",
+            "±1.14% error",
+            "96.2%"
+          ],
+          [
+            "Remaining Life (RUL)",
+            "Random Forest",
+            "±18 cycles",
+            "93.8%"
+          ]
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;321;p37",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.18,
+        "top_in": 2.14,
+        "width_in": 3.16,
+        "height_in": 0.13,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "SPEED IMPROVEMENT",
+            "level": 0,
+            "runs": [
+              {
+                "text": "SPEED IMPROVEMENT",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": true,
+                "color": "64748B"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;322;p37",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.18,
+        "top_in": 2.32,
+        "width_in": 3.16,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "99.4% Faster",
+            "level": 0,
+            "runs": [
+              {
+                "text": "99.4% Faster",
+                "font": "Plus Jakarta Sans ExtraBold",
+                "size": 18.0,
+                "bold": false,
+                "color": "059669"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;323;p37",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.18,
+        "top_in": 2.66,
+        "width_in": 3.16,
+        "height_in": 0.27,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Delivers results in milliseconds compared to days of chamber testing.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Delivers results in milliseconds compared to days of chamber testing.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;324;p37",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.18,
+        "top_in": 3.41,
+        "width_in": 3.16,
+        "height_in": 0.13,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "SORTING ACCURACY",
+            "level": 0,
+            "runs": [
+              {
+                "text": "SORTING ACCURACY",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": true,
+                "color": "64748B"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;325;p37",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.18,
+        "top_in": 3.58,
+        "width_in": 3.16,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "97.8% Match",
+            "level": 0,
+            "runs": [
+              {
+                "text": "97.8% Match",
+                "font": "Plus Jakarta Sans ExtraBold",
+                "size": 18.0,
+                "bold": false,
+                "color": "0284C7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;326;p37",
+        "type": "TEXT_BOX (17)",
+        "left_in": 6.18,
+        "top_in": 3.93,
+        "width_in": 3.16,
+        "height_in": 0.27,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Correctly assigns second-life applications against lab standards.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Correctly assigns second-life applications against lab standards.",
+                "font": "Plus Jakarta Sans",
+                "size": 8.0,
+                "bold": false,
+                "color": "475569"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 14,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;331;p38",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Conclusion and Future scope ",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Conclusion and Future scope ",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;332;p38",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 2.15,
+        "width_in": 4.38,
+        "height_in": 2.06,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;333;p38",
+        "type": "PICTURE (13)",
+        "left_in": 5.12,
+        "top_in": 2.15,
+        "width_in": 4.38,
+        "height_in": 2.06,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;334;p38",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.76,
+        "top_in": 2.41,
+        "width_in": 4.05,
+        "height_in": 0.2,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Key Conclusions",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Key Conclusions",
+                "font": "Plus Jakarta Sans",
+                "size": 12.0,
+                "bold": true,
+                "color": "059669"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;335;p38",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.38,
+        "top_in": 2.41,
+        "width_in": 4.05,
+        "height_in": 0.2,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Future Scope",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Future Scope",
+                "font": "Plus Jakarta Sans",
+                "size": 12.0,
+                "bold": true,
+                "color": "0284C7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;336;p38",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.76,
+        "top_in": 2.75,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Fast & Accurate: Predicts battery health within ±1.1% in sub-second response times.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Fast & Accurate:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Predicts battery health within ±1.1% in sub-second response times.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;337;p38",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.76,
+        "top_in": 3.19,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Saves Usable Batteries: Prevents healthy batteries from ending up in scrap heaps prematurely.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Saves Usable Batteries:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Prevents healthy batteries from ending up in scrap heaps prematurely.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;338;p38",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.76,
+        "top_in": 3.63,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Ready to Integrate: Lightweight API easily connects to diagnostic hardware and apps.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Ready to Integrate:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Lightweight API easily connects to diagnostic hardware and apps.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;339;p38",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.38,
+        "top_in": 2.75,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Vehicle BMS Integration: Running models directly on microcontrollers inside the vehicle.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Vehicle BMS Integration:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Running models directly on microcontrollers inside the vehicle.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;340;p38",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.38,
+        "top_in": 3.19,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Live Commercial Testing: Validating model predictions across real EV delivery fleets.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Live Commercial Testing:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Validating model predictions across real EV delivery fleets.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;341;p38",
+        "type": "TEXT_BOX (17)",
+        "left_in": 5.38,
+        "top_in": 3.63,
+        "width_in": 3.86,
+        "height_in": 0.3,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Battery Passport: Creating digital records to track carbon savings and trade credits.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Battery Passport:",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Creating digital records to track carbon savings and trade credits.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 15,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;346;p39",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.69,
+        "top_in": 0.3,
+        "width_in": 8.62,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "References",
+            "level": 0,
+            "runs": [
+              {
+                "text": "References",
+                "font": null,
+                "size": null,
+                "bold": true,
+                "color": "C00000"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;347;p39",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 1.84,
+        "width_in": 9.0,
+        "height_in": 0.48,
+        "paragraphs": []
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;348;p39",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 2.45,
+        "width_in": 9.0,
+        "height_in": 0.67,
+        "paragraphs": []
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;349;p39",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 3.25,
+        "width_in": 9.0,
+        "height_in": 0.48,
+        "paragraphs": []
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;350;p39",
+        "type": "PICTURE (13)",
+        "left_in": 0.5,
+        "top_in": 3.86,
+        "width_in": 9.0,
+        "height_in": 0.67,
+        "paragraphs": []
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;351;p39",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 1.99,
+        "width_in": 8.61,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "[1] Severson, K. A., et al. (2019). Data-driven prediction of battery cycle life before capacity degradation. Nature Energy, 4(5), 383–391.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "[1] ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "Severson, K. A., et al. (2019).",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Data-driven prediction of battery cycle life before capacity degradation. ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "Nature Energy",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": ", 4(5), 383–391.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;352;p39",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 2.6,
+        "width_in": 8.61,
+        "height_in": 0.38,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "[2] Martinez-Laserna, E., et al. (2018). Battery second life: Hype, hope or reality? A critical review of technology and economics. Renewable and Sustainable Energy Reviews, 93, 701–718.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "[2] ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "Martinez-Laserna, E., et al. (2018).",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Battery second life: Hype, hope or reality? A critical review of technology and economics. ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "Renewable and Sustainable Energy Reviews",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": ", 93, 701–718.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;353;p39",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 3.39,
+        "width_in": 8.61,
+        "height_in": 0.15,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "[3] Birkl, C. (2017). Oxford Battery Degradation Dataset 1. Oxford University Research Archive, Department of Engineering Science.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "[3] ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "Birkl, C. (2017).",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Oxford Battery Degradation Dataset 1. ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "Oxford University Research Archive",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": ", Department of Engineering Science.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;354;p39",
+        "type": "TEXT_BOX (17)",
+        "left_in": 0.7,
+        "top_in": 4.0,
+        "width_in": 8.61,
+        "height_in": 0.38,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "[4] Zhu, J., et al. (2021). Data-driven capacity estimation for lithium-ion batteries using partial cycle features. IEEE Transactions on Industrial Electronics, 68(9), 8190–8200.",
+            "level": 0,
+            "runs": [
+              {
+                "text": "[4] ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "Zhu, J., et al. (2021).",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": true,
+                "color": "334155"
+              },
+              {
+                "text": " Data-driven capacity estimation for lithium-ion batteries using partial cycle features. ",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": "IEEE Transactions on Industrial Electronics",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              },
+              {
+                "text": ", 68(9), 8190–8200.",
+                "font": "Plus Jakarta Sans",
+                "size": 9.0,
+                "bold": false,
+                "color": "334155"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slide_number": 16,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;359;p40",
+        "type": "PLACEHOLDER (14)",
+        "left_in": 0.0,
+        "top_in": 1.73,
+        "width_in": 10.0,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Thank You!",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Thank You!",
+                "font": null,
+                "size": 45.0,
+                "bold": true,
+                "color": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;360;p40",
+        "type": "TEXT_BOX (17)",
+        "left_in": 3.79,
+        "top_in": 3.22,
+        "width_in": 2.17,
+        "height_in": 1.09,
+        "paragraphs": [
+          {
+            "p_idx": 0,
+            "text": "Q & A",
+            "level": 0,
+            "runs": [
+              {
+                "text": "Q & A",
+                "font": "Calibri",
+                "size": 36.0,
+                "bold": true,
+                "color": "FF0000"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

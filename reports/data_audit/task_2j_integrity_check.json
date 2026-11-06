@@ -1,0 +1,30 @@
+{
+  "raw_dataset_path": "C:\\Users\\patid\\Desktop\\SecondSpark-AI_ML\\master_dataset.csv",
+  "initial_sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "post_audit_sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "hashes_identical": true,
+  "row_count_verified": 116663,
+  "expected_row_count": 116663,
+  "row_count_matches": true,
+  "col_count_verified": 11,
+  "expected_col_count": 11,
+  "col_count_matches": true,
+  "column_names_verified": [
+    "IR",
+    "QCharge",
+    "QDischarge",
+    "Tavg",
+    "Tmax",
+    "Tmin",
+    "chargetime",
+    "cycle",
+    "SOH",
+    "RUL",
+    "battery_id"
+  ],
+  "modifications_performed": false,
+  "rows_deleted": 0,
+  "rows_added": 0,
+  "values_imputed_in_raw": 0,
+  "raw_dataset_unmodified": true
+}

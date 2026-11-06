@@ -1,0 +1,9 @@
+target,evaluation_scope,baseline_rmse,advanced_rmse,delta_rmse,pct_improvement,baseline_mae,advanced_mae,baseline_r2,advanced_r2,finding
+SOH,Overall Test Set,0.5896,0.7084,-0.1188,-20.15,0.3442,0.3541,0.9815,0.9733,Baseline HistGradientBoosting generalized slightly better overall due to two outlier test cells.
+SOH,SOH >= 90% (Normal Aging),0.5103,0.614,-0.1037,-20.32,0.3032,0.2996,0.9574,0.9384,Advanced model achieved lower MAE (0.2996% vs 0.3032%) but higher RMSE due to individual cell bias.
+SOH,SOH < 90% (Degraded Subpopulation),1.0552,1.2636,-0.2084,-19.75,0.7041,0.8328,0.8831,0.8324,Increased variance across cells in intermediate degraded phase.
+SOH,SOH < 80% (Critical Knee Regime),2.0583,1.131,0.9273,45.05,1.5333,0.8685,-1.0819,0.3714,MAJOR BREAKTHROUGH: Advanced XGBoost cut RMSE nearly in half (-45%) and converted R2 from negative to positive.
+RUL,Overall Test Set,174.33,186.36,-12.03,-6.9,113.79,125.02,0.8449,0.8228,"Baseline achieved slightly lower overall test error, while CatBoost won decisively on Validation."
+RUL,Near-EOL (RUL < 300 cycles),81.99,96.27,-14.28,-17.42,55.76,66.65,0.1037,-0.2358,Both models maintain sub-100 cycle RMSE near retirement; slight baseline edge.
+RUL,Mid-Life (300 <= RUL < 800 cycles),169.24,165.45,3.79,2.24,115.61,116.92,-0.4002,-0.3382,Advanced CatBoost outperforms baseline on Mid-Life RMSE.
+RUL,Early-Life (RUL >= 800 cycles),262.11,293.57,-31.46,-12.0,196.29,226.59,0.5026,0.376,Early-life trajectory disambiguation remains challenging without future leakage.

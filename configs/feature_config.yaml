@@ -1,0 +1,9 @@
+# EcoCycle AI - Feature Engineering Configuration
+feature_engineering:
+  scaling: "standard"
+  handle_missing: "median"
+  imputation: true
+  feature_selection: true
+  target_columns:
+    - "soh"
+    - "rul"

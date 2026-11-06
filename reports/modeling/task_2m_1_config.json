@@ -1,0 +1,157 @@
+{
+  "task": "Task 2M.1 \u2014 Advanced Model Design & Hyperparameter Optimization Plan",
+  "status": "APPROVED_DESIGN_STATIC_AUDIT",
+  "execution_date": "2026-09-07",
+  "raw_dataset_hash": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "raw_dataset_verified": true,
+  "random_seed": 42,
+  "partitions": {
+    "train": {
+      "batteries": 97,
+      "rows": 81545,
+      "status": "ACTIVE"
+    },
+    "val": {
+      "batteries": 21,
+      "rows": 16606,
+      "status": "ACTIVE"
+    },
+    "test": {
+      "batteries": 21,
+      "rows": 18512,
+      "status": "STRICTLY_QUARANTINED"
+    }
+  },
+  "targets": {
+    "SOH": {
+      "target_name": "SOH",
+      "units": "%",
+      "description": "State of Health continuous percentage capacity retention"
+    },
+    "RUL": {
+      "target_name": "RUL",
+      "units": "cycles",
+      "description": "Remaining Useful Life continuous operating cycles"
+    }
+  },
+  "locked_baseline_benchmarks": {
+    "SOH": {
+      "model": "soh_hist_gradient_boosting",
+      "val_mae": 0.4245,
+      "val_rmse": 0.6805,
+      "val_r2": 0.9818,
+      "test_mae": 0.3442,
+      "test_rmse": 0.5896,
+      "test_r2": 0.9815,
+      "designation": "FINAL BASELINE WINNER \u2014 NOT FINAL PRODUCTION MODEL"
+    },
+    "RUL": {
+      "model": "rul_hist_gradient_boosting",
+      "val_mae": 130.99,
+      "val_rmse": 247.95,
+      "val_r2": 0.544,
+      "test_mae": 113.79,
+      "test_rmse": 174.33,
+      "test_r2": 0.8449,
+      "designation": "FINAL BASELINE WINNER \u2014 NOT FINAL PRODUCTION MODEL"
+    }
+  },
+  "candidate_models": [
+    {
+      "model_id": "xgboost",
+      "class": "XGBRegressor",
+      "framework": "xgboost",
+      "version": "3.2.0",
+      "rationale": "Exact/histogram split finding with explicit L1/L2 leaf regularization to suppress sensor noise"
+    },
+    {
+      "model_id": "lightgbm",
+      "class": "LGBMRegressor",
+      "framework": "lightgbm",
+      "version": "4.7.0",
+      "rationale": "Leaf-wise best-first tree growth capturing sharp degradation knees near EOL"
+    },
+    {
+      "model_id": "catboost",
+      "class": "CatBoostRegressor",
+      "framework": "catboost",
+      "version": "1.2.10",
+      "rationale": "Symmetric oblivious trees and ordered boosting preventing prediction shift across unseen cells"
+    },
+    {
+      "model_id": "hist_gradient_boosting",
+      "class": "HistGradientBoostingRegressor",
+      "framework": "scikit-learn",
+      "version": "1.8.0",
+      "rationale": "Locked Task 2L.3 baseline winner retained as immutable comparative benchmark"
+    }
+  ],
+  "features": {
+    "baseline_feature_count": 17,
+    "baseline_features": [
+      "IR",
+      "QCharge",
+      "Tavg",
+      "Tmax",
+      "Tmin",
+      "chargetime",
+      "cycle",
+      "IR_is_zero",
+      "temp_sensor_fault",
+      "IR_lag1",
+      "IR_delta",
+      "QCharge_lag1",
+      "QCharge_delta",
+      "Tavg_lag1",
+      "Tavg_delta",
+      "chargetime_lag1",
+      "chargetime_delta"
+    ],
+    "candidate_causal_feature_count": 15,
+    "candidate_causal_features": [
+      "IR_accel",
+      "QCharge_accel",
+      "Tavg_accel",
+      "chargetime_accel",
+      "thermal_dissipation_rate",
+      "charge_efficiency_proxy",
+      "resistance_growth_ratio",
+      "IR_roll_mean_5",
+      "IR_roll_std_5",
+      "QCharge_roll_mean_5",
+      "QCharge_roll_std_5",
+      "Tavg_roll_mean_5",
+      "Tavg_roll_std_5",
+      "cum_capacity_fade_rate",
+      "cum_resistance_growth_rate"
+    ],
+    "total_advanced_features": 32,
+    "forbidden_features": [
+      "battery_id",
+      "QDischarge",
+      "SOH_in_RUL",
+      "RUL_in_SOH",
+      "max_cycle",
+      "final_cycle",
+      "terminal_cycle",
+      "future_observations",
+      "center_rolling_windows",
+      "bfill_from_future"
+    ]
+  },
+  "hyperparameter_optimization": {
+    "search_method": "RandomizedSearchCV",
+    "n_iter": 20,
+    "primary_metric": "Validation RMSE",
+    "secondary_metrics": [
+      "Validation MAE",
+      "Validation R2"
+    ],
+    "early_stopping_rounds": 25,
+    "random_state": 42,
+    "cv_scheme": "PredefinedSplit(Train=81545, Val=16606)",
+    "test_partition_accessed": false
+  },
+  "models_trained": false,
+  "approval_for_task_2m_2": "PENDING_EXPLICIT_APPROVAL"
+}

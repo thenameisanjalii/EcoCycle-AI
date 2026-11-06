@@ -1,0 +1,145 @@
+{
+  "task": "Task 2L.1 \u2014 Baseline Model Design & Training Plan",
+  "status": "APPROVED_DESIGN",
+  "random_seed": 42,
+  "raw_dataset_hash": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "targets": {
+    "SOH": {
+      "column": "SOH",
+      "units": "%",
+      "type": "continuous_regression",
+      "clip_gt_100": false,
+      "description": "Battery State of Health"
+    },
+    "RUL": {
+      "column": "RUL",
+      "units": "cycles",
+      "type": "continuous_regression",
+      "formula": "max(cycle_battery) - cycle",
+      "description": "Remaining Useful Life until nominal end of test life"
+    }
+  },
+  "feature_columns": [
+    "IR",
+    "QCharge",
+    "Tavg",
+    "Tmax",
+    "Tmin",
+    "chargetime",
+    "cycle",
+    "IR_is_zero",
+    "temp_sensor_fault",
+    "IR_lag1",
+    "IR_delta",
+    "QCharge_lag1",
+    "QCharge_delta",
+    "Tavg_lag1",
+    "Tavg_delta",
+    "chargetime_lag1",
+    "chargetime_delta"
+  ],
+  "continuous_features": [
+    "IR",
+    "QCharge",
+    "Tavg",
+    "Tmax",
+    "Tmin",
+    "chargetime",
+    "cycle",
+    "IR_lag1",
+    "IR_delta",
+    "QCharge_lag1",
+    "QCharge_delta",
+    "Tavg_lag1",
+    "Tavg_delta",
+    "chargetime_lag1",
+    "chargetime_delta"
+  ],
+  "binary_features": [
+    "IR_is_zero",
+    "temp_sensor_fault"
+  ],
+  "excluded_columns": [
+    "battery_id",
+    "QDischarge",
+    "SOH_in_RUL",
+    "RUL_in_SOH",
+    "max_cycle",
+    "final_cycle",
+    "terminal_cycle"
+  ],
+  "evaluation_metrics": [
+    "MAE",
+    "RMSE",
+    "R2"
+  ],
+  "primary_selection_metric": "Validation RMSE",
+  "models": {
+    "dummy": {
+      "class": "DummyRegressor",
+      "params": {
+        "strategy": "mean"
+      },
+      "requires_scaling": false,
+      "rationale": "Empirical prior establishing non-informative benchmark"
+    },
+    "ridge": {
+      "class": "Ridge",
+      "params": {
+        "alpha": 1.0,
+        "random_state": 42
+      },
+      "requires_scaling": true,
+      "scaler": "RobustScaler",
+      "rationale": "Regularized linear baseline assessing monotonic relationships"
+    },
+    "random_forest": {
+      "class": "RandomForestRegressor",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 15,
+        "min_samples_leaf": 4,
+        "random_state": 42,
+        "n_jobs": -1
+      },
+      "requires_scaling": false,
+      "rationale": "Non-linear bagged ensemble capturing interaction thresholds"
+    },
+    "hist_gradient_boosting": {
+      "class": "HistGradientBoostingRegressor",
+      "params": {
+        "max_iter": 100,
+        "min_samples_leaf": 20,
+        "random_state": 42
+      },
+      "requires_scaling": false,
+      "rationale": "Efficient histogram-binned gradient boosted trees"
+    }
+  },
+  "partitions": {
+    "train": {
+      "batteries": 97,
+      "rows": 81545,
+      "role": "Model fitting only"
+    },
+    "val": {
+      "batteries": 21,
+      "rows": 16606,
+      "role": "Model selection and comparison only"
+    },
+    "test": {
+      "batteries": 21,
+      "rows": 18512,
+      "role": "Final unbiased evaluation only"
+    }
+  },
+  "static_audit_checklist": {
+    "features_count_17": true,
+    "forbidden_features_excluded": true,
+    "targets_defined_and_unaltered": true,
+    "zero_battery_overlap": true,
+    "scaling_train_only": true,
+    "test_set_quarantined": true,
+    "reproducible_seed_42": true
+  }
+}

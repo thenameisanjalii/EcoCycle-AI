@@ -1,0 +1,38 @@
+{
+  "task": "Task 2K Independent Verification Audit",
+  "verdict": "PASS",
+  "raw_dataset_hash": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "raw_dataset_unmodified": true,
+  "checks": {
+    "raw_integrity": "PASS",
+    "artifacts_presence": "PASS",
+    "battery_grouped_split": "PASS",
+    "preprocessing_leakage_free": "PASS",
+    "ir_handling": "PASS",
+    "temperature_fault_handling": "PASS",
+    "tmin_zero_handling": "PASS",
+    "chargetime_handling": "PASS",
+    "qcharge_drift_handling": "PASS",
+    "target_integrity": "PASS",
+    "feature_matrix_specification": "PASS",
+    "causal_feature_engineering": "PASS",
+    "row_counts_and_missing_values": "PASS",
+    "reproducibility": "PASS"
+  },
+  "split_counts": {
+    "train_batteries": 97,
+    "train_rows": 81545,
+    "val_batteries": 21,
+    "val_rows": 16606,
+    "test_batteries": 21,
+    "test_rows": 18512,
+    "total_batteries": 139,
+    "total_rows": 116663
+  },
+  "feature_counts": {
+    "soh_features_X": 17,
+    "rul_features_X": 17,
+    "forbidden_in_soh_X": [],
+    "forbidden_in_rul_X": []
+  }
+}

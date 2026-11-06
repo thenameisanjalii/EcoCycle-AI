@@ -1,0 +1,54 @@
+{
+  "task": "Task 2L.3 \u2014 Baseline Model Verification & Selection",
+  "status": "COMPLETE",
+  "dataset_hash": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "dataset_rows": 116663,
+  "dataset_cols": 11,
+  "test_quarantine_status": "PASS",
+  "artifact_status": "PASS",
+  "metric_reproduction_status": "PASS",
+  "leakage_status": "PASS",
+  "battery_isolation_status": "PASS",
+  "soh_winner": "soh_hist_gradient_boosting",
+  "soh_validation_mae": 0.4245,
+  "soh_validation_rmse": 0.6805,
+  "soh_validation_r2": 0.9818,
+  "rul_winner": "rul_hist_gradient_boosting",
+  "rul_validation_mae": 130.9945,
+  "rul_validation_rmse": 247.9533,
+  "rul_validation_r2": 0.544,
+  "dummy_improvement_soh": {
+    "rmse_improvement_pct": 86.52,
+    "mae_improvement_pct": 88.41
+  },
+  "dummy_improvement_rul": {
+    "rmse_improvement_pct": 32.54,
+    "mae_improvement_pct": 54.29
+  },
+  "negative_rul_analysis": {
+    "ridge": {
+      "count": 813,
+      "pct": 4.9,
+      "min_pred": -596.04,
+      "late_life_concentration_pct": 100.0
+    },
+    "hist_gradient_boosting": {
+      "count": 49,
+      "pct": 0.3,
+      "min_pred": -49.27,
+      "late_life_concentration_pct": 100.0
+    }
+  },
+  "soh_prediction_range_analysis": {
+    "min_pred": 75.8771,
+    "max_pred": 100.454,
+    "count_lt_0": 0,
+    "count_gt_100": 1187,
+    "count_outside_train_range": 0,
+    "train_range": [
+      74.6378,
+      104.7925
+    ]
+  },
+  "final_verdict": "PASS"
+}

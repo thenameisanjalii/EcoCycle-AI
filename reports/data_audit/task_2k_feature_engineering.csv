@@ -1,0 +1,22 @@
+feature_name,model,source_column,feature_type,unit,transformation,leakage_status,causal_status,fit_on,availability_at_inference
+IR,SOH & RUL,IR,current-cycle,Ohm,Causal ffill for isolated zeros; Train-median imputation for systemic zeros,Clean,Causal (Current cycle),Train partition only,Available during charge
+QCharge,SOH & RUL,QCharge,current-cycle,Ah,Raw telemetry retained; RobustScaler in model pipeline,Clean,Causal (Current cycle),Train partition only,Available at end of charge
+Tavg,SOH & RUL,Tavg,current-cycle,°C,Causal interpolation for B85 negative cycles; RobustScaler,Clean,Causal (Current cycle),Train partition only,Available at end of cycle
+Tmax,SOH & RUL,Tmax,current-cycle,°C,Train delta offset imputation for B85; RobustScaler,Clean,Causal (Current cycle),Train partition only,Available at end of cycle
+Tmin,SOH & RUL,Tmin,current-cycle,°C,Causal ffill for Tmin==0; Train delta offset for B85; RobustScaler,Clean,Causal (Current cycle),Train partition only,Available at end of cycle
+chargetime,SOH & RUL,chargetime,current-cycle,min,Raw retained; RobustScaler in model pipeline,Clean,Causal (Current cycle),Train partition only,Available at end of charge
+cycle,SOH & RUL,cycle,current-cycle,count,Monotonic cycle index; RobustScaler,Clean under Grouped Split,Causal (Cumulative age),Train partition only,Available from BMS counter
+IR_is_zero,SOH & RUL,IR,derived,"binary {0,1}",(IR == 0.0).astype(int),Clean,Causal (Current cycle),Rule-based (No fit),Immediately derived
+temp_sensor_fault,SOH & RUL,battery_id / Tmin,derived,"binary {0,1}","1 for B85 sensor fault records, 0 otherwise",Clean,Causal (Current cycle),Rule-based (No fit),Derived from sensor fault threshold
+IR_lag1,SOH & RUL,IR,lagged,Ohm,shift(1) within battery; cycle 1 fallback = IR_t,Clean,Strictly Causal (t-1),Train partition only,Available from BMS history
+IR_delta,SOH & RUL,IR,derived,Ohm,IR_t - IR_lag1 (0.0 at cycle 1),Clean,Strictly Causal (t and t-1),Train partition only,Available from BMS history
+QCharge_lag1,SOH & RUL,QCharge,lagged,Ah,shift(1) within battery; cycle 1 fallback = QCharge_t,Clean,Strictly Causal (t-1),Train partition only,Available from BMS history
+QCharge_delta,SOH & RUL,QCharge,derived,Ah,QCharge_t - QCharge_lag1 (0.0 at cycle 1),Clean,Strictly Causal (t and t-1),Train partition only,Available from BMS history
+Tavg_lag1,SOH & RUL,Tavg,lagged,°C,shift(1) within battery; cycle 1 fallback = Tavg_t,Clean,Strictly Causal (t-1),Train partition only,Available from BMS history
+Tavg_delta,SOH & RUL,Tavg,derived,°C,Tavg_t - Tavg_lag1 (0.0 at cycle 1),Clean,Strictly Causal (t and t-1),Train partition only,Available from BMS history
+chargetime_lag1,SOH & RUL,chargetime,lagged,min,shift(1) within battery; cycle 1 fallback = chargetime_t,Clean,Strictly Causal (t-1),Train partition only,Available from BMS history
+chargetime_delta,SOH & RUL,chargetime,derived,min,chargetime_t - chargetime_lag1 (0.0 at cycle 1),Clean,Strictly Causal (t and t-1),Train partition only,Available from BMS history
+SOH_pred,RUL (Production),Model 1 Output,derived,%,Predicted SOH from Stage 1 model (Schema Interface),Clean (No ground-truth),Causal (Upstream stage),Fitted in Stage 1,Generated at Stage 1 inference
+battery_id,None (Grouping Only),battery_id,static,id,None (Excluded from X),Barred from X,Static Metadata,None,Not used by model
+SOH,SOH Target Only,SOH,current-cycle,%,None (Unscaled continuous target),Target Variable,Target,None,Target to predict
+RUL,RUL Target Only,RUL,current-cycle,cycles,None (Unscaled continuous target),Target Variable,Target,None,Target to predict

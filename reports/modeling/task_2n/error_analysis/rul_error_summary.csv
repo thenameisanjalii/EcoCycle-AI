@@ -1,0 +1,2 @@
+sample_count,mean_error_bias,mae,rmse,median_absolute_error,std_error,percentile_90_ae,percentile_95_ae,percentile_99_ae,max_absolute_error,negative_predictions_count,negative_predictions_pct,min_prediction,max_prediction
+18512,11.32,125.02,186.36,79.05,186.01,287.63,445.45,675.8,774.86,36,0.19,-27.93,1967.62

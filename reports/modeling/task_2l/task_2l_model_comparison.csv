@@ -1,0 +1,9 @@
+target,model,train_time_s,val_MAE,val_RMSE,val_R2,test_MAE,test_RMSE,test_R2,selected,val_pred_time_s,val_latency_ms_sample,test_pred_time_s,test_latency_ms_sample
+SOH,soh_dummy,0.004,3.6626,5.0492,-0.0024,3.1773,4.3331,-0.0007,False,0.0005,3e-05,0.0004,2e-05
+SOH,soh_ridge,0.153,0.8096,1.2373,0.9398,0.6737,1.0491,0.9413,False,0.0105,0.00063,0.0106,0.00057
+SOH,soh_random_forest,18.992,0.4255,0.7047,0.9805,0.371,0.6457,0.9778,False,0.0987,0.00594,0.0978,0.00528
+SOH,soh_hist_gradient_boosting,5.071,0.4245,0.6805,0.9818,0.3442,0.5896,0.9815,True,0.0769,0.00463,0.0787,0.00425
+RUL,rul_dummy,0.006,286.55,367.54,-0.002,332.06,446.72,-0.0185,False,0.0001,1e-05,0.0001,1e-05
+RUL,rul_ridge,0.135,202.51,273.2,0.4463,272.78,370.73,0.2986,False,0.0079,0.00048,0.0079,0.00043
+RUL,rul_random_forest,24.342,135.9,257.51,0.5081,125.15,195.43,0.8051,False,0.0706,0.00425,0.0932,0.00503
+RUL,rul_hist_gradient_boosting,2.201,130.99,247.95,0.544,113.79,174.33,0.8449,True,0.0848,0.00511,0.0939,0.00507

@@ -1,0 +1,14 @@
+# EcoCycle AI - Model Configuration
+models:
+  baseline:
+    type: "linear_regression"
+  ml:
+    algorithms:
+      - "random_forest"
+      - "xgboost"
+      - "lightgbm"
+  deep_learning:
+    architectures:
+      - "mlp"
+      - "lstm"
+      - "transformer"

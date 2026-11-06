@@ -1,0 +1,91 @@
+{
+  "total_batteries": 139,
+  "min_cycles_per_battery": 99.0,
+  "max_cycles_per_battery": 2237.0,
+  "mean_cycles_per_battery": 839.3021582733813,
+  "median_cycles_per_battery": 827.0,
+  "std_cycles_per_battery": 362.0523954130032,
+  "q1_cycles_per_battery": 527.5,
+  "q3_cycles_per_battery": 1027.0,
+  "continuous_batteries_count": 131,
+  "gap_batteries_count": 8,
+  "total_missing_cycles_implied": 9,
+  "ordered_batteries_count": 139,
+  "unordered_batteries_count": 0,
+  "mismatched_unique_record_count": 0,
+  "affected_gap_batteries": [
+    1,
+    19,
+    69,
+    70,
+    82,
+    83,
+    86,
+    87
+  ],
+  "affected_unordered_batteries": [],
+  "affected_mismatched_batteries": [],
+  "gaps_detail_sample": {
+    "1": [
+      {
+        "from_cycle": 11.0,
+        "to_cycle": 13.0,
+        "missing_count": 1
+      }
+    ],
+    "19": [
+      {
+        "from_cycle": 39.0,
+        "to_cycle": 41.0,
+        "missing_count": 1
+      }
+    ],
+    "69": [
+      {
+        "from_cycle": 98.0,
+        "to_cycle": 100.0,
+        "missing_count": 1
+      }
+    ],
+    "70": [
+      {
+        "from_cycle": 98.0,
+        "to_cycle": 100.0,
+        "missing_count": 1
+      },
+      {
+        "from_cycle": 999.0,
+        "to_cycle": 1001.0,
+        "missing_count": 1
+      }
+    ],
+    "82": [
+      {
+        "from_cycle": 98.0,
+        "to_cycle": 100.0,
+        "missing_count": 1
+      }
+    ],
+    "83": [
+      {
+        "from_cycle": 98.0,
+        "to_cycle": 100.0,
+        "missing_count": 1
+      }
+    ],
+    "86": [
+      {
+        "from_cycle": 99.0,
+        "to_cycle": 101.0,
+        "missing_count": 1
+      }
+    ],
+    "87": [
+      {
+        "from_cycle": 99.0,
+        "to_cycle": 101.0,
+        "missing_count": 1
+      }
+    ]
+  }
+}

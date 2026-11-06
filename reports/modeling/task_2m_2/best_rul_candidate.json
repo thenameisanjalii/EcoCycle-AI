@@ -1,0 +1,30 @@
+{
+  "config_id": "rul_catboost_32f",
+  "target": "RUL",
+  "model_family": "catboost",
+  "feature_set": "32f",
+  "feature_count": 32,
+  "val_rmse": 233.0551,
+  "val_mae": 129.4164,
+  "val_r2": 0.5971,
+  "baseline_rmse": 247.95,
+  "baseline_mae": 130.99,
+  "baseline_r2": 0.544,
+  "abs_improvement_rmse": 14.8949,
+  "pct_improvement_rmse": 6.01,
+  "best_iteration": 435,
+  "tuning_duration_seconds": 47.42,
+  "best_params": {
+    "subsample": 0.8,
+    "learning_rate": 0.1,
+    "l2_leaf_reg": 5.0,
+    "iterations": 500,
+    "depth": 4
+  },
+  "min_prediction": -117.6451,
+  "max_prediction": 1143.5606,
+  "negative_predictions_count": 137,
+  "negative_predictions_pct": 0.825,
+  "prediction_file": "reports\\modeling\\task_2m_2\\predictions\\rul_catboost_32f_validation.csv",
+  "model_file": "artifacts\\models\\task_2m\\rul\\catboost_32f.joblib"
+}

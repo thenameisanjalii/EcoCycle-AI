@@ -1,0 +1,259 @@
+{
+  "task": "Task 2L.3 \u2014 Baseline Model Selection & Final Test Evaluation",
+  "status": "COMPLETE",
+  "model_status_designation": "FINAL BASELINE WINNERS \u2014 NOT FINAL PRODUCTION MODELS",
+  "models": {
+    "SOH": {
+      "model_name": "soh_hist_gradient_boosting",
+      "val_metrics": {
+        "mae": 0.4245,
+        "rmse": 0.6805,
+        "r2": 0.9818
+      },
+      "test_metrics": {
+        "MAE": 0.3442,
+        "RMSE": 0.5896,
+        "R2": 0.9815,
+        "sample_count": 18512
+      },
+      "delta_test_minus_val": {
+        "mae": -0.0803,
+        "rmse": -0.0909,
+        "r2": -0.0003
+      },
+      "error_diagnostics": {
+        "mean_prediction_error": 0.029663161945840212,
+        "median_absolute_error": 0.19904148811311018,
+        "max_absolute_error": 5.296296443944968,
+        "p25": 0.07987573953171179,
+        "p75": 0.42914671756900447,
+        "p95": 1.0822501083051208
+      },
+      "regional_performance": {
+        "SOH < 80%": {
+          "count": 96,
+          "pct": 0.52,
+          "MAE": 1.5333,
+          "RMSE": 2.0583,
+          "R2": -1.0819,
+          "sample_count": 96
+        },
+        "SOH < 90%": {
+          "count": 1894,
+          "pct": 10.23,
+          "MAE": 0.7041,
+          "RMSE": 1.0552,
+          "R2": 0.8831,
+          "sample_count": 1894
+        },
+        "SOH >= 90%": {
+          "count": 16618,
+          "pct": 89.77,
+          "MAE": 0.3032,
+          "RMSE": 0.5103,
+          "R2": 0.9574,
+          "sample_count": 16618
+        }
+      },
+      "best_batteries": [
+        {
+          "battery_id": 139,
+          "test_rows": 1800,
+          "soh_mae": 0.1584,
+          "soh_rmse": 0.2074,
+          "soh_r2": 0.9976,
+          "rul_mae": 34.5177,
+          "rul_rmse": 45.8347,
+          "rul_r2": 0.9922
+        },
+        {
+          "battery_id": 24,
+          "test_rows": 1012,
+          "soh_mae": 0.1618,
+          "soh_rmse": 0.2238,
+          "soh_r2": 0.9975,
+          "rul_mae": 114.2167,
+          "rul_rmse": 132.6401,
+          "rul_r2": 0.7939
+        },
+        {
+          "battery_id": 107,
+          "test_rows": 815,
+          "soh_mae": 0.2096,
+          "soh_rmse": 0.256,
+          "soh_r2": 0.9961,
+          "rul_mae": 51.22,
+          "rul_rmse": 69.9983,
+          "rul_r2": 0.9115
+        }
+      ],
+      "worst_batteries": [
+        {
+          "battery_id": 88,
+          "test_rows": 463,
+          "soh_mae": 1.4636,
+          "soh_rmse": 2.1928,
+          "soh_r2": 0.886,
+          "rul_mae": 150.3886,
+          "rul_rmse": 179.2686,
+          "rul_r2": -0.799
+        },
+        {
+          "battery_id": 22,
+          "test_rows": 557,
+          "soh_mae": 1.0594,
+          "soh_rmse": 1.2315,
+          "soh_r2": 0.9247,
+          "rul_mae": 123.7263,
+          "rul_rmse": 144.7322,
+          "rul_r2": 0.1898
+        },
+        {
+          "battery_id": 122,
+          "test_rows": 540,
+          "soh_mae": 0.8615,
+          "soh_rmse": 0.984,
+          "soh_r2": 0.9495,
+          "rul_mae": 94.6082,
+          "rul_rmse": 158.7007,
+          "rul_r2": -0.0365
+        }
+      ]
+    },
+    "RUL": {
+      "model_name": "rul_hist_gradient_boosting",
+      "val_metrics": {
+        "mae": 130.9945,
+        "rmse": 247.9533,
+        "r2": 0.544
+      },
+      "test_metrics": {
+        "MAE": 113.7863,
+        "RMSE": 174.3279,
+        "R2": 0.8449,
+        "sample_count": 18512
+      },
+      "delta_test_minus_val": {
+        "mae": -17.21,
+        "rmse": -73.63,
+        "r2": 0.3009
+      },
+      "error_diagnostics": {
+        "mean_prediction_error": -6.925177343120614,
+        "median_absolute_error": 65.26529321738596,
+        "max_absolute_error": 694.5027184328164,
+        "negative_prediction_count": 26,
+        "p25": 25.094712823954495,
+        "p75": 142.19353206658673,
+        "p95": 431.15270400853547
+      },
+      "regional_performance": {
+        "Early-Life (RUL >= 800)": {
+          "count": 4255,
+          "pct": 22.99,
+          "MAE": 196.2869,
+          "RMSE": 262.1108,
+          "R2": 0.5026,
+          "sample_count": 4255
+        },
+        "Mid-Life (300 <= RUL < 800)": {
+          "count": 7957,
+          "pct": 42.98,
+          "MAE": 115.6109,
+          "RMSE": 169.2399,
+          "R2": -0.4002,
+          "sample_count": 7957
+        },
+        "Near-End-of-Life (RUL < 300)": {
+          "count": 6300,
+          "pct": 34.03,
+          "MAE": 55.761,
+          "RMSE": 81.99,
+          "R2": 0.1037,
+          "sample_count": 6300
+        }
+      },
+      "best_batteries": [
+        {
+          "battery_id": 30,
+          "test_rows": 915,
+          "soh_mae": 0.246,
+          "soh_rmse": 0.3553,
+          "soh_r2": 0.9943,
+          "rul_mae": 32.0507,
+          "rul_rmse": 38.324,
+          "rul_r2": 0.9789
+        },
+        {
+          "battery_id": 139,
+          "test_rows": 1800,
+          "soh_mae": 0.1584,
+          "soh_rmse": 0.2074,
+          "soh_r2": 0.9976,
+          "rul_mae": 34.5177,
+          "rul_rmse": 45.8347,
+          "rul_r2": 0.9922
+        },
+        {
+          "battery_id": 108,
+          "test_rows": 857,
+          "soh_mae": 0.2966,
+          "soh_rmse": 0.3845,
+          "soh_r2": 0.9914,
+          "rul_mae": 40.4309,
+          "rul_rmse": 53.9729,
+          "rul_r2": 0.9524
+        }
+      ],
+      "worst_batteries": [
+        {
+          "battery_id": 104,
+          "test_rows": 1077,
+          "soh_mae": 0.2887,
+          "soh_rmse": 0.4265,
+          "soh_r2": 0.9887,
+          "rul_mae": 391.355,
+          "rul_rmse": 446.4372,
+          "rul_r2": -1.0619
+        },
+        {
+          "battery_id": 117,
+          "test_rows": 2189,
+          "soh_mae": 0.1931,
+          "soh_rmse": 0.2783,
+          "soh_r2": 0.9903,
+          "rul_mae": 258.4399,
+          "rul_rmse": 296.9323,
+          "rul_r2": 0.7792
+        },
+        {
+          "battery_id": 88,
+          "test_rows": 463,
+          "soh_mae": 1.4636,
+          "soh_rmse": 2.1928,
+          "soh_r2": 0.886,
+          "rul_mae": 150.3886,
+          "rul_rmse": 179.2686,
+          "rul_r2": -0.799
+        }
+      ]
+    }
+  },
+  "prediction_sanity": {
+    "soh_predictions_count": 18512,
+    "rul_predictions_count": 18512,
+    "soh_nan_inf_count": 0,
+    "rul_nan_inf_count": 0,
+    "rul_negative_predictions_count": 26,
+    "rul_negative_predictions_pct": 0.14,
+    "rul_min_prediction": -7.68,
+    "rul_max_prediction": 1949.29
+  },
+  "raw_dataset": {
+    "sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+    "rows": 116663,
+    "columns": 11,
+    "unmodified": true
+  },
+  "next_stage": "Task 2M \u2014 Advanced Modeling & Hyperparameter Optimization"
+}

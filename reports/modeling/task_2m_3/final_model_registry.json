@@ -1,0 +1,49 @@
+{
+  "stage": "Task 2M.3 \u2014 Advanced Model Selection & Final Test Evaluation",
+  "status": "FINAL_ADVANCED_WINNERS",
+  "timestamp": "2026-09-07 07:21:45",
+  "raw_dataset_hash": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "SOH_WINNER": {
+    "config_id": "soh_xgboost_32f",
+    "architecture": "XGBoost Regressor",
+    "features": 32,
+    "validation_rmse": 0.5654,
+    "validation_mae": 0.3347,
+    "validation_r2": 0.9874,
+    "test_rmse": 0.7084,
+    "test_mae": 0.3541,
+    "test_r2": 0.9733,
+    "test_rmse_improvement_vs_baseline_pct": -20.15,
+    "model_artifact": "artifacts/models/task_2m/soh/xgboost_32f.joblib",
+    "hyperparameters": {
+      "subsample": 0.7,
+      "reg_lambda": 1.0,
+      "reg_alpha": 0.1,
+      "n_estimators": 150,
+      "min_child_weight": 5,
+      "max_depth": 8,
+      "learning_rate": 0.08,
+      "colsample_bytree": 0.85
+    }
+  },
+  "RUL_WINNER": {
+    "config_id": "rul_catboost_32f",
+    "architecture": "CatBoost Regressor",
+    "features": 32,
+    "validation_rmse": 233.0551,
+    "validation_mae": 129.4164,
+    "validation_r2": 0.5971,
+    "test_rmse": 186.3573,
+    "test_mae": 125.0178,
+    "test_r2": 0.8228,
+    "test_rmse_improvement_vs_baseline_pct": -6.9,
+    "model_artifact": "artifacts/models/task_2m/rul/catboost_32f.joblib",
+    "hyperparameters": {
+      "subsample": 0.8,
+      "learning_rate": 0.1,
+      "l2_leaf_reg": 5.0,
+      "iterations": 500,
+      "depth": 4
+    }
+  }
+}

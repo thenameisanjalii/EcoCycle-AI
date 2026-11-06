@@ -1,0 +1,1802 @@
+[
+  {
+    "slide_num": 1,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;129;p25",
+        "type": "PLACEHOLDER (14)",
+        "left": 1016391,
+        "top": 483751,
+        "width": 6858000,
+        "height": 878573,
+        "text": "  EcoCycle AI"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;130;p25",
+        "type": "PLACEHOLDER (14)",
+        "left": 0,
+        "top": 1613215,
+        "width": 9144000,
+        "height": 1247551,
+        "text": "Presented by \n Anjali Chourasia \n Roll No: 24223011 \n MCA- V Semester"
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;131;p25",
+        "type": "TEXT_BOX (17)",
+        "left": 2672929,
+        "top": 3201552,
+        "width": 3798000,
+        "height": 838800,
+        "text": "Dr. Mou Das Gupta \n Mentor \n Department of Computer Applications \n National Institute of Technology Raipur"
+      }
+    ]
+  },
+  {
+    "slide_num": 2,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;136;p26",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Sequence of slides to be followed"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;137;p26",
+        "type": "PLACEHOLDER (14)",
+        "left": 511085,
+        "top": 1379016,
+        "width": 8515350,
+        "height": 3263504,
+        "text": "Declaration  \n Problem Formulation and Definition (one slide) \n Motivation (one slide) \n Contribution (one slide) \n Methodology/ Proposed Algorithm (maximum five slides) \n Design/ Architecture/ Workflow (maximum five slides) \n Screen Shots/Testing & Implementation/Results and Discussion (maximum five slides) \n Conclusion and Future scope (one slide) \n References/ Bibliography (one slide)"
+      }
+    ]
+  },
+  {
+    "slide_num": 3,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;142;p27",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Contents:"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;143;p27",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 1369219,
+        "width": 7886700,
+        "height": 3263504,
+        "text": "Declaration \n Problem Formulation and Definition \n Motivation  \n Contribution  \n Methodology/ Proposed Algorithm  \n Design/ Architecture/ Workflow  \n Testing & Implementation/Results and Discussion  \n Conclusion and Future Scope \n References/ Bibliography "
+      }
+    ]
+  },
+  {
+    "slide_num": 4,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;148;p28",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Declaration"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;149;p28",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 1663601,
+        "width": 8229600,
+        "height": 1787723,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;150;p28",
+        "type": "TEXT_BOX (17)",
+        "left": 721519,
+        "top": 1899344,
+        "width": 7701000,
+        "height": 465600,
+        "text": "I hereby declare that this project report entitled \"EcoCycle : AI-Powered EV Battery Health & Second-Life Recommendation Platform \" is an authentic record of work carried out by me under the guidance of my mentor."
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;151;p28",
+        "type": "TEXT_BOX (17)",
+        "left": 721519,
+        "top": 2740521,
+        "width": 7701000,
+        "height": 465600,
+        "text": "The machine learning algorithms, decision logic, and web application described here are original and have not been submitted for any other degree."
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;152;p28",
+        "type": "TEXT_BOX (17)",
+        "left": 514350,
+        "top": 3740646,
+        "width": 2071800,
+        "height": 138600,
+        "text": "Roll No: 24223011"
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;153;p28",
+        "type": "TEXT_BOX (17)",
+        "left": 514350,
+        "top": 3890665,
+        "width": 2071800,
+        "height": 138600,
+        "text": "National Institute of Technology Raipur"
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;154;p28",
+        "type": "TEXT_BOX (17)",
+        "left": 6586538,
+        "top": 3737074,
+        "width": 2043000,
+        "height": 169200,
+        "text": "Anjali Chourasia"
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;155;p28",
+        "type": "TEXT_BOX (17)",
+        "left": 6586538,
+        "top": 3908524,
+        "width": 2043000,
+        "height": 123000,
+        "text": "Master of Computer Applications (MCA)"
+      }
+    ]
+  },
+  {
+    "slide_num": 5,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;160;p29",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Problem Formulation and Definition"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;161;p29",
+        "type": "TEXT_BOX (17)",
+        "left": 5508850,
+        "top": 2183275,
+        "width": 3275100,
+        "height": 1694400,
+        "text": "70%–80% \n Remaining Usable Energy  \n Average storage capacity still available when an EV battery is retired from a car.  "
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;162;p29",
+        "type": "TEXT_BOX (17)",
+        "left": 628650,
+        "top": 3817075,
+        "width": 4468800,
+        "height": 994200,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;163;p29",
+        "type": "AUTO_SHAPE (1)",
+        "left": 628650,
+        "top": 1355050,
+        "width": 4622400,
+        "height": 994200,
+        "text": "Batteries Discarded Too Early \n EVs retire batteries when they reach 70–80% capacity, leaving plenty of energy unused."
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;164;p29",
+        "type": "AUTO_SHAPE (1)",
+        "left": 596550,
+        "top": 2583550,
+        "width": 4686600,
+        "height": 1081200,
+        "text": "Manual Testing is Too Slow \n Standard laboratory testing takes days of slow charging and discharging for each pack."
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;165;p29",
+        "type": "AUTO_SHAPE (1)",
+        "left": 628900,
+        "top": 3817075,
+        "width": 4686600,
+        "height": 994200,
+        "text": "No Automated Sorting \n Without quick digital grading, working batteries are prematurely sent to recycling."
+      }
+    ]
+  },
+  {
+    "slide_num": 6,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;170;p30",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Motivation"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;171;p30",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 1539478,
+        "width": 3986213,
+        "height": 2714625,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;172;p30",
+        "type": "PICTURE (13)",
+        "left": 4700588,
+        "top": 1974019,
+        "width": 285750,
+        "height": 285750,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;173;p30",
+        "type": "PICTURE (13)",
+        "left": 4700588,
+        "top": 2636825,
+        "width": 285750,
+        "height": 285750,
+        "text": ""
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;174;p30",
+        "type": "PICTURE (13)",
+        "left": 4700588,
+        "top": 3299631,
+        "width": 285750,
+        "height": 285750,
+        "text": ""
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;175;p30",
+        "type": "PICTURE (13)",
+        "left": 4779169,
+        "top": 2052600,
+        "width": 128588,
+        "height": 128587,
+        "text": ""
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;176;p30",
+        "type": "PICTURE (13)",
+        "left": 4761309,
+        "top": 2715406,
+        "width": 164306,
+        "height": 128587,
+        "text": ""
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;177;p30",
+        "type": "PICTURE (13)",
+        "left": 4779169,
+        "top": 3378212,
+        "width": 128588,
+        "height": 128587,
+        "text": ""
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;178;p30",
+        "type": "TEXT_BOX (17)",
+        "left": 5100638,
+        "top": 1974019,
+        "width": 3765600,
+        "height": 169200,
+        "text": "Helps the Environment"
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;179;p30",
+        "type": "TEXT_BOX (17)",
+        "left": 5100638,
+        "top": 2174044,
+        "width": 3586200,
+        "height": 332400,
+        "text": "Reusing batteries avoids mining extra raw minerals like lithium, cobalt, and nickel."
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;180;p30",
+        "type": "TEXT_BOX (17)",
+        "left": 5100638,
+        "top": 2636825,
+        "width": 3765600,
+        "height": 169200,
+        "text": "Cheaper Clean Energy Storage"
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;181;p30",
+        "type": "TEXT_BOX (17)",
+        "left": 5100638,
+        "top": 2836850,
+        "width": 3586200,
+        "height": 332400,
+        "text": "Repurposed EV batteries cut stationary solar storage costs by up to 45%."
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;182;p30",
+        "type": "TEXT_BOX (17)",
+        "left": 5100638,
+        "top": 3299631,
+        "width": 3765600,
+        "height": 169200,
+        "text": "Instant Digital Health Check"
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;183;p30",
+        "type": "TEXT_BOX (17)",
+        "left": 5100638,
+        "top": 3499656,
+        "width": 3586200,
+        "height": 332400,
+        "text": "Machine learning estimates battery health in under a second from simple sensor data."
+      }
+    ]
+  },
+  {
+    "slide_num": 7,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;188;p31",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Contributions"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;189;p31",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 2078831,
+        "width": 2628900,
+        "height": 1664494,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;190;p31",
+        "type": "PICTURE (13)",
+        "left": 3257550,
+        "top": 2078831,
+        "width": 2628900,
+        "height": 1664494,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;191;p31",
+        "type": "PICTURE (13)",
+        "left": 6057900,
+        "top": 2078831,
+        "width": 2628900,
+        "height": 1664494,
+        "text": ""
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;192;p31",
+        "type": "PICTURE (13)",
+        "left": 635794,
+        "top": 2314575,
+        "width": 314325,
+        "height": 314325,
+        "text": ""
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;193;p31",
+        "type": "PICTURE (13)",
+        "left": 3436144,
+        "top": 2314575,
+        "width": 314325,
+        "height": 314325,
+        "text": ""
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;194;p31",
+        "type": "PICTURE (13)",
+        "left": 6236494,
+        "top": 2314575,
+        "width": 314325,
+        "height": 314325,
+        "text": ""
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;195;p31",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 2743200,
+        "width": 2385300,
+        "height": 169200,
+        "text": "Two Trained AI Models"
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;196;p31",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 2993231,
+        "width": 2271600,
+        "height": 346200,
+        "text": "Accurately predicts current battery health (SoH %) and remaining safe cycles (RUL)."
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;197;p31",
+        "type": "TEXT_BOX (17)",
+        "left": 3436144,
+        "top": 2743200,
+        "width": 2385300,
+        "height": 169200,
+        "text": "Automated Decision Engine"
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;198;p31",
+        "type": "TEXT_BOX (17)",
+        "left": 3436144,
+        "top": 2993231,
+        "width": 2271600,
+        "height": 346200,
+        "text": "Instantly sorts batteries into solar storage, backup telecom UPS, or raw recycling."
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;199;p31",
+        "type": "TEXT_BOX (17)",
+        "left": 6236494,
+        "top": 2743200,
+        "width": 2385300,
+        "height": 169200,
+        "text": "Interactive Web Dashboard"
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;200;p31",
+        "type": "TEXT_BOX (17)",
+        "left": 6236494,
+        "top": 2993231,
+        "width": 2271600,
+        "height": 554100,
+        "text": "Clean user interface that displays health grades, carbon savings, and cost benefits."
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;201;p31",
+        "type": "PICTURE (13)",
+        "left": 721519,
+        "top": 2400300,
+        "width": 142875,
+        "height": 142875,
+        "text": ""
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;202;p31",
+        "type": "PICTURE (13)",
+        "left": 3521869,
+        "top": 2400300,
+        "width": 142875,
+        "height": 142875,
+        "text": ""
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;203;p31",
+        "type": "PICTURE (13)",
+        "left": 6311503,
+        "top": 2400300,
+        "width": 164306,
+        "height": 142875,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "slide_num": 8,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;208;p32",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Methodology/ Proposed Algorithm "
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;209;p32",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 2286000,
+        "width": 1950244,
+        "height": 1250156,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;210;p32",
+        "type": "PICTURE (13)",
+        "left": 2550319,
+        "top": 2286000,
+        "width": 1950244,
+        "height": 1250156,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;211;p32",
+        "type": "PICTURE (13)",
+        "left": 4643438,
+        "top": 2286000,
+        "width": 1950244,
+        "height": 1250156,
+        "text": ""
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;212;p32",
+        "type": "PICTURE (13)",
+        "left": 6736556,
+        "top": 2286000,
+        "width": 1950244,
+        "height": 1250156,
+        "text": ""
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;213;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 592931,
+        "top": 2464594,
+        "width": 1678800,
+        "height": 153900,
+        "text": "STEP 01"
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;214;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 592931,
+        "top": 2686050,
+        "width": 1762800,
+        "height": 153900,
+        "text": "Load Cycle Data"
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;215;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 592931,
+        "top": 2907506,
+        "width": 1678800,
+        "height": 468000,
+        "text": "Extracting raw cycle records with voltage curves, charge capacity, and current."
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;216;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 2686050,
+        "top": 2464594,
+        "width": 1678800,
+        "height": 153900,
+        "text": "STEP 02"
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;217;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 2686050,
+        "top": 2686050,
+        "width": 1762800,
+        "height": 153900,
+        "text": "Clean Outliers"
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;218;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 2686050,
+        "top": 2907506,
+        "width": 1678800,
+        "height": 468000,
+        "text": "Filtering noisy sensor spikes, temperature jumps, and incomplete test cycles."
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;219;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 4779169,
+        "top": 2464594,
+        "width": 1678800,
+        "height": 153900,
+        "text": "STEP 03"
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;220;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 4779169,
+        "top": 2686050,
+        "width": 1762800,
+        "height": 153900,
+        "text": "Select Key Features"
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;221;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 4779169,
+        "top": 2907506,
+        "width": 1678800,
+        "height": 468000,
+        "text": "Focusing on internal resistance rise, charge time changes, and max temperatures."
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;222;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 6872288,
+        "top": 2464594,
+        "width": 1678800,
+        "height": 153900,
+        "text": "STEP 04"
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;223;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 6872288,
+        "top": 2686050,
+        "width": 1762800,
+        "height": 153900,
+        "text": "Compute Targets"
+      },
+      {
+        "index": 16,
+        "name": "Google Shape;224;p32",
+        "type": "TEXT_BOX (17)",
+        "left": 6872288,
+        "top": 2907506,
+        "width": 1678800,
+        "height": 468000,
+        "text": "Labeling ground-truth health percentage (SoH) and remaining cycle life (RUL)."
+      }
+    ]
+  },
+  {
+    "slide_num": 9,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;229;p33",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Methodology/ Proposed Algorithm \u000b\t\t\t\t\t\t                            Cont.."
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;230;p33",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 1953815,
+        "width": 4000500,
+        "height": 1914525,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;231;p33",
+        "type": "PICTURE (13)",
+        "left": 4686300,
+        "top": 1953815,
+        "width": 4000500,
+        "height": 1914525,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;232;p33",
+        "type": "PICTURE (13)",
+        "left": 692944,
+        "top": 2189559,
+        "width": 257175,
+        "height": 257175,
+        "text": ""
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;233;p33",
+        "type": "PICTURE (13)",
+        "left": 4922044,
+        "top": 2189559,
+        "width": 257175,
+        "height": 257175,
+        "text": ""
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;234;p33",
+        "type": "TEXT_BOX (17)",
+        "left": 1035844,
+        "top": 2218134,
+        "width": 2175300,
+        "height": 184800,
+        "text": "Battery Health (SoH) Model"
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;235;p33",
+        "type": "TEXT_BOX (17)",
+        "left": 692944,
+        "top": 2561034,
+        "width": 3528900,
+        "height": 277200,
+        "text": "What it Measures: Current storage capacity as a percentage of original capacity."
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;236;p33",
+        "type": "TEXT_BOX (17)",
+        "left": 692944,
+        "top": 2946797,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Input Features: Internal resistance (IR), charge duration, and temperature."
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;237;p33",
+        "type": "TEXT_BOX (17)",
+        "left": 692944,
+        "top": 3332559,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Model Used: Gradient Boosting Regressor tuned for battery degradation."
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;238;p33",
+        "type": "TEXT_BOX (17)",
+        "left": 5264944,
+        "top": 2218134,
+        "width": 2182800,
+        "height": 184800,
+        "text": "Remaining Life (RUL) Model"
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;239;p33",
+        "type": "TEXT_BOX (17)",
+        "left": 4922044,
+        "top": 2561034,
+        "width": 3528900,
+        "height": 277200,
+        "text": "What it Measures: Number of safe charge cycles remaining before failure."
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;240;p33",
+        "type": "TEXT_BOX (17)",
+        "left": 4922044,
+        "top": 2946797,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Input Features: Rate of resistance increase and past cycle history."
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;241;p33",
+        "type": "TEXT_BOX (17)",
+        "left": 4922044,
+        "top": 3332559,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Model Used: Random Forest Regressor trained for steady wear predictions."
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;242;p33",
+        "type": "PICTURE (13)",
+        "left": 757238,
+        "top": 2260996,
+        "width": 128588,
+        "height": 114300,
+        "text": ""
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;243;p33",
+        "type": "PICTURE (13)",
+        "left": 5007769,
+        "top": 2260996,
+        "width": 85725,
+        "height": 114300,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "slide_num": 10,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;248;p34",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Design/ Architecture/ Workflow "
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;249;p34",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 2175271,
+        "width": 1950244,
+        "height": 1471613,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;250;p34",
+        "type": "PICTURE (13)",
+        "left": 2550319,
+        "top": 2175271,
+        "width": 1950244,
+        "height": 1471613,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;251;p34",
+        "type": "PICTURE (13)",
+        "left": 4643438,
+        "top": 2175271,
+        "width": 1950244,
+        "height": 1471613,
+        "text": ""
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;252;p34",
+        "type": "PICTURE (13)",
+        "left": 6736556,
+        "top": 2175271,
+        "width": 1950244,
+        "height": 1471613,
+        "text": ""
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;253;p34",
+        "type": "PICTURE (13)",
+        "left": 1260872,
+        "top": 2353865,
+        "width": 342900,
+        "height": 342900,
+        "text": ""
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;254;p34",
+        "type": "PICTURE (13)",
+        "left": 3353990,
+        "top": 2353865,
+        "width": 342900,
+        "height": 342900,
+        "text": ""
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;255;p34",
+        "type": "PICTURE (13)",
+        "left": 5447109,
+        "top": 2353865,
+        "width": 342900,
+        "height": 342900,
+        "text": ""
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;256;p34",
+        "type": "PICTURE (13)",
+        "left": 7540228,
+        "top": 2353865,
+        "width": 342900,
+        "height": 342900,
+        "text": ""
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;257;p34",
+        "type": "TEXT_BOX (17)",
+        "left": 550961,
+        "top": 2796778,
+        "width": 1762800,
+        "height": 153900,
+        "text": "1. Battery Data Input"
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;258;p34",
+        "type": "TEXT_BOX (17)",
+        "left": 592931,
+        "top": 3018234,
+        "width": 1678800,
+        "height": 295500,
+        "text": "Receives resistance, voltage, and cycle sensor numbers via JSON."
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;259;p34",
+        "type": "TEXT_BOX (17)",
+        "left": 2644080,
+        "top": 2796778,
+        "width": 1762800,
+        "height": 153900,
+        "text": "2. FastAPI Backend"
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;260;p34",
+        "type": "TEXT_BOX (17)",
+        "left": 2686050,
+        "top": 3018234,
+        "width": 1678800,
+        "height": 468000,
+        "text": "High-speed REST API that runs our pre-trained machine learning models."
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;261;p34",
+        "type": "TEXT_BOX (17)",
+        "left": 4737199,
+        "top": 2796778,
+        "width": 1762800,
+        "height": 153900,
+        "text": "3. Decision Rules"
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;262;p34",
+        "type": "TEXT_BOX (17)",
+        "left": 4779169,
+        "top": 3018234,
+        "width": 1678800,
+        "height": 295500,
+        "text": "Automated classification into solar storage, UPS, or recycling."
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;263;p34",
+        "type": "TEXT_BOX (17)",
+        "left": 6830318,
+        "top": 2796778,
+        "width": 1762800,
+        "height": 153900,
+        "text": "4. User Dashboard"
+      },
+      {
+        "index": 16,
+        "name": "Google Shape;264;p34",
+        "type": "TEXT_BOX (17)",
+        "left": 6872288,
+        "top": 3018234,
+        "width": 1678800,
+        "height": 295500,
+        "text": "Interactive visual interface showing battery status and carbon savings."
+      },
+      {
+        "index": 17,
+        "name": "Google Shape;265;p34",
+        "type": "PICTURE (13)",
+        "left": 1360884,
+        "top": 2453878,
+        "width": 142875,
+        "height": 142875,
+        "text": ""
+      },
+      {
+        "index": 18,
+        "name": "Google Shape;266;p34",
+        "type": "PICTURE (13)",
+        "left": 3454003,
+        "top": 2453878,
+        "width": 142875,
+        "height": 142875,
+        "text": ""
+      },
+      {
+        "index": 19,
+        "name": "Google Shape;267;p34",
+        "type": "PICTURE (13)",
+        "left": 5547122,
+        "top": 2453878,
+        "width": 142875,
+        "height": 142875,
+        "text": ""
+      },
+      {
+        "index": 20,
+        "name": "Google Shape;268;p34",
+        "type": "PICTURE (13)",
+        "left": 7622381,
+        "top": 2453878,
+        "width": 178594,
+        "height": 142875,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "slide_num": 11,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;273;p35",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994200,
+        "text": "Design Engine Workflow "
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;274;p35",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 2228850,
+        "width": 2628900,
+        "height": 1364456,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;275;p35",
+        "type": "PICTURE (13)",
+        "left": 3257550,
+        "top": 2228850,
+        "width": 2628900,
+        "height": 1364456,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;276;p35",
+        "type": "PICTURE (13)",
+        "left": 6057900,
+        "top": 2228850,
+        "width": 2628900,
+        "height": 1364456,
+        "text": ""
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;277;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 2450306,
+        "width": 1035900,
+        "height": 123000,
+        "text": "GRADE A: HEALTHY"
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;278;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 2657475,
+        "width": 2385300,
+        "height": 169200,
+        "text": "Solar & Grid Storage"
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;279;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 2893219,
+        "width": 2271600,
+        "height": 138600,
+        "text": "Health ≥ 75% | Life > 500 Cycles"
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;280;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 3086100,
+        "width": 2271600,
+        "height": 295500,
+        "text": "Ideal for home solar battery systems and large electrical grid backup."
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;281;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 3436144,
+        "top": 2450306,
+        "width": 1150200,
+        "height": 123000,
+        "text": "GRADE B: MODERATE"
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;282;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 3436144,
+        "top": 2657475,
+        "width": 2385300,
+        "height": 169200,
+        "text": "Telecom & UPS Backup"
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;283;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 3436144,
+        "top": 2893219,
+        "width": 2271600,
+        "height": 138600,
+        "text": "60% ≤ Health < 75% | Medium Life"
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;284;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 3436144,
+        "top": 3086100,
+        "width": 2271600,
+        "height": 295500,
+        "text": "Great for cell tower emergency backup and low-speed electric carts."
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;285;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 6236494,
+        "top": 2450306,
+        "width": 1200300,
+        "height": 123000,
+        "text": "GRADE C: END OF LIFE"
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;286;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 6236494,
+        "top": 2657475,
+        "width": 2385300,
+        "height": 169200,
+        "text": "Safe Material Recycling"
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;287;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 6236494,
+        "top": 2893219,
+        "width": 2271600,
+        "height": 138600,
+        "text": "Health < 60% | High Resistance"
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;288;p35",
+        "type": "TEXT_BOX (17)",
+        "left": 6236494,
+        "top": 3086100,
+        "width": 2271600,
+        "height": 295500,
+        "text": "Safely sent to recycling centers to recover pure lithium and cobalt salts."
+      }
+    ]
+  },
+  {
+    "slide_num": 12,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;293;p36",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994200,
+        "text": "Implementation & Testing"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;294;p36",
+        "type": "PICTURE (13)",
+        "left": 4680272,
+        "top": 2010965,
+        "width": 4006527,
+        "height": 1800225,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;295;p36",
+        "type": "AUTO_SHAPE (1)",
+        "left": 4887441,
+        "top": 2718197,
+        "width": 3592200,
+        "height": 7200,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;296;p36",
+        "type": "AUTO_SHAPE (1)",
+        "left": 4887441,
+        "top": 3032522,
+        "width": 3592200,
+        "height": 7200,
+        "text": ""
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;297;p36",
+        "type": "AUTO_SHAPE (1)",
+        "left": 4887441,
+        "top": 3346846,
+        "width": 3592200,
+        "height": 7200,
+        "text": ""
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;298;p36",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 1907381,
+        "width": 3994472,
+        "height": 592931,
+        "text": ""
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;299;p36",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 2614613,
+        "width": 3994472,
+        "height": 592931,
+        "text": ""
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;300;p36",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 3321844,
+        "width": 3994472,
+        "height": 592931,
+        "text": ""
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;301;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 4887441,
+        "top": 2218134,
+        "width": 3771900,
+        "height": 153900,
+        "text": "Unit Test Results"
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;302;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 4887441,
+        "top": 2525315,
+        "width": 3592200,
+        "height": 138600,
+        "text": "Battery Health Prediction Test PASSED (100%)"
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;303;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 4887441,
+        "top": 2839640,
+        "width": 3592200,
+        "height": 138600,
+        "text": "FastAPI REST Endpoints Test PASSED (100%)"
+      },
+      {
+        "index": 11,
+        "name": "Google Shape;304;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 4887441,
+        "top": 3153965,
+        "width": 3592200,
+        "height": 138600,
+        "text": "Decision Engine Triage Test PASSED (100%)"
+      },
+      {
+        "index": 12,
+        "name": "Google Shape;305;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 4887441,
+        "top": 3468290,
+        "width": 3592200,
+        "height": 138600,
+        "text": "Average API Response Time < 28 ms (Instant)"
+      },
+      {
+        "index": 13,
+        "name": "Google Shape;306;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 607219,
+        "top": 2043113,
+        "width": 3879300,
+        "height": 153900,
+        "text": "Backend Service"
+      },
+      {
+        "index": 14,
+        "name": "Google Shape;307;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 607219,
+        "top": 2228850,
+        "width": 3694500,
+        "height": 123000,
+        "text": "Python 3.10+, FastAPI, Uvicorn, Scikit-learn, and NumPy."
+      },
+      {
+        "index": 15,
+        "name": "Google Shape;308;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 607219,
+        "top": 2750344,
+        "width": 3879300,
+        "height": 153900,
+        "text": "Frontend Dashboard"
+      },
+      {
+        "index": 16,
+        "name": "Google Shape;309;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 607219,
+        "top": 2936081,
+        "width": 3694500,
+        "height": 123000,
+        "text": "React 18, TypeScript, Vite, and Tailwind CSS."
+      },
+      {
+        "index": 17,
+        "name": "Google Shape;310;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 607219,
+        "top": 3457575,
+        "width": 3879300,
+        "height": 153900,
+        "text": "Datasets Used"
+      },
+      {
+        "index": 18,
+        "name": "Google Shape;311;p36",
+        "type": "TEXT_BOX (17)",
+        "left": 607219,
+        "top": 3643313,
+        "width": 3694500,
+        "height": 123000,
+        "text": "Oxford and NASA real-world battery degradation benchmarks."
+      }
+    ]
+  },
+  {
+    "slide_num": 13,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;316;p37",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Results and Discussion "
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;317;p37",
+        "type": "PICTURE (13)",
+        "left": 5497785,
+        "top": 1810940,
+        "width": 3189014,
+        "height": 1042987,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;318;p37",
+        "type": "PICTURE (13)",
+        "left": 5497785,
+        "top": 2968228,
+        "width": 3189014,
+        "height": 1042987,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;319;p37",
+        "type": "AUTO_SHAPE (1)",
+        "left": 457200,
+        "top": 2332434,
+        "width": 4783500,
+        "height": 1157400,
+        "text": ""
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;320;p37",
+        "type": "TABLE (19)",
+        "left": 457200,
+        "top": 2332434,
+        "width": 3000000,
+        "height": 3000000,
+        "text": "TABLE:\nTarget Value | Model Used | Average Error | Accuracy (R²)\nBattery Health (SoH) | Gradient Boosting | ±1.14% error | 96.2%\nRemaining Life (RUL) | Random Forest | ±18 cycles | 93.8%"
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;321;p37",
+        "type": "TEXT_BOX (17)",
+        "left": 5647804,
+        "top": 1960959,
+        "width": 2889000,
+        "height": 123000,
+        "text": "SPEED IMPROVEMENT"
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;322;p37",
+        "type": "TEXT_BOX (17)",
+        "left": 5647804,
+        "top": 2118122,
+        "width": 2889000,
+        "height": 277200,
+        "text": "99.4% Faster"
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;323;p37",
+        "type": "TEXT_BOX (17)",
+        "left": 5647804,
+        "top": 2432447,
+        "width": 2889000,
+        "height": 246300,
+        "text": "Delivers results in milliseconds compared to days of chamber testing."
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;324;p37",
+        "type": "TEXT_BOX (17)",
+        "left": 5647804,
+        "top": 3118247,
+        "width": 2889000,
+        "height": 123000,
+        "text": "SORTING ACCURACY"
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;325;p37",
+        "type": "TEXT_BOX (17)",
+        "left": 5647804,
+        "top": 3275409,
+        "width": 2889000,
+        "height": 277200,
+        "text": "97.8% Match"
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;326;p37",
+        "type": "TEXT_BOX (17)",
+        "left": 5647804,
+        "top": 3589734,
+        "width": 2889000,
+        "height": 246300,
+        "text": "Correctly assigns second-life applications against lab standards."
+      }
+    ]
+  },
+  {
+    "slide_num": 14,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;331;p38",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "Conclusion and Future scope "
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;332;p38",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 1968103,
+        "width": 4000500,
+        "height": 1885950,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;333;p38",
+        "type": "PICTURE (13)",
+        "left": 4686300,
+        "top": 1968103,
+        "width": 4000500,
+        "height": 1885950,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;334;p38",
+        "type": "TEXT_BOX (17)",
+        "left": 692944,
+        "top": 2203847,
+        "width": 3705600,
+        "height": 184800,
+        "text": "Key Conclusions"
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;335;p38",
+        "type": "TEXT_BOX (17)",
+        "left": 4922044,
+        "top": 2203847,
+        "width": 3705600,
+        "height": 184800,
+        "text": "Future Scope"
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;336;p38",
+        "type": "TEXT_BOX (17)",
+        "left": 692944,
+        "top": 2518172,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Fast & Accurate: Predicts battery health within ±1.1% in sub-second response times."
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;337;p38",
+        "type": "TEXT_BOX (17)",
+        "left": 692944,
+        "top": 2918222,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Saves Usable Batteries: Prevents healthy batteries from ending up in scrap heaps prematurely."
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;338;p38",
+        "type": "TEXT_BOX (17)",
+        "left": 692944,
+        "top": 3318271,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Ready to Integrate: Lightweight API easily connects to diagnostic hardware and apps."
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;339;p38",
+        "type": "TEXT_BOX (17)",
+        "left": 4922044,
+        "top": 2518172,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Vehicle BMS Integration: Running models directly on microcontrollers inside the vehicle."
+      },
+      {
+        "index": 9,
+        "name": "Google Shape;340;p38",
+        "type": "TEXT_BOX (17)",
+        "left": 4922044,
+        "top": 2918222,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Live Commercial Testing: Validating model predictions across real EV delivery fleets."
+      },
+      {
+        "index": 10,
+        "name": "Google Shape;341;p38",
+        "type": "TEXT_BOX (17)",
+        "left": 4922044,
+        "top": 3318271,
+        "width": 3528900,
+        "height": 277200,
+        "text": "Battery Passport: Creating digital records to track carbon savings and trade credits."
+      }
+    ]
+  },
+  {
+    "slide_num": 15,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;346;p39",
+        "type": "PLACEHOLDER (14)",
+        "left": 628650,
+        "top": 273844,
+        "width": 7886700,
+        "height": 994172,
+        "text": "References"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;347;p39",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 1682353,
+        "width": 8229600,
+        "height": 442913,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "name": "Google Shape;348;p39",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 2239565,
+        "width": 8229600,
+        "height": 614362,
+        "text": ""
+      },
+      {
+        "index": 3,
+        "name": "Google Shape;349;p39",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 2968228,
+        "width": 8229600,
+        "height": 442913,
+        "text": ""
+      },
+      {
+        "index": 4,
+        "name": "Google Shape;350;p39",
+        "type": "PICTURE (13)",
+        "left": 457200,
+        "top": 3525440,
+        "width": 8229600,
+        "height": 614362,
+        "text": ""
+      },
+      {
+        "index": 5,
+        "name": "Google Shape;351;p39",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 1818084,
+        "width": 7872300,
+        "height": 138600,
+        "text": "[1] Severson, K. A., et al. (2019). Data-driven prediction of battery cycle life before capacity degradation. Nature Energy, 4(5), 383–391."
+      },
+      {
+        "index": 6,
+        "name": "Google Shape;352;p39",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 2375297,
+        "width": 7872300,
+        "height": 346200,
+        "text": "[2] Martinez-Laserna, E., et al. (2018). Battery second life: Hype, hope or reality? A critical review of technology and economics. Renewable and Sustainable Energy Reviews, 93, 701–718."
+      },
+      {
+        "index": 7,
+        "name": "Google Shape;353;p39",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 3103959,
+        "width": 7872300,
+        "height": 138600,
+        "text": "[3] Birkl, C. (2017). Oxford Battery Degradation Dataset 1. Oxford University Research Archive, Department of Engineering Science."
+      },
+      {
+        "index": 8,
+        "name": "Google Shape;354;p39",
+        "type": "TEXT_BOX (17)",
+        "left": 635794,
+        "top": 3661171,
+        "width": 7872300,
+        "height": 346200,
+        "text": "[4] Zhu, J., et al. (2021). Data-driven capacity estimation for lithium-ion batteries using partial cycle features. IEEE Transactions on Industrial Electronics, 68(9), 8190–8200."
+      }
+    ]
+  },
+  {
+    "slide_num": 16,
+    "shapes": [
+      {
+        "index": 0,
+        "name": "Google Shape;359;p40",
+        "type": "PLACEHOLDER (14)",
+        "left": 0,
+        "top": 1577578,
+        "width": 9144000,
+        "height": 994172,
+        "text": "Thank You!"
+      },
+      {
+        "index": 1,
+        "name": "Google Shape;360;p40",
+        "type": "TEXT_BOX (17)",
+        "left": 3468188,
+        "top": 2945912,
+        "width": 1988820,
+        "height": 994172,
+        "text": "Q & A"
+      }
+    ]
+  }
+]

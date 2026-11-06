@@ -1,0 +1,9 @@
+target,model,stored_mae,recomputed_mae,mae_difference,stored_rmse,recomputed_rmse,rmse_difference,stored_r2,recomputed_r2,r2_difference,metric_reproduction_status,model_selection_rank,selected_model
+SOH,soh_hist_gradient_boosting,0.4245,0.4245,0.0,0.6805,0.6805,0.0,0.9818,0.9818,0.0,PASS,1,True
+SOH,soh_random_forest,0.4255,0.4255,0.0,0.7047,0.7047,0.0,0.9805,0.9805,0.0,PASS,2,False
+SOH,soh_ridge,0.8096,0.8096,0.0,1.2373,1.2373,0.0,0.9398,0.9398,0.0,PASS,3,False
+SOH,soh_dummy,3.6626,3.6626,0.0,5.0492,5.0492,0.0,-0.0024,-0.0024,0.0,PASS,4,False
+RUL,rul_hist_gradient_boosting,130.9945,130.9945,0.0,247.9533,247.9533,0.0,0.544,0.544,0.0,PASS,1,True
+RUL,rul_random_forest,135.9016,135.9016,0.0,257.5131,257.5131,0.0,0.5081,0.5081,0.0,PASS,2,False
+RUL,rul_ridge,202.5094,202.5094,0.0,273.2028,273.2028,0.0,0.4463,0.4463,0.0,PASS,3,False
+RUL,rul_dummy,286.5486,286.5486,0.0,367.5413,367.5413,0.0,-0.002,-0.002,0.0,PASS,4,False

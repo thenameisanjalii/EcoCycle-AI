@@ -1,0 +1,10 @@
+finding_id,feature,description,affected_records,percentage,affected_batteries_count,affected_battery_ids,classification
+F01_TEMP_BOUNDS,"Tmin, Tavg, Tmax",Temperature order consistency (Tmin <= Tavg <= Tmax),0,0.0,0,[],Internally consistent (0 violations)
+F02_TMIN_NEG_270,Tmin,Tmin pinned to -270.0 °C,99,0.0849,1,[85],Physically suspicious / Requires source documentation
+F03_TMAX_400,Tmax,Tmax pinned to 400.0 °C,99,0.0849,1,[85],Physically suspicious / Requires source documentation
+F04_TAVG_NEG,Tavg,Negative average temperature (min -8.66 °C),8,0.0069,1,[85],Physically suspicious / Requires source documentation
+F05_IR_ZERO,IR,Internal resistance recorded as exactly 0.0,4922,4.219,23,"[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 17, 21, 22, 24, 41, 87, 88, 89, 90, 91, 92, 93]",Physically suspicious / Requires source documentation
+F06_CHARGETIME_EXTREME,chargetime,Charge time > 60 minutes (peaks at ~3934 mins / 65.5 hrs),17,0.0146,17,"[4, 6, 15, 16, 25, 42, 61, 67, 73, 75, 77, 79, 81, 87, 88, 91, 93]",Statistically unusual / Potentially valid resting pause
+F07_SOH_GT_100,SOH,State of Health exceeding 100% (range 100.0% to 104.79%),10784,9.2437,139,All 139 batteries (early cycles),Potentially valid / Structurally consistent with fresh cell capacity
+F08_RUL_FORMULA,RUL,Exact formula consistency: RUL = max_cycle - cycle,116663,100.0,139,All 139 batteries,Internally consistent (deterministic ground truth)
+F09_QCHARGE_DRIFT,QCharge,QCharge > 1.2 Ah (drifts linearly from 1.22 to 1.97 Ah in Battery 19),28,0.024,1,[19],Statistically unusual / Requires source documentation

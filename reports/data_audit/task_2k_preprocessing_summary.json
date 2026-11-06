@@ -1,0 +1,75 @@
+{
+  "task": "Task 2K \u2014 Preprocessing Implementation + Causal Feature Engineering",
+  "status": "COMPLETE",
+  "raw_dataset_hash_before": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "raw_dataset_hash_after": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "raw_dataset_unmodified": true,
+  "split_configuration": {
+    "random_seed": 42,
+    "total_batteries": 139,
+    "train_batteries_count": 97,
+    "val_batteries_count": 21,
+    "test_batteries_count": 21,
+    "battery_overlap_count": 0,
+    "train_rows": 81545,
+    "val_rows": 16606,
+    "test_rows": 18512,
+    "total_rows": 116663
+  },
+  "preprocessing_parameters_train_fitted": {
+    "train_median_ir": 0.0163213845,
+    "delta_tmin": 3.0498747734530642,
+    "delta_tmax": 3.571058173574034,
+    "train_healthy_median_tavg": 34.29250431037961,
+    "train_healthy_median_tmin": 31.523711930502394
+  },
+  "feature_counts": {
+    "soh_features_in_X": 17,
+    "rul_features_in_X": 17,
+    "soh_dataset_total_cols": 19,
+    "rul_dataset_total_cols": 19,
+    "engineered_causal_features_count": 8,
+    "engineered_indicator_flags_count": 2
+  },
+  "anomaly_handling_verification": {
+    "ir_zero_rows_flagged": 4922,
+    "temp_sensor_fault_rows_flagged": 99,
+    "tmin_zero_rows_repaired_causal_ffill": 24,
+    "soh_gt_100_rows_retained": 10784,
+    "temp_inequality_violations_post_processing": 0
+  },
+  "validation_checks_18": {
+    "check_1_initial_hash": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+    "check_2_post_hash": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+    "check_3_hashes_identical": true,
+    "check_4_battery_overlap_zero": true,
+    "check_5_all_139_batteries": true,
+    "check_6_no_battery_id_in_X": true,
+    "check_7_soh_not_in_X_soh": true,
+    "check_8_rul_not_in_any_X": true,
+    "check_9_qdischarge_absent_from_X": true,
+    "check_10_ground_truth_soh_not_in_rul_X": true,
+    "check_11_train_only_fitting": true,
+    "check_12_no_future_leakage": true,
+    "check_13_no_bfill_used": true,
+    "check_14_row_counts_preserved": true,
+    "check_15_temp_inequality_violations": 0,
+    "check_15_temp_inequality_valid": true,
+    "check_16_ir_is_zero_count_matches": true,
+    "check_17_temp_sensor_fault_count_matches": true,
+    "check_18_soh_gt_100_preserved": true
+  },
+  "exported_files": [
+    "data/processed/train_soh.csv",
+    "data/processed/val_soh.csv",
+    "data/processed/test_soh.csv",
+    "data/processed/train_rul.csv",
+    "data/processed/val_rul.csv",
+    "data/processed/test_rul.csv",
+    "artifacts/preprocessors/preprocessor_soh.joblib",
+    "artifacts/preprocessors/preprocessor_rul.joblib",
+    "reports/data_audit/task_2k_feature_engineering.csv",
+    "reports/data_audit/task_2k_preprocessing_summary.json",
+    "reports/data_audit/task_2k_preprocessing_report.md"
+  ]
+}

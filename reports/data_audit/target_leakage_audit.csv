@@ -1,0 +1,23 @@
+column,target,leakage_type,status,correlation_pearson,correlation_spearman,prediction_time_availability,rationale_and_guidelines
+IR,SOH,None,Allowed,-0.1229,-0.1675,Available during charge cycle,Physical electrochemical measurement reflecting cell internal impedance growth as SEI layer thickens. Causal and non-leaky.
+QCharge,SOH,None,Allowed,0.9345,0.9077,Available upon charge phase completion,"Integrated charge capacity delivered to cell. Strong physical indicator of capacity retention, available without running a discharge cycle."
+QDischarge,SOH,Derived-Target / Algebraic Identity Leakage,Restricted,0.9668,0.9114,Available only after complete discharge cycle,"SOH is explicitly defined in source code as (QDischarge / initial_capacity)*100. Within any single battery, SOH/QDischarge is an exact constant (std=0.0). Using QDischarge trivializes SOH prediction into a linear scaling multiplier (~92.8), bypassing internal degradation modeling. Furthermore, discharge capacity is unavailable during fast-charge screening."
+Tavg,SOH,None,Allowed,-0.1385,-0.2772,Available at end of cycle,Thermal telemetry during cycling reflecting heat dissipation and internal overpotentials. Causal and non-leaky.
+Tmax,SOH,None,Allowed,-0.0149,-0.2811,Available at end of cycle,Peak surface temperature during cycle. Causal physical feature.
+Tmin,SOH,None,Allowed,-0.0405,-0.2458,Available at end of cycle,Minimum surface temperature during cycle. Causal physical feature.
+chargetime,SOH,None,Allowed,-0.0151,-0.3441,Available at end of charge phase,Time required to charge cell. Reflects charge acceptance rate and resistance increase over life. Causal and non-leaky.
+cycle,SOH,None (under Grouped split),Allowed,-0.5821,-0.8377,Available from BMS cycle counter,Operating cycle count representing battery age. Valid degradation feature provided splitting is strictly battery-grouped.
+battery_id,SOH,Identifier Leakage,Forbidden,-0.0316,-0.0766,Administrative metadata only,"Synthetic categorical identifier. If used as an ML feature, models memorize specific battery baseline capacities. Must strictly be used as a grouping key for Leave-Batteries-Out cross-validation."
+SOH,SOH,Direct Target Leakage,Forbidden,1.0,1.0,Target to predict,Ground truth target variable.
+RUL,SOH,Derived-Target / Temporal Leakage,Forbidden,0.5987,0.7381,Derived from future end-of-life cycle,"RUL is computed as max_cycle - cycle, embedding future terminal cycle information that is strictly unknown at prediction time."
+IR,RUL,None,Allowed,-0.0812,-0.3754,Available during charge cycle,Physical degradation indicator. Causal and non-leaky.
+QCharge,RUL,None,Allowed,0.5228,0.6202,Available at end of charge phase,Causal telemetry reflecting capacity decline towards end-of-life.
+QDischarge,RUL,None,Allowed,0.522,0.5949,Available if full discharge performed,"Measured capacity. Non-leaky for RUL, as RUL depends on future trajectory rather than static scaling."
+Tavg,RUL,None,Allowed,0.0284,-0.0018,Available at end of cycle,Thermal degradation telemetry. Causal and non-leaky.
+Tmax,RUL,None,Allowed,-0.0633,-0.1816,Available at end of cycle,Maximum thermal strain telemetry. Causal and non-leaky.
+Tmin,RUL,None,Allowed,0.0505,0.0812,Available at end of cycle,Minimum thermal telemetry. Causal and non-leaky.
+chargetime,RUL,None,Allowed,-0.0056,-0.2777,Available at end of charge phase,Charging kinetics duration. Causal and non-leaky.
+cycle,RUL,Temporal / Mathematical Dependency Leakage Risk,Restricted,-0.3854,-0.4991,Available from BMS cycle counter,"RUL = max_cycle - cycle. Per-battery Pearson correlation with RUL is exactly -1.0000. If evaluated under random row splits, models memorize the battery EOL intercept and predict RUL trivially. Cycle is ALLOWED ONLY under strict Battery-Grouped splitting where the model cannot memorize unseen battery lifespans."
+battery_id,RUL,Identifier Leakage,Forbidden,0.2211,0.1721,Administrative metadata only,"Direct identifier leakage. If included, trees memorize max_cycle per battery ID, predicting perfect RUL on seen batteries and failing completely on unseen batteries."
+SOH,RUL,Proxy / Measurement Dependency,Restricted,0.5987,0.7381,Requires estimation (SOH_pred) at inference,"True SOH is derived from early 50-cycle average. At inference on an unseen battery, ground truth SOH is unavailable unless predicted by the upstream SOH model (SOH_pred). Must use SOH_pred rather than true SOH."
+RUL,RUL,Direct Target Leakage,Forbidden,1.0,1.0,Target to predict,Ground truth target variable.

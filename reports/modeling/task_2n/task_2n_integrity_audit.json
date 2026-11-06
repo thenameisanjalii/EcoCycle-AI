@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-09-07 07:25:30",
+  "raw_dataset_path": "C:\\Users\\patid\\Desktop\\SecondSpark-AI_ML\\master_dataset.csv",
+  "raw_dataset_sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "raw_dataset_unmodified": true,
+  "soh_model_artifact_path": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\artifacts\\models\\task_2m\\soh\\xgboost_32f.joblib",
+  "rul_model_artifact_path": "C:\\Users\\patid\\.gemini\\antigravity\\scratch\\EcoCycle-AI\\artifacts\\models\\task_2m\\rul\\catboost_32f.joblib",
+  "soh_model_artifact_hash": "f5dbd8339e1a81c61806edbac127cd289b940e0c9654211383f750704d7614d1",
+  "rul_model_artifact_hash": "67ecc6e5767ab4c6306fd02cc0bcf9d6ebc9c2baad990ba5d4097ab74bf4d0dc",
+  "models_retrained": false,
+  "hyperparameters_changed": false,
+  "test_optimization_performed": false,
+  "target_leakage_detected": false,
+  "all_checks_passed": true
+}
