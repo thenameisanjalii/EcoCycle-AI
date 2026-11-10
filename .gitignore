@@ -81,6 +81,11 @@ artifacts/feature_metadata/*
 *.onnx
 *.bin
 
+# Allow required ML artifacts and data for presentation
+!ml/artifacts/models/**/*.joblib
+!ml/artifacts/preprocessors/**/*.joblib
+!ml/data/*.csv
+
 # Logs & Temporary Outputs
 *.log
 logs/
