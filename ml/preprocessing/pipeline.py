@@ -5,6 +5,43 @@ Task 2K Implementation
 import numpy as np
 import pandas as pd
 
+from ml.models.feature_engineering import generate_causal_features_for_battery
+from ml.models.feature_schema import ADVANCED_FEATURE_COLUMNS
+
+
+def prepare_inference_features(history_df: pd.DataFrame, preprocessor) -> pd.DataFrame:
+    """Transform raw battery history and return the canonical 32 model features."""
+    try:
+        transformed = preprocessor.transform(history_df, is_train=False)
+    except TypeError as exc:
+        if not hasattr(preprocessor, "feature_names_in_"):
+            raise exc
+        transformed = None
+
+    # The production artifact currently stores a sklearn scaler, while the
+    # causal preprocessor used during feature generation returns a DataFrame.
+    # Keep both artifact formats compatible without changing the inference
+    # contract.
+    if not isinstance(transformed, pd.DataFrame):
+        transformed = history_df.copy()
+        feature_names = getattr(preprocessor, "feature_names_in_", None)
+        if feature_names is None:
+            raise TypeError("Inference preprocessor must return a DataFrame.")
+        transformed = transformed.sort_values(["battery_id", "cycle"]).reset_index(drop=True)
+        transformed["IR_is_zero"] = (transformed["IR"] == 0.0).astype(int)
+        transformed["temp_sensor_fault"] = (transformed["battery_id"] == 85).astype(int)
+        for column in ("IR", "QCharge", "Tavg", "chargetime"):
+            lag = transformed.groupby("battery_id")[column].shift(1)
+            transformed[f"{column}_lag1"] = lag.fillna(transformed[column])
+            transformed[f"{column}_delta"] = transformed[column] - transformed[f"{column}_lag1"]
+        scaled = preprocessor.transform(transformed[list(feature_names)])
+        transformed[list(feature_names)] = transformed[list(feature_names)].astype(float)
+        transformed.loc[:, list(feature_names)] = scaled
+
+    engineered = generate_causal_features_for_battery(transformed)
+    return engineered[ADVANCED_FEATURE_COLUMNS].copy()
+
+
 class CausalBatteryPreprocessor:
     def __init__(self):
         self.params = {}

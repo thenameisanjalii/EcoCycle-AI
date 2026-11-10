@@ -87,13 +87,16 @@ The main endpoints are:
 | ------ | ------------------ | ------------------------------------------------ |
 | GET    | `/health`          | Check service and model availability             |
 | GET    | `/model-info`      | View model and dataset provenance                |
-| POST   | `/predict`         | Predict SOH and RUL for one record               |
+| POST   | `/predict`         | Predict SOH and RUL from raw battery history     |
 | POST   | `/predict/batch`   | Predict SOH and RUL for multiple records         |
 | POST   | `/decision/assess` | Return prediction and second-life recommendation |
 
-The API must receive all 32 causal features. `battery_id` and `row_id` are
-optional metadata fields. Do not send leakage fields such as `QDischarge`,
-`max_cycle`, `final_cycle`, `terminal_cycle`, `total_cycles`, `SOH`, or `RUL`.
+`/predict` accepts a JSON object with a `records` list containing raw historical
+battery records (`IR`, `QCharge`, `Tavg`, `Tmax`, `Tmin`, `chargetime`, `cycle`,
+and `battery_id`). The API computes the 32 causal features internally and
+predicts using the most recent cycle. `row_id` is optional metadata. Do not
+send leakage fields such as `QDischarge`, `max_cycle`, `final_cycle`,
+`terminal_cycle`, `total_cycles`, `SOH`, or `RUL`.
 
 ## Demonstration Scripts
 
@@ -146,8 +149,9 @@ python -m pytest -k leakage -v
 
 ## Sample Prediction Data
 
-Use the following complete JSON objects with `POST /predict` or
-`POST /decision/assess`. Every valid example contains all 32 required features.
+The existing complete 32-feature JSON objects remain valid for
+`POST /decision/assess`. For `POST /predict`, wrap raw historical records in a
+`records` list.
 
 ### Scenario A: Healthy Battery
 

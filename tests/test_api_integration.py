@@ -36,8 +36,8 @@ client = TestClient(app)
 
 @pytest.fixture
 def valid_cycle_payload():
-    """Generates a valid 32-feature battery telemetry record."""
-    payload = {col: 1.0 for col in ADVANCED_FEATURE_COLUMNS}
+    """Generates a valid raw battery telemetry record."""
+    payload = {col: 1.0 for col in ADVANCED_FEATURE_COLUMNS[:17]}
     payload["cycle"] = 120.0
     payload["IR"] = 0.0085
     payload["QCharge"] = 1.065
@@ -55,8 +55,6 @@ def valid_cycle_payload():
     payload["Tavg_delta"] = 0.1
     payload["chargetime_lag1"] = 40.6
     payload["chargetime_delta"] = -0.1
-    payload["cum_capacity_fade_rate"] = 0.00025
-    payload["cum_resistance_growth_rate"] = 0.00004
     payload["battery_id"] = 42
     payload["row_id"] = "test_cell_042"
     return payload
@@ -87,7 +85,7 @@ def test_02_model_info_endpoint():
 
 # 3. Valid SOH/RUL prediction
 def test_03_valid_prediction(valid_cycle_payload):
-    resp = client.post("/predict", json=valid_cycle_payload)
+    resp = client.post("/predict", json={"records": [valid_cycle_payload]})
     assert resp.status_code == 200
     data = resp.json()
     assert data["status"] == "success"
@@ -102,7 +100,7 @@ def test_03_valid_prediction(valid_cycle_payload):
 def test_04_missing_feature_rejection(valid_cycle_payload):
     bad_payload = valid_cycle_payload.copy()
     del bad_payload["QCharge_lag1"]
-    resp = client.post("/predict", json=bad_payload)
+    resp = client.post("/predict", json={"records": [bad_payload]})
     # Pydantic or input validator catches missing field
     assert resp.status_code in [400, 422]
 
@@ -111,7 +109,7 @@ def test_04_missing_feature_rejection(valid_cycle_payload):
 def test_05_nan_rejection(valid_cycle_payload):
     bad_payload = valid_cycle_payload.copy()
     bad_payload["IR_roll_mean_5"] = None  # JSON null parses as NaN
-    resp = client.post("/predict", json=bad_payload)
+    resp = client.post("/predict", json={"records": [bad_payload]})
     assert resp.status_code in [400, 422]
 
 
@@ -119,7 +117,7 @@ def test_05_nan_rejection(valid_cycle_payload):
 def test_06_inf_rejection(valid_cycle_payload):
     bad_payload = valid_cycle_payload.copy()
     bad_payload["thermal_dissipation_rate"] = "Infinity"
-    resp = client.post("/predict", json=bad_payload)
+    resp = client.post("/predict", json={"records": [bad_payload]})
     assert resp.status_code in [400, 422]
 
 
@@ -127,7 +125,7 @@ def test_06_inf_rejection(valid_cycle_payload):
 def test_07_qdischarge_leakage_rejection(valid_cycle_payload):
     bad_payload = valid_cycle_payload.copy()
     bad_payload["QDischarge"] = 1.05
-    resp = client.post("/predict", json=bad_payload)
+    resp = client.post("/predict", json={"records": [bad_payload]})
     assert resp.status_code == 422
     assert "leakage" in resp.text.lower()
 
@@ -136,7 +134,7 @@ def test_07_qdischarge_leakage_rejection(valid_cycle_payload):
 def test_08_max_cycle_leakage_rejection(valid_cycle_payload):
     bad_payload = valid_cycle_payload.copy()
     bad_payload["max_cycle"] = 1200
-    resp = client.post("/predict", json=bad_payload)
+    resp = client.post("/predict", json={"records": [bad_payload]})
     assert resp.status_code == 422
     assert "leakage" in resp.text.lower()
 
@@ -145,7 +143,7 @@ def test_08_max_cycle_leakage_rejection(valid_cycle_payload):
 def test_09_cross_target_leakage_rejection(valid_cycle_payload):
     bad_payload = valid_cycle_payload.copy()
     bad_payload["SOH"] = 92.5
-    resp = client.post("/predict", json=bad_payload)
+    resp = client.post("/predict", json={"records": [bad_payload]})
     assert resp.status_code == 422
     assert "leakage" in resp.text.lower()
 
@@ -154,15 +152,15 @@ def test_09_cross_target_leakage_rejection(valid_cycle_payload):
 def test_10_invalid_physical_value(valid_cycle_payload):
     bad_payload = valid_cycle_payload.copy()
     bad_payload["cycle"] = 0.0  # cycle must be >= 1
-    resp = client.post("/predict", json=bad_payload)
+    resp = client.post("/predict", json={"records": [bad_payload]})
     assert resp.status_code == 400
     assert "physical bound" in resp.text.lower()
 
 
 # 11. Deterministic repeated prediction
 def test_11_deterministic_repeated_prediction(valid_cycle_payload):
-    resp1 = client.post("/predict", json=valid_cycle_payload)
-    resp2 = client.post("/predict", json=valid_cycle_payload)
+    resp1 = client.post("/predict", json={"records": [valid_cycle_payload]})
+    resp2 = client.post("/predict", json={"records": [valid_cycle_payload]})
     assert resp1.status_code == 200 and resp2.status_code == 200
     d1 = resp1.json()["predictions"]
     d2 = resp2.json()["predictions"]
@@ -174,6 +172,11 @@ def test_11_deterministic_repeated_prediction(valid_cycle_payload):
 def test_12_batch_prediction(valid_cycle_payload):
     p1 = valid_cycle_payload.copy()
     p2 = valid_cycle_payload.copy()
+    derived_features = {
+        col: 1.0 for col in ADVANCED_FEATURE_COLUMNS[17:]
+    }
+    p1.update(derived_features)
+    p2.update(derived_features)
     p2["cycle"] = 121.0
     p2["row_id"] = "cell_row_2"
 
@@ -188,7 +191,7 @@ def test_12_batch_prediction(valid_cycle_payload):
 
 # 13. Metadata preservation
 def test_13_metadata_preservation(valid_cycle_payload):
-    resp = client.post("/predict", json=valid_cycle_payload)
+    resp = client.post("/predict", json={"records": [valid_cycle_payload]})
     assert resp.status_code == 200
     meta = resp.json()["metadata"]
     assert meta["battery_id"] == 42
@@ -197,7 +200,7 @@ def test_13_metadata_preservation(valid_cycle_payload):
 
 # 14. Raw prediction preservation (unclipped)
 def test_14_raw_prediction_preservation(valid_cycle_payload):
-    resp = client.post("/predict", json=valid_cycle_payload)
+    resp = client.post("/predict", json={"records": [valid_cycle_payload]})
     assert resp.status_code == 200
     preds = resp.json()["predictions"]
     # Raw values are floats and must exist independently of display
@@ -209,7 +212,7 @@ def test_14_raw_prediction_preservation(valid_cycle_payload):
 
 # 15. Display bounding
 def test_15_display_bounding(valid_cycle_payload):
-    resp = client.post("/predict", json=valid_cycle_payload)
+    resp = client.post("/predict", json={"records": [valid_cycle_payload]})
     assert resp.status_code == 200
     preds = resp.json()["predictions"]
     assert 0.0 <= preds["soh"]["display"] <= 100.0
@@ -234,5 +237,5 @@ def test_17_model_artifact_hash_verification():
 
 # 18. Malformed request handling
 def test_18_malformed_request_handling():
-    resp = client.post("/predict", json={"garbage": "data"})
+    resp = client.post("/predict", json={"records": [{"garbage": "data"}]})
     assert resp.status_code in [400, 422]

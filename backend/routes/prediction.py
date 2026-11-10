@@ -7,9 +7,12 @@ import os
 from typing import Dict, Any, List
 from fastapi import APIRouter, HTTPException, status, Request
 import pandas as pd
+import joblib
 
 from ml.models.final_registry import get_default_registry, FinalModelRegistry, ModelRegistryError
 from ml.models.input_validation import validate_inference_input, InputValidationError, DataLeakageError
+from ml.models.config import PREPROCESSOR_PATHS
+from ml.preprocessing.pipeline import prepare_inference_features
 from ml.models.inference import (
     predict_all,
     predict_batch,
@@ -18,6 +21,7 @@ from ml.models.inference import (
 )
 from backend.schemas.telemetry import (
     BatteryCycleTelemetry,
+    HistoricalBatteryRequest,
     BatchTelemetryRequest,
     PredictionResponse,
     BatchPredictionResponse,
@@ -65,16 +69,35 @@ def get_model_info() -> Dict[str, Any]:
 
 
 @router.post("/predict", response_model=PredictionResponse, status_code=status.HTTP_200_OK)
-def predict_single_cycle(telemetry: BatteryCycleTelemetry) -> Dict[str, Any]:
+def predict_single_cycle(history: HistoricalBatteryRequest) -> Dict[str, Any]:
     """
-    Accepts one battery-cycle telemetry record (32 causal features + optional metadata).
+    Accepts raw historical battery-cycle records and derives the 32 causal features.
     Returns authoritative raw predictions, presentation display values, regime interpretation, and provenance.
     """
-    record_dict = telemetry.model_dump()
+    if not history.records:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Historical battery record list is empty."
+        )
+    if len(history.records) > MAX_BATCH_SIZE:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"History size {len(history.records)} exceeds maximum permissible limit of {MAX_BATCH_SIZE} records."
+        )
+    if any(record.cycle < 1.0 for record in history.records):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Input validation error: physical bound violation for feature 'cycle'."
+        )
 
-    # 1. Validation & Leakage Check
     try:
-        X, metadata_df = validate_inference_input(record_dict)
+        history_df = pd.DataFrame([record.model_dump() for record in history.records])
+        preprocessor = joblib.load(PREPROCESSOR_PATHS["soh"])
+        features_df = prepare_inference_features(history_df, preprocessor).tail(1)
+        X, metadata_df = validate_inference_input(
+            features_df,
+            enforce_physical_bounds=False
+        )
     except DataLeakageError as dle:
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
@@ -85,20 +108,29 @@ def predict_single_cycle(telemetry: BatteryCycleTelemetry) -> Dict[str, Any]:
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Input validation error: {ive}"
         )
+    except (KeyError, TypeError, ValueError, OSError) as exc:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Unable to prepare historical records for inference: {exc}"
+        )
 
-    # 2. Inference via Certified Engine
-    res = predict_all(X)
+    # 1. Inference via Certified Engine
+    res = predict_all(X, enforce_physical_bounds=False)
     raw_soh = float(res["predicted_soh"])
     raw_rul = float(res["predicted_rul"])
 
-    # 3. Presentation Bounding (Non-Destructive)
+    # 2. Presentation Bounding (Non-Destructive)
     pres = format_presentation_output(raw_soh, raw_rul)
 
-    # 4. Degradation Interpretation
+    # 3. Degradation Interpretation
     interp = interpret_battery_health(raw_soh, raw_rul)
 
-    # 5. Build Structured Response
-    client_meta = {k: v for k, v in record_dict.items() if k in ["battery_id", "row_id"] and v is not None}
+    # 4. Build Structured Response
+    latest_record = history_df.sort_values("cycle").iloc[-1].to_dict()
+    client_meta = {
+        k: v for k, v in latest_record.items()
+        if k in ["battery_id", "row_id"] and v is not None
+    }
 
     return {
         "status": "success",

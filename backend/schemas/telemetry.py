@@ -5,6 +5,7 @@ Task 2N — Production Inference API & Application Integration
 
 from typing import Dict, Any, Optional, List, Union
 from pydantic import BaseModel, Field, ConfigDict
+from backend.schemas.prediction_schema import RawTelemetryRecord, HistoricalBatteryRequest
 
 
 class BatteryCycleTelemetry(BaseModel):

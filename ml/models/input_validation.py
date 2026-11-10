@@ -36,7 +36,8 @@ class DataLeakageError(ValueError):
 
 def validate_inference_input(
     data: Union[Dict[str, Any], List[Dict[str, Any]], pd.Series, pd.DataFrame],
-    target: Optional[str] = None
+    target: Optional[str] = None,
+    enforce_physical_bounds: bool = True
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """
     Validates and standardizes input data for model inference.
@@ -140,17 +141,18 @@ def validate_inference_input(
         )
 
     # 8. Physical Admissibility Bounds Checking
-    for col, (lower_bound, upper_bound) in PHYSICAL_VALUE_BOUNDS.items():
-        if col in X.columns:
-            vals = X[col].values
-            if (vals < lower_bound).any() or (vals > upper_bound).any():
-                invalid_min = vals.min()
-                invalid_max = vals.max()
-                raise InputValidationError(
-                    f"Physical bound violation for feature '{col}'!\n"
-                    f"Observed range: [{invalid_min:.4f}, {invalid_max:.4f}]\n"
-                    f"Permissible range: [{lower_bound}, {upper_bound}]. "
-                    f"Data indicates severe sensor anomaly, corrupted values, or impossible physical state."
-                )
+    if enforce_physical_bounds:
+        for col, (lower_bound, upper_bound) in PHYSICAL_VALUE_BOUNDS.items():
+            if col in X.columns:
+                vals = X[col].values
+                if (vals < lower_bound).any() or (vals > upper_bound).any():
+                    invalid_min = vals.min()
+                    invalid_max = vals.max()
+                    raise InputValidationError(
+                        f"Physical bound violation for feature '{col}'!\n"
+                        f"Observed range: [{invalid_min:.4f}, {invalid_max:.4f}]\n"
+                        f"Permissible range: [{lower_bound}, {upper_bound}]. "
+                        f"Data indicates severe sensor anomaly, corrupted values, or impossible physical state."
+                    )
 
     return X, metadata_df

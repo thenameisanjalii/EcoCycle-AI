@@ -80,7 +80,8 @@ def predict_rul(
 
 def predict_all(
     input_data: Union[Dict[str, Any], List[Dict[str, Any]], pd.Series, pd.DataFrame],
-    registry: Optional[FinalModelRegistry] = None
+    registry: Optional[FinalModelRegistry] = None,
+    enforce_physical_bounds: bool = True
 ) -> Dict[str, Any]:
     """
     Predicts both SOH and RUL for the provided input data, returning a structured
@@ -97,7 +98,11 @@ def predict_all(
             - model_versions: metadata dictionary
     """
     reg = registry or get_default_registry()
-    X, _ = validate_inference_input(input_data, target=None)
+    X, _ = validate_inference_input(
+        input_data,
+        target=None,
+        enforce_physical_bounds=enforce_physical_bounds
+    )
 
     soh_model = reg.load_model("soh")
     rul_model = reg.load_model("rul")
