@@ -1,0 +1,33 @@
+{
+  "pipeline_version": "2.0.1",
+  "registry_sha256": "72b52eda2ff4c0e90226b6d46ad983c0c54567858a8cfdd23ea3f03ec53023be",
+  "contract": "single",
+  "soh_definition": "Existing SOH = measured QDischarge / mean QDischarge at cycles <=50 *100; reference not a predictor.",
+  "rul_endpoint": {
+    "threshold_soh": 80.0,
+    "confirmation_consecutive_cycles": 3,
+    "event_time": "Nth consecutive observed cycle below threshold; exact consecutive cycle numbers required; no backdating",
+    "regression_cohort": "Confirmed events only; censored trajectories excluded from regression; selection-biased conditional estimate, not population survival."
+  },
+  "results": [
+    {
+      "row_index": 0,
+      "metadata": {
+        "battery_id": 2
+      },
+      "soh": {
+        "raw": 99.78622436523438,
+        "display": 99.78622436523438,
+        "units": "%"
+      },
+      "rul": null,
+      "reliability": {
+        "status": "within_feature_support_not_a_confidence_interval",
+        "warnings": [
+          "No measured SOH below 70%; reliable 50-70% accuracy is unsupported.",
+          "RUL requires observed history and is unavailable for single assessment."
+        ]
+      }
+    }
+  ]
+}

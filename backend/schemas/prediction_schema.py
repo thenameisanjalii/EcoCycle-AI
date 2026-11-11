@@ -8,7 +8,7 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 class RawTelemetryRecord(BaseModel):
     """Validated telemetry and causal-history values accepted by prediction."""
 
-    model_config = ConfigDict(extra='forbid')
+    model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
 
     @model_validator(mode='before')
     @classmethod

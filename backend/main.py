@@ -11,6 +11,7 @@ from ml.models.input_validation import InputValidationError, DataLeakageError
 from ml.models.final_registry import ModelRegistryError
 from backend.routes.prediction import router
 from backend.routes.decision import decision_router
+from backend.routes.pipeline_v2 import router as pipeline_v2_router
 
 app = FastAPI(
     title="EcoCycle AI — Battery Health Prediction & Lifecycle API",
@@ -74,6 +75,16 @@ async def model_registry_exception_handler(request: Request, exc: ModelRegistryE
 
 
 # Root Endpoint
+@app.middleware("http")
+async def mark_legacy_targets(request, call_next):
+    response = await call_next(request)
+    if request.url.path in {"/predict", "/predict/batch", "/decision/assess"}:
+        response.headers["Deprecation"] = "true"
+        response.headers["Link"] = '</v2/predict>; rel="successor-version"'
+        response.headers["Warning"] = '299 EcoCycle "Legacy RUL predicts recording end, not confirmed SOH failure."'
+    return response
+
+
 @app.get("/", tags=["General"])
 def read_root():
     return {
@@ -93,3 +104,4 @@ def read_root():
 # Include Routes
 app.include_router(router)
 app.include_router(decision_router)
+app.include_router(pipeline_v2_router)

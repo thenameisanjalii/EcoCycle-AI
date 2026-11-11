@@ -155,4 +155,7 @@ def validate_inference_input(
                         f"Data indicates severe sensor anomaly, corrupted values, or impossible physical state."
                     )
 
+        if ((X["Tmin"] > X["Tavg"]) | (X["Tavg"] > X["Tmax"])).any():
+            raise InputValidationError("Physical bound violation: temperatures must satisfy Tmin <= Tavg <= Tmax.")
+
     return X, metadata_df

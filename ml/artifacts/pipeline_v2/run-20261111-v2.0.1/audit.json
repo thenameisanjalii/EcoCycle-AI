@@ -1,0 +1,128 @@
+{
+  "dataset_sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "rows": 116663,
+  "batteries": 139,
+  "soh_min": 74.55272866405737,
+  "soh_max": 104.79245284946096,
+  "soh_below70": 0,
+  "soh_formula_max_abs_error": 7.105427357601002e-14,
+  "legacy_rul_formula_max_abs_error": 0.0,
+  "duplicate_battery_cycles": 0,
+  "zero_IR": 4922,
+  "temperature_invalid_or_zero": 123,
+  "chargetime_quantiles": {
+    "0": 6.474444999999832,
+    "0.5": 10.314278333333156,
+    "0.95": 13.425616666666851,
+    "0.99": 22.07504836666747,
+    "0.995": 24.215728400001264,
+    "0.999": 30.725351246667316,
+    "1": 3934.705166666666
+  },
+  "chargetime_over60": 17,
+  "chargetime_extremes": [
+    {
+      "battery_id": 61,
+      "cycle": 50.0,
+      "chargetime": 3934.705166666666
+    },
+    {
+      "battery_id": 81,
+      "cycle": 77.0,
+      "chargetime": 3934.1237716666665
+    },
+    {
+      "battery_id": 93,
+      "cycle": 48.0,
+      "chargetime": 3933.840303333333
+    },
+    {
+      "battery_id": 75,
+      "cycle": 49.0,
+      "chargetime": 3933.736146666666
+    },
+    {
+      "battery_id": 88,
+      "cycle": 51.0,
+      "chargetime": 3933.623046666667
+    },
+    {
+      "battery_id": 79,
+      "cycle": 71.0,
+      "chargetime": 3933.455188333333
+    },
+    {
+      "battery_id": 77,
+      "cycle": 52.0,
+      "chargetime": 3933.4007583333337
+    },
+    {
+      "battery_id": 73,
+      "cycle": 51.0,
+      "chargetime": 3933.121078333333
+    },
+    {
+      "battery_id": 87,
+      "cycle": 49.0,
+      "chargetime": 3932.943618333333
+    },
+    {
+      "battery_id": 67,
+      "cycle": 50.0,
+      "chargetime": 3932.592796666666
+    },
+    {
+      "battery_id": 91,
+      "cycle": 70.0,
+      "chargetime": 3932.50703
+    },
+    {
+      "battery_id": 16,
+      "cycle": 13.0,
+      "chargetime": 419.87335500000006
+    },
+    {
+      "battery_id": 15,
+      "cycle": 13.0,
+      "chargetime": 419.7895399999999
+    },
+    {
+      "battery_id": 6,
+      "cycle": 13.0,
+      "chargetime": 418.81941000000006
+    },
+    {
+      "battery_id": 42,
+      "cycle": 887.0,
+      "chargetime": 280.98125833333376
+    },
+    {
+      "battery_id": 25,
+      "cycle": 902.0,
+      "chargetime": 278.9766833333337
+    },
+    {
+      "battery_id": 4,
+      "cycle": 879.0,
+      "chargetime": 278.28135833333266
+    },
+    {
+      "battery_id": 72,
+      "cycle": 508.0,
+      "chargetime": 41.63706500000165
+    },
+    {
+      "battery_id": 89,
+      "cycle": 494.0,
+      "chargetime": 40.98187166666612
+    },
+    {
+      "battery_id": 77,
+      "cycle": 425.0,
+      "chargetime": 40.77537000000011
+    }
+  ],
+  "charge_time_units": "Minutes per repository provenance. CSV alone cannot confirm units or distinguish rests from logging faults. No automatic conversion; >train q99.5 treated as missing and flagged.",
+  "default_confirmed_failures": 39,
+  "default_censored_batteries": 100
+}

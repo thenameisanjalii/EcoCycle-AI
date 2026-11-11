@@ -1,0 +1,95 @@
+{
+  "note": "Current-QCharge-only perturbation of archived measured feature rows; history unchanged and intentionally inconsistent with the perturbation. Not an accuracy evaluation or manufactured degraded label.",
+  "rows": [
+    {
+      "anchor": "first",
+      "cycle": 2.0,
+      "QCharge": 0.2,
+      "predicted_soh": 92.25102233886719
+    },
+    {
+      "anchor": "first",
+      "cycle": 2.0,
+      "QCharge": 0.4,
+      "predicted_soh": 92.25102233886719
+    },
+    {
+      "anchor": "first",
+      "cycle": 2.0,
+      "QCharge": 0.6,
+      "predicted_soh": 92.25102233886719
+    },
+    {
+      "anchor": "first",
+      "cycle": 2.0,
+      "QCharge": 0.8,
+      "predicted_soh": 92.25102233886719
+    },
+    {
+      "anchor": "first",
+      "cycle": 2.0,
+      "QCharge": 1.0,
+      "predicted_soh": 96.58023071289062
+    },
+    {
+      "anchor": "middle",
+      "cycle": 649.0,
+      "QCharge": 0.2,
+      "predicted_soh": 83.22309875488281
+    },
+    {
+      "anchor": "middle",
+      "cycle": 649.0,
+      "QCharge": 0.4,
+      "predicted_soh": 83.22309875488281
+    },
+    {
+      "anchor": "middle",
+      "cycle": 649.0,
+      "QCharge": 0.6,
+      "predicted_soh": 83.22309875488281
+    },
+    {
+      "anchor": "middle",
+      "cycle": 649.0,
+      "QCharge": 0.8,
+      "predicted_soh": 83.22309875488281
+    },
+    {
+      "anchor": "middle",
+      "cycle": 649.0,
+      "QCharge": 1.0,
+      "predicted_soh": 88.9570083618164
+    },
+    {
+      "anchor": "last",
+      "cycle": 1800.0,
+      "QCharge": 0.2,
+      "predicted_soh": 82.14549255371094
+    },
+    {
+      "anchor": "last",
+      "cycle": 1800.0,
+      "QCharge": 0.4,
+      "predicted_soh": 82.14549255371094
+    },
+    {
+      "anchor": "last",
+      "cycle": 1800.0,
+      "QCharge": 0.6,
+      "predicted_soh": 82.14549255371094
+    },
+    {
+      "anchor": "last",
+      "cycle": 1800.0,
+      "QCharge": 0.8,
+      "predicted_soh": 82.14549255371094
+    },
+    {
+      "anchor": "last",
+      "cycle": 1800.0,
+      "QCharge": 1.0,
+      "predicted_soh": 89.13933563232422
+    }
+  ]
+}

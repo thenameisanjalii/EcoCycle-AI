@@ -1,0 +1,218 @@
+{
+  "single_soh": [
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 1.0
+      },
+      "validation": {
+        "n": 16606,
+        "mae": 0.8143509921680699,
+        "rmse": 1.2515666548258932
+      }
+    },
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 100.0
+      },
+      "validation": {
+        "n": 16606,
+        "mae": 0.8102090333049075,
+        "rmse": 1.2484745081057051
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 4,
+        "best_iteration": 136
+      },
+      "validation": {
+        "n": 16606,
+        "mae": 0.4837642740817397,
+        "rmse": 0.7398285481018304
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 7,
+        "best_iteration": 161
+      },
+      "validation": {
+        "n": 16606,
+        "mae": 0.415043100835793,
+        "rmse": 0.6844208084373193
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 4,
+        "best_iteration": 218
+      },
+      "validation": {
+        "n": 16606,
+        "mae": 0.48882407800570116,
+        "rmse": 0.7629381896131147
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 7,
+        "best_iteration": 166
+      },
+      "validation": {
+        "n": 16606,
+        "mae": 0.474437546953593,
+        "rmse": 0.7763864468947242
+      }
+    }
+  ],
+  "history_soh": [
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 1.0
+      },
+      "validation": {
+        "n": 16585,
+        "mae": 0.7766622463906868,
+        "rmse": 1.195784210402573
+      }
+    },
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 100.0
+      },
+      "validation": {
+        "n": 16585,
+        "mae": 0.7748359513214419,
+        "rmse": 1.185616086339123
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 4,
+        "best_iteration": 120
+      },
+      "validation": {
+        "n": 16585,
+        "mae": 0.4365330674051411,
+        "rmse": 0.6489522382984131
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 7,
+        "best_iteration": 415
+      },
+      "validation": {
+        "n": 16585,
+        "mae": 0.3623242597241272,
+        "rmse": 0.5830122386795558
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 4,
+        "best_iteration": 278
+      },
+      "validation": {
+        "n": 16585,
+        "mae": 0.4685885226853866,
+        "rmse": 0.7113669219830048
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 7,
+        "best_iteration": 340
+      },
+      "validation": {
+        "n": 16585,
+        "mae": 0.4389115353623018,
+        "rmse": 0.7028339124825523
+      }
+    }
+  ],
+  "history_rul": [
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 1.0
+      },
+      "validation": {
+        "n": 6613,
+        "mae": 141.99684154166027,
+        "rmse": 169.43536079102122
+      }
+    },
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 100.0
+      },
+      "validation": {
+        "n": 6613,
+        "mae": 142.94820569739733,
+        "rmse": 170.80462918122092
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 4,
+        "best_iteration": 76
+      },
+      "validation": {
+        "n": 6613,
+        "mae": 68.25822909545667,
+        "rmse": 111.91073811040914
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 7,
+        "best_iteration": 44
+      },
+      "validation": {
+        "n": 6613,
+        "mae": 76.4310345155793,
+        "rmse": 129.48879677331578
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 4,
+        "best_iteration": 106
+      },
+      "validation": {
+        "n": 6613,
+        "mae": 64.57843549323043,
+        "rmse": 95.30735874564506
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 7,
+        "best_iteration": 111
+      },
+      "validation": {
+        "n": 6613,
+        "mae": 67.74932108821692,
+        "rmse": 108.74938118214874
+      }
+    }
+  ]
+}

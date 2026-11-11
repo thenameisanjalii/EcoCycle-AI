@@ -1,0 +1,37 @@
+{
+  "pipeline_version": "2.0.1",
+  "registry_sha256": "72b52eda2ff4c0e90226b6d46ad983c0c54567858a8cfdd23ea3f03ec53023be",
+  "contract": "history",
+  "soh_definition": "Existing SOH = measured QDischarge / mean QDischarge at cycles <=50 *100; reference not a predictor.",
+  "rul_endpoint": {
+    "threshold_soh": 80.0,
+    "confirmation_consecutive_cycles": 3,
+    "event_time": "Nth consecutive observed cycle below threshold; exact consecutive cycle numbers required; no backdating",
+    "regression_cohort": "Confirmed events only; censored trajectories excluded from regression; selection-biased conditional estimate, not population survival."
+  },
+  "results": [
+    {
+      "row_index": 19,
+      "metadata": {
+        "battery_id": 2
+      },
+      "soh": {
+        "raw": 100.025146484375,
+        "display": 100.0,
+        "units": "%"
+      },
+      "rul": {
+        "raw": 391.7747125066997,
+        "display": 391.7747125066997,
+        "units": "cycles"
+      },
+      "reliability": {
+        "status": "within_feature_support_not_a_confidence_interval",
+        "warnings": [
+          "No measured SOH below 70%; reliable 50-70% accuracy is unsupported.",
+          "RUL is conditional on the confirmed-failure training cohort; censoring selection bias remains."
+        ]
+      }
+    }
+  ]
+}

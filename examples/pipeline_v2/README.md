@@ -1,0 +1,1 @@
+These are measured records for held-out battery 2 from master_dataset.csv, with targets/discharge capacity removed. single.csv contains its first recorded cycle; history.csv contains its first 20 recorded cycles. No values or labels were synthesized.

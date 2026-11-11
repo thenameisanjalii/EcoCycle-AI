@@ -14,7 +14,7 @@ class BatteryCycleTelemetry(BaseModel):
     Requires the exact 32 causal features established in Task 2M.4.
     Optional metadata (battery_id, row_id) is preserved without entering feature matrix X.
     """
-    model_config = ConfigDict(extra="allow")
+    model_config = ConfigDict(extra="allow", allow_inf_nan=False)
 
     # Raw Physical Measurements (6)
     IR: float = Field(..., description="Internal resistance in Ohms")

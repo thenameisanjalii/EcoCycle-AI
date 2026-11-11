@@ -1,0 +1,11 @@
+{
+  "dataset": "D:\\MCA\\Sem 5\\Minor Project\\EcoCycle-AI\\EcoCycle-AI\\ml\\data\\master_dataset.csv",
+  "output": "ml/artifacts/pipeline_v2/my-run",
+  "seed": 42,
+  "train_fraction": 0.7,
+  "validation_fraction": 0.15,
+  "threshold": 80.0,
+  "confirmation": 3,
+  "iterations": 500,
+  "threads": 4
+}

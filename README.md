@@ -1,5 +1,12 @@
 # EcoCycle-AI
 
+The measurement-based SOH/RUL pipeline is now **v2**. Start with the
+[v2 contracts, training/startup commands, definitions and limitations](docs/soh-rul-pipeline-v2.md)
+and the [measured evaluation](reports/pipeline_v2/run-20261111-v2.0.1/evaluation.md).
+The frontend uses `/v2/predict` and requires `ECOCYCLE_V2_BUNDLE` on the backend.
+Original CSVs and models are preserved. The API contract below documents the
+legacy compatibility routes: their RUL target is recording end, not failure.
+
 ## SOH, RUL, and Second-Life Prediction for EV Batteries
 
 EcoCycle-AI is a machine-learning backend for assessing electric-vehicle battery
@@ -119,8 +126,9 @@ uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
 pytest
 ```
 
-The complete test suite contains 85 passing tests covering schemas, leakage
-protection, feature preparation, model inference, and API behavior.
+The suite covers schemas, leakage protection, causal preprocessing, censoring,
+model integrity, offline/API parity and legacy API behavior. The frontend also
+has request-race regression checks (`npm.cmd --prefix frontend test`).
 
 ## Example `/predict` Request
 

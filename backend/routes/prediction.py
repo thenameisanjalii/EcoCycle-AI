@@ -8,6 +8,7 @@ from typing import Dict, Any, List
 from fastapi import APIRouter, HTTPException, status, Request
 import pandas as pd
 import joblib
+import numpy as np
 
 from ml.models.final_registry import get_default_registry, FinalModelRegistry, ModelRegistryError
 from ml.models.input_validation import validate_inference_input, InputValidationError, DataLeakageError
@@ -90,15 +91,28 @@ def predict_single_cycle(history: HistoricalBatteryRequest) -> Dict[str, Any]:
             detail="Input validation error: physical bound violation for feature 'cycle'."
         )
 
+    raw_history = pd.DataFrame([record.model_dump() for record in history.records])
+    raw_history["battery_id"] = raw_history.battery_id.astype(str)
+    if raw_history.battery_id.astype(str).nunique() != 1:
+        raise HTTPException(400, "A history request must contain exactly one battery.")
+    if raw_history.duplicated(["battery_id", "cycle"]).any():
+        raise HTTPException(400, "Duplicate cycles within a battery are ambiguous.")
+    # Validate raw physical channels BEFORE engineering; no bypass of checks.
+    from ml.models.feature_schema import PHYSICAL_VALUE_BOUNDS
+    for column, (lower, upper) in PHYSICAL_VALUE_BOUNDS.items():
+        values = raw_history[column].to_numpy(dtype=float)
+        if not np.isfinite(values).all() or (values < lower).any() or (values > upper).any():
+            raise HTTPException(400, f"Physical bound violation for feature '{column}'. Use /v2/predict for sensor-fault cleaning.")
+
     try:
         history_df = pd.DataFrame([record.model_dump() for record in history.records])
         preprocessor = joblib.load(PREPROCESSOR_PATHS["soh"])
-        features_df = prepare_inference_features(history_df, preprocessor)
+        features_df = prepare_inference_features(history_df.assign(battery_id=history_df.battery_id.astype(str)), preprocessor)
         latest_index = features_df["cycle"].idxmax()
         features_df = features_df.loc[[latest_index]]
         X, metadata_df = validate_inference_input(
             features_df,
-            enforce_physical_bounds=False
+            enforce_physical_bounds=True
         )
     except DataLeakageError as dle:
         raise HTTPException(
@@ -117,7 +131,7 @@ def predict_single_cycle(history: HistoricalBatteryRequest) -> Dict[str, Any]:
         )
 
     # 1. Inference via Certified Engine
-    res = predict_all(X, enforce_physical_bounds=False)
+    res = predict_all(X)
     raw_soh = float(res["predicted_soh"])
     raw_rul = float(res["predicted_rul"])
 
@@ -191,8 +205,8 @@ def predict_batch_cycles(batch: BatchTelemetryRequest) -> Dict[str, Any]:
 
     # Run Certified Inference
     res = predict_all(X)
-    soh_list = res["predicted_soh"]
-    rul_list = res["predicted_rul"]
+    soh_list = np.atleast_1d(res["predicted_soh"])
+    rul_list = np.atleast_1d(res["predicted_rul"])
 
     # Format Output List
     results = []
