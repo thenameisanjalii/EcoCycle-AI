@@ -5,41 +5,43 @@ Task 2K Implementation
 import numpy as np
 import pandas as pd
 
-from ml.models.feature_engineering import generate_causal_features_for_battery
-from ml.models.feature_schema import ADVANCED_FEATURE_COLUMNS
+from ml.models.feature_engineering import generate_causal_features_dataset
+from ml.models.feature_schema import (
+    ADVANCED_FEATURE_COLUMNS,
+    BASELINE_FEATURE_COLUMNS,
+)
+
+
+_SCALER_INPUT_COLUMNS = [
+    column for column in BASELINE_FEATURE_COLUMNS
+    if column not in {"IR_is_zero", "temp_sensor_fault"}
+]
 
 
 def prepare_inference_features(history_df: pd.DataFrame, preprocessor) -> pd.DataFrame:
-    """Transform raw battery history and return the canonical 32 model features."""
-    try:
-        transformed = preprocessor.transform(history_df, is_train=False)
-    except TypeError as exc:
-        if not hasattr(preprocessor, "feature_names_in_"):
-            raise exc
-        transformed = None
+    """Build the exact raw 32-feature representation used to train the models.
 
-    # The production artifact currently stores a sklearn scaler, while the
-    # causal preprocessor used during feature generation returns a DataFrame.
-    # Keep both artifact formats compatible without changing the inference
-    # contract.
-    if not isinstance(transformed, pd.DataFrame):
-        transformed = history_df.copy()
-        feature_names = getattr(preprocessor, "feature_names_in_", None)
-        if feature_names is None:
-            raise TypeError("Inference preprocessor must return a DataFrame.")
-        transformed = transformed.sort_values(["battery_id", "cycle"]).reset_index(drop=True)
-        transformed["IR_is_zero"] = (transformed["IR"] == 0.0).astype(int)
-        transformed["temp_sensor_fault"] = (transformed["battery_id"] == 85).astype(int)
-        for column in ("IR", "QCharge", "Tavg", "chargetime"):
-            lag = transformed.groupby("battery_id")[column].shift(1)
-            transformed[f"{column}_lag1"] = lag.fillna(transformed[column])
-            transformed[f"{column}_delta"] = transformed[column] - transformed[f"{column}_lag1"]
-        scaled = preprocessor.transform(transformed[list(feature_names)])
-        transformed[list(feature_names)] = transformed[list(feature_names)].astype(float)
-        transformed.loc[:, list(feature_names)] = scaled
+    The serialized preprocessors are RobustScaler artifacts for the baseline
+    modeling path. The locked advanced tree models were trained on the
+    unscaled baseline measurements and their causal derivatives. Scaling before
+    deriving ratios, rolling statistics, and cumulative rates changes those
+    features and is not equivalent to the training representation.
+    """
+    required = set(BASELINE_FEATURE_COLUMNS) | {"battery_id"}
+    missing = sorted(required.difference(history_df.columns))
+    if missing:
+        raise ValueError(f"History is missing required baseline columns: {missing}")
 
-    engineered = generate_causal_features_for_battery(transformed)
-    return engineered[ADVANCED_FEATURE_COLUMNS].copy()
+    scaler_columns = list(getattr(preprocessor, "feature_names_in_", []))
+    if scaler_columns and scaler_columns != _SCALER_INPUT_COLUMNS:
+        raise ValueError(
+            "Inference preprocessor columns do not match the locked baseline schema."
+        )
+
+    # Feature engineering must be performed independently per battery. In
+    # particular, rolling windows and cumulative rates must never cross cells.
+    engineered = generate_causal_features_dataset(history_df.copy())
+    return engineered.loc[:, ADVANCED_FEATURE_COLUMNS].copy()
 
 
 class CausalBatteryPreprocessor:

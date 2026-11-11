@@ -154,3 +154,65 @@ protection, feature preparation, model inference, and API behavior.
 
 The response includes raw and display-safe SOH/RUL values, units, model
 provenance, preserved metadata, and the battery-health interpretation.
+
+## Frontend dashboard
+
+The `frontend/` directory contains the React + Vite presentation dashboard for
+the API. It provides a responsive academic dashboard with:
+
+- a persistent navigation sidebar for overview, prediction, analytics, and API health;
+- editable multi-record raw telemetry input with CSV/JSON import and sample data;
+- client-side validation, record sorting, leakage-field rejection, and the 5,000-record limit;
+- latest-cycle SOH/RUL cards using the complete submitted history;
+- Recharts-based telemetry and lag/delta degradation views; and
+- `/health` model availability and pipeline-version monitoring.
+
+The frontend deliberately calls only `POST /predict` for raw telemetry. The
+advanced `/decision/assess` endpoint is not called because it expects engineered
+32-feature input; the dashboard uses the interpretation returned by `/predict`.
+
+### Frontend setup
+
+```bash
+cd frontend
+npm install
+copy .env.example .env
+npm run dev
+```
+
+For PowerShell, the environment-file command is:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+The default `.env` value is `VITE_API_BASE_URL=http://localhost:8000`.
+Start the backend separately with `uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload`.
+The frontend production build is verified with `npm run build`.
+
+### Frontend structure
+
+```text
+frontend/
+├── src/
+│   ├── services/api.ts       # fetch wrapper for /predict and /health
+│   ├── utils/parser.ts       # CSV/JSON upload parsing
+│   ├── utils/validation.ts   # raw contract, leakage, and limit validation
+│   ├── types.ts              # telemetry and response types
+│   ├── App.tsx               # dashboard views and modular UI components
+│   └── index.css             # Tailwind theme and global styles
+├── .env.example
+├── package.json
+└── vite.config.ts
+```
+
+### Backend integration verification
+
+1. Start FastAPI and open `http://localhost:8000/health`; confirm `status` is
+   `healthy` and both model flags are `true`.
+2. Start the frontend and use **Use sample data**, then **Run prediction**.
+3. Confirm the request in the browser Network panel is `POST /predict` with
+   `{ "records": [...] }`, sorted by `cycle`, and contains only raw telemetry
+   fields (no engineered 32-feature columns or target leakage fields).
+4. Confirm the response populates SOH, RUL, metadata, interpretation, and model
+   provenance, while charts continue to reflect the submitted history.

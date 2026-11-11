@@ -93,7 +93,9 @@ def predict_single_cycle(history: HistoricalBatteryRequest) -> Dict[str, Any]:
     try:
         history_df = pd.DataFrame([record.model_dump() for record in history.records])
         preprocessor = joblib.load(PREPROCESSOR_PATHS["soh"])
-        features_df = prepare_inference_features(history_df, preprocessor).tail(1)
+        features_df = prepare_inference_features(history_df, preprocessor)
+        latest_index = features_df["cycle"].idxmax()
+        features_df = features_df.loc[[latest_index]]
         X, metadata_df = validate_inference_input(
             features_df,
             enforce_physical_bounds=False
