@@ -1,0 +1,6 @@
+file,requested_soh,measured_soh,v3_single_predicted_soh,source_entry
+near_50_soh.csv,50,50.85609638362354,51.36513840183207,Cell6a/agingdata_50degC/WWH_18650_cell6a_charac4000.csv
+near_60_soh.csv,60,59.67883293097815,60.54117525954367,Cell1b/agingdata_50degC/WWH_18650_cell1b_charac2800.csv
+near_70_soh.csv,70,69.76938018859514,69.67622325939105,Cell2c/agingdata_50degC/WWH_18650_cell2c_charac2000.csv
+near_80_soh.csv,80,81.18755378232812,80.9084755337739,Cell3a/agingdata_50degC/WWH_18650_cell3a_charac1200.csv
+near_90_soh.csv,90,89.72141883978296,90.17175902303536,Cell1b/agingdata_50degC/WWH_18650_cell1b_charac0400.csv

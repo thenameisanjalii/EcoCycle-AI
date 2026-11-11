@@ -1,0 +1,28 @@
+{
+  "train": [
+    "wheeler2025:Cell1a",
+    "wheeler2025:Cell2b",
+    "wheeler2025:Cell3b",
+    "wheeler2025:Cell4b",
+    "wheeler2025:Cell5a",
+    "wheeler2025:Cell6b",
+    "wheeler2025:Cell7b"
+  ],
+  "validation": [
+    "wheeler2025:Cell1c",
+    "wheeler2025:Cell2a",
+    "wheeler2025:Cell4a",
+    "wheeler2025:Cell5c",
+    "wheeler2025:Cell6c",
+    "wheeler2025:Cell7c"
+  ],
+  "test": [
+    "wheeler2025:Cell1b",
+    "wheeler2025:Cell2c",
+    "wheeler2025:Cell3a",
+    "wheeler2025:Cell4c",
+    "wheeler2025:Cell5b",
+    "wheeler2025:Cell6a",
+    "wheeler2025:Cell7a"
+  ]
+}

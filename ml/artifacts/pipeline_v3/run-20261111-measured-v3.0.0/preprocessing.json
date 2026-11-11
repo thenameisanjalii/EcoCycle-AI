@@ -1,0 +1,17 @@
+{
+  "training_support": {
+    "QCharge": [
+      0.420144,
+      1.013137
+    ],
+    "chargetime": [
+      69.22755350000001,
+      167.67421836666665
+    ],
+    "cycle": [
+      0.0,
+      6800.0
+    ]
+  },
+  "scaling_and_imputation": "Ridge pipeline fitted only on train; trees native NaN handling; no invented historical observations"
+}

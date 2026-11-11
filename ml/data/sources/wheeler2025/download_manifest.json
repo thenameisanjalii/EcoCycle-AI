@@ -1,0 +1,35 @@
+{
+  "dataset_doi": "10.57745/OLBXKT",
+  "version": "2.0",
+  "retrieved_utc": "2026-11-11T09:45:23.517830+00:00",
+  "files": [
+    {
+      "file": "extractedData.mat",
+      "url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/606807",
+      "bytes": 459258,
+      "md5": "6a468312420585734784ea763ea6e0c3",
+      "sha256": "8c1a79c17d44cc0ee6e96d3f47829d7abab35a5ddb65d46f9b5fe421eacae501"
+    },
+    {
+      "file": "Matlab_BasicImportAndDisplay.m",
+      "url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/607239",
+      "bytes": 17177,
+      "md5": "8c26d8e099aadfbb1c7633d235374180",
+      "sha256": "9668586b9782bda5554d56e4d80dfa42165eb7c1bd8c715f5f58e26dec0b5c64"
+    },
+    {
+      "file": "readme.txt",
+      "url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/611322",
+      "bytes": 990,
+      "md5": "363da70a34c59bc96f87ae735702b3f7",
+      "sha256": "92bdf4684dd406f5568b664f72c477721c38f9f81ec69240c1d0442951c1bcfe"
+    },
+    {
+      "file": "WLTPcycle.txt",
+      "url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/606698",
+      "bytes": 29867,
+      "md5": "adcd406ab3229093a30bedd4ee2311f3",
+      "sha256": "7165d4ef41832cde5dbd9ae0e107adf2c9a4d4183f4dd0cd34357a8fa00b20cb"
+    }
+  ]
+}

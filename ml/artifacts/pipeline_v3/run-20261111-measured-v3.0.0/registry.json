@@ -1,0 +1,92 @@
+{
+  "version": "3.0.0",
+  "domain": "wheeler_C3_50C",
+  "dataset": "ml/data/wheeler2025_discharge_measured.csv",
+  "dataset_sha256": "6da503070bc926c358b5564e8850ca451b72b30d9ed645c7b5c05cee7aca6334",
+  "models": {
+    "single_soh": {
+      "family": "ridge",
+      "contract": "single",
+      "target": "SOH",
+      "artifact": "single_soh.joblib",
+      "features": [
+        "QCharge",
+        "chargetime",
+        "cycle"
+      ]
+    },
+    "history_soh": {
+      "family": "ridge",
+      "contract": "history",
+      "target": "SOH",
+      "artifact": "history_soh.joblib",
+      "features": [
+        "QCharge",
+        "chargetime",
+        "cycle",
+        "history_count",
+        "observed_span",
+        "cycle_gap",
+        "QCharge_lag1",
+        "QCharge_delta_per_cycle",
+        "QCharge_past_mean5",
+        "QCharge_past_std5",
+        "chargetime_lag1",
+        "chargetime_delta_per_cycle",
+        "chargetime_past_mean5",
+        "chargetime_past_std5"
+      ]
+    }
+  },
+  "soh_definition": "100 * measured C/3 discharge Ah / same cell's documented pristine cycle-0 C/3 discharge Ah at 50C; charge capacity is never the label or denominator.",
+  "soh_training_range": [
+    42.1057691450002,
+    100.0
+  ],
+  "rul_endpoint": {
+    "status": "unavailable",
+    "primary_life": "80% crossing only, interval-censored between observed characterizations",
+    "second_life": "No justified application-specific endpoint. Follow-up is censored; no RUL regression trained."
+  },
+  "unsupported": "Research cohort only: 20 independent cells, sparse 400-cycle sampling at 50C. Measured range errors are not reliable deployment accuracy. Not validated for Severson telemetry or other chemistries/protocols.",
+  "units": {
+    "QCharge": "Ah, C/3 characterization step 13",
+    "chargetime": "minutes, step 13 duration / 60",
+    "cycle": "actual ageing cycles, pristine reference cycle 0"
+  },
+  "files": {
+    "config.json": "0b3378c9cd7b887c76f90a6e264a20df023cc79c49ec64f2121b00f7241d93e8",
+    "coverage.json": "ea5d5c3057453c243bdae218e29b6670c955a8fcbd94db6002e9cc19bd36c382",
+    "dependencies.json": "85caf901a23d3b3cd96f497dbb32f0fa20b82141da757c201ac4f258527ac2c7",
+    "history_soh.joblib": "23cf6d158d379dc903aa6a66d5d9950e55d43c0ccdf376b197bf4cb5f4fd8f1a",
+    "history_soh_catboost_test_predictions.csv": "51986dd0abfe6393c89850b9784ece2942a245f33f8e66e51f4b2c25c695edd7",
+    "history_soh_catboost_validation_predictions.csv": "b4c9ae8a62bb2dec748f445420531ed6fa312a1819215a29031726efc0cb509b",
+    "history_soh_ridge_test_predictions.csv": "90a14994e710d7564f021834dc679b8d1108d1f70b8f55e32addb014f08cfb5b",
+    "history_soh_ridge_validation_predictions.csv": "70fe2cab620211b342605fb2bd0f5510d9c1a1b92a2c9946ab338fc0cba4b4c1",
+    "history_soh_xgboost_test_predictions.csv": "91a934d248bb6660908e8b4491a52549530834f59daf58ec2cfd7ad97e3c1685",
+    "history_soh_xgboost_validation_predictions.csv": "89a789b9305ac7a5c4b93e57121ae0351eb11f59a2711edfe4fa755deaabfd18",
+    "metrics.json": "016a48f1c9370a86b6f9196c0840ece2b8ca29ad6f58824dc25c2dd3f73c1939",
+    "original_manifest.json": "3eeec5726499225858eab1e4619ea711d3848dc0f2e0be25a675e5483d676013",
+    "preprocessing.json": "360d87beb00d43472a824d262cae01c34967248f345be6166f495c31283fb89d",
+    "preprocessor.joblib": "5096297f9f409b798527de36b1eb955ab15a1d8a0fcfbacec744bf3539e742bd",
+    "requirements-lock.txt": "11978a78a9c8c36232badd8273feba9e9864e4647e5d35c1446b593919df9ea8",
+    "single_soh.joblib": "e7e852d75a31ef1be3d0294c30d883c8a10b0a9f10059f78595585725b35cf91",
+    "single_soh_catboost_test_predictions.csv": "6b4fdd6999e99085590ff979d76224d1f53cad4b75ef406e214126c2d69b8a67",
+    "single_soh_catboost_validation_predictions.csv": "983baa9885c7cb166c97cfd3bbd05711adbeba297bf8224c27850f86bdd39db9",
+    "single_soh_ridge_test_predictions.csv": "b158353276388a28f0709dddbec4e810220643f7805c51b1f5b3ed38d055f8bc",
+    "single_soh_ridge_validation_predictions.csv": "a94c528f552767fec12c12eea7761b901983de5de7fd226b4eb3e6cdb3a62433",
+    "single_soh_xgboost_test_predictions.csv": "52809baa22be4af503291db1fec63c03833f458894211f8e5aaabe9f8164b700",
+    "single_soh_xgboost_validation_predictions.csv": "5de8c6d3f0f99d71d2420abf869bb031ac96ee766f6f98633c6524e3c7cb83ab",
+    "source/__init__.py": "e2d8f3504ff31617f26d6a966eb23cd8fec84f96031e3873e7388236e42bc7f0",
+    "source/build_measured_extension.py": "f149e0e4922e81fa769aea649ee436b5465ea1c70756993a45dc2089ce6141b8",
+    "source/fetch_wheeler_characterizations.py": "6b4b56f27574d14da87ad8f6f8c6e315f85e4fbd229ade0a40416dc6a614ab28",
+    "source/inference.py": "a8bbbc1980efaa3e046f0cbe33ce08650abf01b38abd42d919cc6297134e2b99",
+    "source/pipeline_v3.py": "58c3ccde2ab59898865a5485e01fb871ea80efae1353b65c484ec09544d7205f",
+    "source/preprocessing.py": "d3a9a404491f1e2e22622faa820c3098bfe68fc9838fff07515717645a2ba481",
+    "source/train.py": "2351f6107e8d3f0d215b6d00b11794ba05f48346cf179a9c2e06f8da68d0a295",
+    "source/v2_train.py": "8ea250b5b24ee6f9eec45afb1625527a604aae90df946499bad206458a2a61b2",
+    "splits.json": "096c2a6f35d340226ae1ff5b1d9de4b471c2560765db01403d9588be67578e33",
+    "trajectories.csv": "772d9b892c01552c869b68b71e8d060da3ed8f2b1367b4a63fe3d650c8cb2c41",
+    "tuning.json": "6a7117f842c38239a9d1411b91543ed29b9387127d891337430c791ecda29b19"
+  }
+}

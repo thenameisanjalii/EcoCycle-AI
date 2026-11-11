@@ -1,0 +1,86 @@
+{
+  "train": {
+    "rows": 81,
+    "independent_batteries": 7,
+    "soh_min": 42.1057691450002,
+    "soh_max": 100.0,
+    "ranges": {
+      "[0,50)": {
+        "rows": 9,
+        "independent_batteries": 4
+      },
+      "[50,60)": {
+        "rows": 16,
+        "independent_batteries": 6
+      },
+      "[60,70)": {
+        "rows": 16,
+        "independent_batteries": 7
+      },
+      "[70,80)": {
+        "rows": 14,
+        "independent_batteries": 7
+      },
+      "[80,110)": {
+        "rows": 26,
+        "independent_batteries": 7
+      }
+    }
+  },
+  "validation": {
+    "rows": 71,
+    "independent_batteries": 6,
+    "soh_min": 41.28181064318949,
+    "soh_max": 100.0,
+    "ranges": {
+      "[0,50)": {
+        "rows": 7,
+        "independent_batteries": 2
+      },
+      "[50,60)": {
+        "rows": 15,
+        "independent_batteries": 5
+      },
+      "[60,70)": {
+        "rows": 12,
+        "independent_batteries": 6
+      },
+      "[70,80)": {
+        "rows": 13,
+        "independent_batteries": 6
+      },
+      "[80,110)": {
+        "rows": 24,
+        "independent_batteries": 6
+      }
+    }
+  },
+  "test": {
+    "rows": 80,
+    "independent_batteries": 7,
+    "soh_min": 31.449912588827555,
+    "soh_max": 100.0,
+    "ranges": {
+      "[0,50)": {
+        "rows": 11,
+        "independent_batteries": 3
+      },
+      "[50,60)": {
+        "rows": 17,
+        "independent_batteries": 7
+      },
+      "[60,70)": {
+        "rows": 16,
+        "independent_batteries": 7
+      },
+      "[70,80)": {
+        "rows": 10,
+        "independent_batteries": 6
+      },
+      "[80,110)": {
+        "rows": 26,
+        "independent_batteries": 7
+      }
+    }
+  }
+}

@@ -12,6 +12,7 @@ from ml.models.final_registry import ModelRegistryError
 from backend.routes.prediction import router
 from backend.routes.decision import decision_router
 from backend.routes.pipeline_v2 import router as pipeline_v2_router
+from backend.routes.pipeline_v3 import router as pipeline_v3_router
 
 app = FastAPI(
     title="EcoCycle AI — Battery Health Prediction & Lifecycle API",
@@ -105,3 +106,4 @@ def read_root():
 app.include_router(router)
 app.include_router(decision_router)
 app.include_router(pipeline_v2_router)
+app.include_router(pipeline_v3_router)

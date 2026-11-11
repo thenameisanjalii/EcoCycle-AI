@@ -1,0 +1,6 @@
+IR,QCharge,Tavg,Tmax,Tmin,chargetime,cycle,battery_id
+,0.50911,,,,84.18874415,4000,wheeler2025:Cell6a
+,0.597823,,,,99.05320746666666,2800,wheeler2025:Cell1b
+,0.690775,,,,114.09685065,2000,wheeler2025:Cell2c
+,0.804852,,,,133.07797903333332,1200,wheeler2025:Cell3a
+,0.898641,,,,148.43321921666666,400,wheeler2025:Cell1b

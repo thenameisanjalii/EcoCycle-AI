@@ -1,0 +1,146 @@
+{
+  "single_soh": [
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 1.0
+      },
+      "validation": {
+        "n": 71,
+        "mae": 1.1113119952311474,
+        "rmse": 1.3540667083120232
+      }
+    },
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 100.0
+      },
+      "validation": {
+        "n": 71,
+        "mae": 4.536078509747645,
+        "rmse": 5.491283127817562
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 4,
+        "best_iteration": 315
+      },
+      "validation": {
+        "n": 71,
+        "mae": 1.2257920089158807,
+        "rmse": 1.7370921670732702
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 7,
+        "best_iteration": 315
+      },
+      "validation": {
+        "n": 71,
+        "mae": 1.243136730141976,
+        "rmse": 1.769910811512749
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 4,
+        "best_iteration": 499
+      },
+      "validation": {
+        "n": 71,
+        "mae": 1.0433810582382193,
+        "rmse": 1.3924652194856268
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 7,
+        "best_iteration": 499
+      },
+      "validation": {
+        "n": 71,
+        "mae": 1.268398263154488,
+        "rmse": 1.9742210276133911
+      }
+    }
+  ],
+  "history_soh": [
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 1.0
+      },
+      "validation": {
+        "n": 65,
+        "mae": 1.000579593718718,
+        "rmse": 1.2203130116161753
+      }
+    },
+    {
+      "family": "ridge",
+      "parameters": {
+        "alpha": 100.0
+      },
+      "validation": {
+        "n": 65,
+        "mae": 2.2995538110059592,
+        "rmse": 2.9068759201657257
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 4,
+        "best_iteration": 499
+      },
+      "validation": {
+        "n": 65,
+        "mae": 1.163035472705021,
+        "rmse": 1.375256504900104
+      }
+    },
+    {
+      "family": "xgboost",
+      "parameters": {
+        "max_depth": 7,
+        "best_iteration": 499
+      },
+      "validation": {
+        "n": 65,
+        "mae": 1.1987000894093363,
+        "rmse": 1.4290439123251508
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 4,
+        "best_iteration": 498
+      },
+      "validation": {
+        "n": 65,
+        "mae": 1.3034238273985623,
+        "rmse": 1.6646594435192172
+      }
+    },
+    {
+      "family": "catboost",
+      "parameters": {
+        "depth": 7,
+        "best_iteration": 499
+      },
+      "validation": {
+        "n": 65,
+        "mae": 1.5096539130891795,
+        "rmse": 1.9285721337279331
+      }
+    }
+  ]
+}

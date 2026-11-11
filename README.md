@@ -4,6 +4,14 @@ The measurement-based SOH/RUL pipeline is now **v2**. Start with the
 [v2 contracts, training/startup commands, definitions and limitations](docs/soh-rul-pipeline-v2.md)
 and the [measured evaluation](reports/pipeline_v2/run-20261111-v2.0.1/evaluation.md).
 The frontend uses `/v2/predict` and requires `ECOCYCLE_V2_BUNDLE` on the backend.
+
+A separate **v3 research cohort** adds measured discharge SOH evaluation at
+lower health under a 50°C C/3 characterization protocol. It is kept separate
+from the original telemetry and frontend because the conditions and available
+sensors differ. See [sources, reproducible commands, and limitations](reports/soh_extension/README.md)
+and the [held-out measured evaluation](reports/soh_extension/verification/evaluation.md).
+The opt-in `/v3/predict` contract requires `domain: "wheeler_C3_50C"` and returns
+no second-life RUL without a justified observed service endpoint.
 Original CSVs and models are preserved. The API contract below documents the
 legacy compatibility routes: their RUL target is recording end, not failure.
 

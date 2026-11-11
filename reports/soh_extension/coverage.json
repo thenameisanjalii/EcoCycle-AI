@@ -1,0 +1,68 @@
+{
+  "compatible_master": {
+    "rows": 116663,
+    "independent_batteries": 139,
+    "soh_min": 74.55272866405737,
+    "soh_max": 104.79245284946096,
+    "ranges": {
+      "[0,50)": {
+        "rows": 0,
+        "independent_batteries": 0
+      },
+      "[50,60)": {
+        "rows": 0,
+        "independent_batteries": 0
+      },
+      "[60,70)": {
+        "rows": 0,
+        "independent_batteries": 0
+      },
+      "[70,80)": {
+        "rows": 907,
+        "independent_batteries": 39
+      },
+      "[80,110)": {
+        "rows": 115756,
+        "independent_batteries": 139
+      }
+    }
+  },
+  "separate_wheeler_cohort": {
+    "rows": 232,
+    "independent_batteries": 20,
+    "soh_min": 31.449912588827555,
+    "soh_max": 100.0,
+    "ranges": {
+      "[0,50)": {
+        "rows": 27,
+        "independent_batteries": 9
+      },
+      "[50,60)": {
+        "rows": 48,
+        "independent_batteries": 18
+      },
+      "[60,70)": {
+        "rows": 44,
+        "independent_batteries": 20
+      },
+      "[70,80)": {
+        "rows": 37,
+        "independent_batteries": 19
+      },
+      "[80,110)": {
+        "rows": 76,
+        "independent_batteries": 20
+      }
+    }
+  },
+  "total_distinct_source_batteries_unpooled": 159,
+  "master_extended_sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "master_original_sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "separate_measured_sha256": "6da503070bc926c358b5564e8850ca451b72b30d9ed645c7b5c05cee7aca6334",
+  "excluded_rows": 3,
+  "pooled_training": false,
+  "compatible_master_extended": false,
+  "reason": "50C accelerated aging; C/3 characterization instead of fast-charge/4C cycling; no cell temperature or per-cycle IR; distinct reference protocol. Kept separate.",
+  "second_life_RUL": "Unavailable: no justified application-specific second-life endpoint; recording ends are censored, never failure.",
+  "sampling": "Fixed in fetch script before extracting discharge labels: cycle 0, every 400 cycles and last characterization. No interpolation or relabeling."
+}

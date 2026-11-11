@@ -1,0 +1,10 @@
+{
+  "registry_sha256": "9f47b29571f90c0b42c75d7f66b02032b28ea77acca1d1c3ab7e26251c9fdcb6",
+  "single_rows": 80,
+  "history_batteries": 7,
+  "exact_api_offline_matches": true,
+  "history_saved_prediction_matches": true,
+  "rul_always_unavailable": true,
+  "original_files_verified": 131,
+  "original_data_and_artifacts_unchanged": true
+}

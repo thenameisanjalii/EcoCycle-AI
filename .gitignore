@@ -85,6 +85,7 @@ artifacts/feature_metadata/*
 !ml/artifacts/models/**/*.joblib
 !ml/artifacts/preprocessors/**/*.joblib
 !ml/artifacts/pipeline_v2/**/*.joblib
+!ml/artifacts/pipeline_v3/**/*.joblib
 !ml/data/*.csv
 
 # Logs & Temporary Outputs
@@ -96,3 +97,8 @@ frontend/node_modules/
 frontend/dist/
 frontend/build/
 frontend/.next/
+
+# Retained local source bytes; public URLs, CRCs and SHA256s are versioned.
+ml/data/sources/wheeler2025/raw_characterizations/**/*.deflate
+ml/data/sources/wheeler2025/*_zip_tail.dat
+reports/soh_extension/pytest_*/

@@ -1,0 +1,1084 @@
+{
+  "single_soh": {
+    "selected_by_validation": "ridge",
+    "models": {
+      "ridge": {
+        "validation": {
+          "overall": {
+            "n": 71,
+            "mae": 1.1113119952311474,
+            "rmse": 1.3540667083120232,
+            "independent_batteries": 6
+          },
+          "per_battery": {
+            "wheeler2025:Cell1c": {
+              "n": 9,
+              "mae": 1.779384713798892,
+              "rmse": 1.791261944483591,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2a": {
+              "n": 10,
+              "mae": 0.7962769339446112,
+              "rmse": 1.0806935556254804,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4a": {
+              "n": 12,
+              "mae": 1.0351878701841664,
+              "rmse": 1.0538541937939379,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5c": {
+              "n": 12,
+              "mae": 2.114196948448655,
+              "rmse": 2.203318646382061,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6c": {
+              "n": 18,
+              "mae": 0.3560208662866743,
+              "rmse": 0.41002905616626395,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7c": {
+              "n": 10,
+              "mae": 1.0724926481021335,
+              "rmse": 1.2252678433188093,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 7,
+              "mae": 1.0018718026823126,
+              "rmse": 1.0993426405693705,
+              "independent_batteries": 2
+            },
+            "[50,60)": {
+              "n": 15,
+              "mae": 0.8121220503238448,
+              "rmse": 1.0245179154782087,
+              "independent_batteries": 5
+            },
+            "[60,70)": {
+              "n": 12,
+              "mae": 1.179110768629999,
+              "rmse": 1.3081504049062966,
+              "independent_batteries": 6
+            },
+            "[70,80)": {
+              "n": 13,
+              "mae": 1.1385650958008493,
+              "rmse": 1.3367730513223104,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 11,
+              "mae": 1.331654273400828,
+              "rmse": 1.6372389476481053,
+              "independent_batteries": 6
+            },
+            "[90,110)": {
+              "n": 13,
+              "mae": 1.239180447030575,
+              "rmse": 1.5865338310644759,
+              "independent_batteries": 6
+            }
+          },
+          "macro_battery_mae": 1.1922599967941887
+        },
+        "test": {
+          "overall": {
+            "n": 80,
+            "mae": 0.7374677094007851,
+            "rmse": 0.9615339630272961,
+            "independent_batteries": 7
+          },
+          "per_battery": {
+            "wheeler2025:Cell1b": {
+              "n": 10,
+              "mae": 0.7273315642581636,
+              "rmse": 0.7669086458261353,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2c": {
+              "n": 9,
+              "mae": 0.27451209505473095,
+              "rmse": 0.3910129673920651,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell3a": {
+              "n": 11,
+              "mae": 0.21130059017588626,
+              "rmse": 0.23488017367933436,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4c": {
+              "n": 12,
+              "mae": 1.5437265749700728,
+              "rmse": 1.557904940070762,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5b": {
+              "n": 12,
+              "mae": 0.9758128065523485,
+              "rmse": 1.0653561059610468,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6a": {
+              "n": 17,
+              "mae": 0.20208705080099942,
+              "rmse": 0.24539511145336979,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7a": {
+              "n": 9,
+              "mae": 1.473248146685311,
+              "rmse": 1.5751932573530176,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 11,
+              "mae": 0.7987812068898973,
+              "rmse": 1.0650056677258957,
+              "independent_batteries": 3
+            },
+            "[50,60)": {
+              "n": 17,
+              "mae": 0.7353804075335011,
+              "rmse": 0.9078464215288039,
+              "independent_batteries": 7
+            },
+            "[60,70)": {
+              "n": 16,
+              "mae": 0.5709777305655668,
+              "rmse": 0.775500454442215,
+              "independent_batteries": 7
+            },
+            "[70,80)": {
+              "n": 10,
+              "mae": 0.7894420670099705,
+              "rmse": 1.0158105270906777,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 13,
+              "mae": 0.715222423427267,
+              "rmse": 0.9330172130353656,
+              "independent_batteries": 7
+            },
+            "[90,110)": {
+              "n": 13,
+              "mae": 0.8754923603462441,
+              "rmse": 1.1169377759073316,
+              "independent_batteries": 7
+            }
+          },
+          "macro_battery_mae": 0.7725741183567875
+        }
+      },
+      "xgboost": {
+        "validation": {
+          "overall": {
+            "n": 71,
+            "mae": 1.2257920089158807,
+            "rmse": 1.7370921670732702,
+            "independent_batteries": 6
+          },
+          "per_battery": {
+            "wheeler2025:Cell1c": {
+              "n": 9,
+              "mae": 1.0837441094363653,
+              "rmse": 1.194465975824544,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2a": {
+              "n": 10,
+              "mae": 1.8296500600799313,
+              "rmse": 2.6303827128456736,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4a": {
+              "n": 12,
+              "mae": 0.7562867700484812,
+              "rmse": 0.9348739425443718,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5c": {
+              "n": 12,
+              "mae": 2.4284396998377784,
+              "rmse": 2.8768746498715183,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6c": {
+              "n": 18,
+              "mae": 0.7377972435939957,
+              "rmse": 0.8812783162676812,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7c": {
+              "n": 10,
+              "mae": 0.7483967023973903,
+              "rmse": 0.9180070351656511,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 7,
+              "mae": 0.7714574479922283,
+              "rmse": 0.9640967804487629,
+              "independent_batteries": 2
+            },
+            "[50,60)": {
+              "n": 15,
+              "mae": 0.7872472599625524,
+              "rmse": 1.037117561811016,
+              "independent_batteries": 5
+            },
+            "[60,70)": {
+              "n": 12,
+              "mae": 1.2282111363678474,
+              "rmse": 1.2893301100732701,
+              "independent_batteries": 6
+            },
+            "[70,80)": {
+              "n": 13,
+              "mae": 1.3389792712275645,
+              "rmse": 1.4518578904811237,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 11,
+              "mae": 1.3150325829065175,
+              "rmse": 1.58389483139051,
+              "independent_batteries": 6
+            },
+            "[90,110)": {
+              "n": 13,
+              "mae": 1.7855153094845737,
+              "rmse": 2.995562847687908,
+              "independent_batteries": 6
+            }
+          },
+          "macro_battery_mae": 1.2640524308989902
+        },
+        "test": {
+          "overall": {
+            "n": 80,
+            "mae": 1.3935075464386777,
+            "rmse": 2.398290043099073,
+            "independent_batteries": 7
+          },
+          "per_battery": {
+            "wheeler2025:Cell1b": {
+              "n": 10,
+              "mae": 0.572704134694763,
+              "rmse": 0.6712416889704625,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2c": {
+              "n": 9,
+              "mae": 0.9103266892179431,
+              "rmse": 1.1699820304032131,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell3a": {
+              "n": 11,
+              "mae": 0.6463463366364111,
+              "rmse": 0.7659911580220552,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4c": {
+              "n": 12,
+              "mae": 0.9950324156372362,
+              "rmse": 1.274888289477686,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5b": {
+              "n": 12,
+              "mae": 1.5520798091886914,
+              "rmse": 1.8040149840655806,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6a": {
+              "n": 17,
+              "mae": 1.451766626136775,
+              "rmse": 2.467050004235184,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7a": {
+              "n": 9,
+              "mae": 3.911714791105363,
+              "rmse": 5.5260859968252785,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 11,
+              "mae": 3.965679966553217,
+              "rmse": 5.38263337631836,
+              "independent_batteries": 3
+            },
+            "[50,60)": {
+              "n": 17,
+              "mae": 0.5605821072944307,
+              "rmse": 0.6664434555563729,
+              "independent_batteries": 7
+            },
+            "[60,70)": {
+              "n": 16,
+              "mae": 0.8610412114725454,
+              "rmse": 0.9946072085025963,
+              "independent_batteries": 7
+            },
+            "[70,80)": {
+              "n": 10,
+              "mae": 1.3854634686407734,
+              "rmse": 1.6249938456327393,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 13,
+              "mae": 1.2405126773986803,
+              "rmse": 1.4355409162288304,
+              "independent_batteries": 7
+            },
+            "[90,110)": {
+              "n": 13,
+              "mae": 1.1207899525270915,
+              "rmse": 2.2338117552776304,
+              "independent_batteries": 7
+            }
+          },
+          "macro_battery_mae": 1.434281543231026
+        }
+      },
+      "catboost": {
+        "validation": {
+          "overall": {
+            "n": 71,
+            "mae": 1.0433810582382193,
+            "rmse": 1.3924652194856268,
+            "independent_batteries": 6
+          },
+          "per_battery": {
+            "wheeler2025:Cell1c": {
+              "n": 9,
+              "mae": 1.2478720637794207,
+              "rmse": 1.3217787396445406,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2a": {
+              "n": 10,
+              "mae": 0.4255298484997091,
+              "rmse": 0.616933069714868,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4a": {
+              "n": 12,
+              "mae": 0.8050224857593365,
+              "rmse": 0.9030572905745717,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5c": {
+              "n": 12,
+              "mae": 1.617836503338441,
+              "rmse": 1.6946944208728119,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6c": {
+              "n": 18,
+              "mae": 1.1772772022702958,
+              "rmse": 1.8379763804644924,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7c": {
+              "n": 10,
+              "mae": 0.8328610565863024,
+              "rmse": 1.1436482020983907,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 7,
+              "mae": 1.8616546451974187,
+              "rmse": 2.7049967406542526,
+              "independent_batteries": 2
+            },
+            "[50,60)": {
+              "n": 15,
+              "mae": 0.7590193819187713,
+              "rmse": 0.9563728193738785,
+              "independent_batteries": 5
+            },
+            "[60,70)": {
+              "n": 12,
+              "mae": 1.1677218622504864,
+              "rmse": 1.2744035652366081,
+              "independent_batteries": 6
+            },
+            "[70,80)": {
+              "n": 13,
+              "mae": 1.1641698839468666,
+              "rmse": 1.3153173008153178,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 11,
+              "mae": 1.204090136283403,
+              "rmse": 1.3963602035061584,
+              "independent_batteries": 6
+            },
+            "[90,110)": {
+              "n": 13,
+              "mae": 0.559332273255194,
+              "rmse": 0.8457705731648174,
+              "independent_batteries": 6
+            }
+          },
+          "macro_battery_mae": 1.0177331933722509
+        },
+        "test": {
+          "overall": {
+            "n": 80,
+            "mae": 1.4203585400317578,
+            "rmse": 2.491105497927159,
+            "independent_batteries": 7
+          },
+          "per_battery": {
+            "wheeler2025:Cell1b": {
+              "n": 10,
+              "mae": 1.172382089871963,
+              "rmse": 1.2862298190902308,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2c": {
+              "n": 9,
+              "mae": 0.3609389400559956,
+              "rmse": 0.4776896792966689,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell3a": {
+              "n": 11,
+              "mae": 0.4180517207369967,
+              "rmse": 0.5340318007732089,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4c": {
+              "n": 12,
+              "mae": 1.3081106035435077,
+              "rmse": 1.4495211380928537,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5b": {
+              "n": 12,
+              "mae": 1.141920127035392,
+              "rmse": 1.2764152153887804,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6a": {
+              "n": 17,
+              "mae": 1.842047983056067,
+              "rmse": 3.396308317013247,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7a": {
+              "n": 9,
+              "mae": 3.7047398262566795,
+              "rmse": 5.097452948736294,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 11,
+              "mae": 4.781282612275207,
+              "rmse": 6.0791326800512095,
+              "independent_batteries": 3
+            },
+            "[50,60)": {
+              "n": 17,
+              "mae": 1.0313498998645685,
+              "rmse": 1.374656758643301,
+              "independent_batteries": 7
+            },
+            "[60,70)": {
+              "n": 16,
+              "mae": 0.7549652538814953,
+              "rmse": 0.927551027287718,
+              "independent_batteries": 7
+            },
+            "[70,80)": {
+              "n": 10,
+              "mae": 1.2180614524944446,
+              "rmse": 1.3187137633182149,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 13,
+              "mae": 0.9825771299590488,
+              "rmse": 1.192171166100053,
+              "independent_batteries": 7
+            },
+            "[90,110)": {
+              "n": 13,
+              "mae": 0.4975434533307438,
+              "rmse": 0.7931117162856538,
+              "independent_batteries": 7
+            }
+          },
+          "macro_battery_mae": 1.4211701843652287
+        }
+      }
+    }
+  },
+  "history_soh": {
+    "selected_by_validation": "ridge",
+    "models": {
+      "ridge": {
+        "validation": {
+          "overall": {
+            "n": 65,
+            "mae": 1.000579593718718,
+            "rmse": 1.2203130116161753,
+            "independent_batteries": 6
+          },
+          "per_battery": {
+            "wheeler2025:Cell1c": {
+              "n": 8,
+              "mae": 1.6617298067473172,
+              "rmse": 1.6895145861764984,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2a": {
+              "n": 9,
+              "mae": 0.5548024883486293,
+              "rmse": 0.6865715365778904,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4a": {
+              "n": 11,
+              "mae": 1.078667774440949,
+              "rmse": 1.1013828082294652,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5c": {
+              "n": 11,
+              "mae": 1.993226281426718,
+              "rmse": 2.0620152449427707,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6c": {
+              "n": 17,
+              "mae": 0.44635313341440674,
+              "rmse": 0.564306704017204,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7c": {
+              "n": 9,
+              "mae": 0.5968638733345786,
+              "rmse": 0.6822816231497469,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 7,
+              "mae": 0.691332558073052,
+              "rmse": 0.7562805412106298,
+              "independent_batteries": 2
+            },
+            "[50,60)": {
+              "n": 15,
+              "mae": 0.7756510703123055,
+              "rmse": 0.9070915021008108,
+              "independent_batteries": 5
+            },
+            "[60,70)": {
+              "n": 12,
+              "mae": 1.2309619777170433,
+              "rmse": 1.3454504032682904,
+              "independent_batteries": 6
+            },
+            "[70,80)": {
+              "n": 13,
+              "mae": 0.9561006353049154,
+              "rmse": 1.2106677879976553,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 11,
+              "mae": 1.1644925883083823,
+              "rmse": 1.453413973163612,
+              "independent_batteries": 6
+            },
+            "[90,110)": {
+              "n": 7,
+              "mae": 1.221901309651441,
+              "rmse": 1.5323191341968079,
+              "independent_batteries": 6
+            }
+          },
+          "macro_battery_mae": 1.0552738929521
+        },
+        "test": {
+          "overall": {
+            "n": 73,
+            "mae": 0.6662394361391359,
+            "rmse": 0.8343051378464201,
+            "independent_batteries": 7
+          },
+          "per_battery": {
+            "wheeler2025:Cell1b": {
+              "n": 9,
+              "mae": 0.7108498659214548,
+              "rmse": 0.7606552943090787,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2c": {
+              "n": 8,
+              "mae": 0.5176166921591756,
+              "rmse": 0.571114798752576,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell3a": {
+              "n": 10,
+              "mae": 0.30962040349039555,
+              "rmse": 0.3385572632468568,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4c": {
+              "n": 11,
+              "mae": 1.479150403211927,
+              "rmse": 1.4995189690597506,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5b": {
+              "n": 11,
+              "mae": 0.8661565630788659,
+              "rmse": 0.90936101182645,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6a": {
+              "n": 16,
+              "mae": 0.20428907266610663,
+              "rmse": 0.315208616248288,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7a": {
+              "n": 8,
+              "mae": 0.7417113351037554,
+              "rmse": 0.8964966660933336,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 11,
+              "mae": 0.31076423365100714,
+              "rmse": 0.5081997963788704,
+              "independent_batteries": 3
+            },
+            "[50,60)": {
+              "n": 17,
+              "mae": 0.6699425949502777,
+              "rmse": 0.7959846784004139,
+              "independent_batteries": 7
+            },
+            "[60,70)": {
+              "n": 16,
+              "mae": 0.6710735326509614,
+              "rmse": 0.8291027601860523,
+              "independent_batteries": 7
+            },
+            "[70,80)": {
+              "n": 10,
+              "mae": 0.8633704395937244,
+              "rmse": 0.9659806152331631,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 13,
+              "mae": 0.7021886808686599,
+              "rmse": 0.8506955332266666,
+              "independent_batteries": 7
+            },
+            "[90,110)": {
+              "n": 6,
+              "mae": 0.8881190640326532,
+              "rmse": 1.1152809544038593,
+              "independent_batteries": 6
+            }
+          },
+          "macro_battery_mae": 0.6899134765188116
+        }
+      },
+      "xgboost": {
+        "validation": {
+          "overall": {
+            "n": 65,
+            "mae": 1.163035472705021,
+            "rmse": 1.375256504900104,
+            "independent_batteries": 6
+          },
+          "per_battery": {
+            "wheeler2025:Cell1c": {
+              "n": 8,
+              "mae": 1.0845243968704512,
+              "rmse": 1.1519852310105625,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2a": {
+              "n": 9,
+              "mae": 1.4087943409796546,
+              "rmse": 1.6500447253512533,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4a": {
+              "n": 11,
+              "mae": 0.9548228346670303,
+              "rmse": 1.061717958050121,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5c": {
+              "n": 11,
+              "mae": 1.9357160256442314,
+              "rmse": 2.0769390947911,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6c": {
+              "n": 17,
+              "mae": 0.7805446971132346,
+              "rmse": 0.9648737855143317,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7c": {
+              "n": 9,
+              "mae": 1.0196415741885545,
+              "rmse": 1.1613821233653518,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 7,
+              "mae": 0.5582781244602028,
+              "rmse": 0.7363043598200354,
+              "independent_batteries": 2
+            },
+            "[50,60)": {
+              "n": 15,
+              "mae": 0.9520055450153431,
+              "rmse": 1.1176662667080868,
+              "independent_batteries": 5
+            },
+            "[60,70)": {
+              "n": 12,
+              "mae": 1.1774606407633386,
+              "rmse": 1.2397122141573016,
+              "independent_batteries": 6
+            },
+            "[70,80)": {
+              "n": 13,
+              "mae": 1.4127532760988981,
+              "rmse": 1.5128346996491566,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 11,
+              "mae": 1.4177642461108582,
+              "rmse": 1.7497810163314673,
+              "independent_batteries": 6
+            },
+            "[90,110)": {
+              "n": 7,
+              "mae": 1.3312212419585165,
+              "rmse": 1.6269779867695453,
+              "independent_batteries": 6
+            }
+          },
+          "macro_battery_mae": 1.1973406449105262
+        },
+        "test": {
+          "overall": {
+            "n": 73,
+            "mae": 1.4022469967976177,
+            "rmse": 2.2856294350445046,
+            "independent_batteries": 7
+          },
+          "per_battery": {
+            "wheeler2025:Cell1b": {
+              "n": 9,
+              "mae": 0.7018697640542939,
+              "rmse": 0.7336671146004604,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2c": {
+              "n": 8,
+              "mae": 0.43981156113391773,
+              "rmse": 0.5691380050226282,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell3a": {
+              "n": 10,
+              "mae": 0.8146861857541537,
+              "rmse": 0.9660741602046865,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4c": {
+              "n": 11,
+              "mae": 1.3436814660021996,
+              "rmse": 1.5914649741275124,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5b": {
+              "n": 11,
+              "mae": 1.697565915887841,
+              "rmse": 1.8917706925804179,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6a": {
+              "n": 16,
+              "mae": 1.3912485764808022,
+              "rmse": 2.3399474018175552,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7a": {
+              "n": 8,
+              "mae": 3.583518764830161,
+              "rmse": 5.120521282910879,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 11,
+              "mae": 3.6810407814280395,
+              "rmse": 5.0846750232993045,
+              "independent_batteries": 3
+            },
+            "[50,60)": {
+              "n": 17,
+              "mae": 0.7913458197635057,
+              "rmse": 0.955866254394267,
+              "independent_batteries": 7
+            },
+            "[60,70)": {
+              "n": 16,
+              "mae": 0.790260695801769,
+              "rmse": 0.9008610744555798,
+              "independent_batteries": 7
+            },
+            "[70,80)": {
+              "n": 10,
+              "mae": 1.2796407147345235,
+              "rmse": 1.6082446934779349,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 13,
+              "mae": 1.3393966730417093,
+              "rmse": 1.5807756271909235,
+              "independent_batteries": 7
+            },
+            "[90,110)": {
+              "n": 6,
+              "mae": 0.9278280341370504,
+              "rmse": 1.2973924077131502,
+              "independent_batteries": 6
+            }
+          },
+          "macro_battery_mae": 1.4246260334490528
+        }
+      },
+      "catboost": {
+        "validation": {
+          "overall": {
+            "n": 65,
+            "mae": 1.3034238273985623,
+            "rmse": 1.6646594435192172,
+            "independent_batteries": 6
+          },
+          "per_battery": {
+            "wheeler2025:Cell1c": {
+              "n": 8,
+              "mae": 1.3452904720432892,
+              "rmse": 1.4656693096265985,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2a": {
+              "n": 9,
+              "mae": 0.3076993868940845,
+              "rmse": 0.48987754650943194,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4a": {
+              "n": 11,
+              "mae": 1.1319146343043733,
+              "rmse": 1.2219405553063014,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5c": {
+              "n": 11,
+              "mae": 1.4469237985459302,
+              "rmse": 1.6119198460546404,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6c": {
+              "n": 17,
+              "mae": 1.4451650727975998,
+              "rmse": 1.9347258338553237,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7c": {
+              "n": 9,
+              "mae": 2.0284335026223257,
+              "rmse": 2.4068455724286317,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 7,
+              "mae": 2.0633901914126733,
+              "rmse": 2.7175190058976315,
+              "independent_batteries": 2
+            },
+            "[50,60)": {
+              "n": 15,
+              "mae": 1.2080728684120468,
+              "rmse": 1.4429916614453022,
+              "independent_batteries": 5
+            },
+            "[60,70)": {
+              "n": 12,
+              "mae": 1.3138323649042996,
+              "rmse": 1.722767592553618,
+              "independent_batteries": 6
+            },
+            "[70,80)": {
+              "n": 13,
+              "mae": 1.3111772582663974,
+              "rmse": 1.5367264212105016,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 11,
+              "mae": 0.8689185198273929,
+              "rmse": 1.008602071110953,
+              "independent_batteries": 6
+            },
+            "[90,110)": {
+              "n": 7,
+              "mae": 1.3983325657744348,
+              "rmse": 1.6770771922882977,
+              "independent_batteries": 6
+            }
+          },
+          "macro_battery_mae": 1.2842378112012671
+        },
+        "test": {
+          "overall": {
+            "n": 73,
+            "mae": 1.9387817622413503,
+            "rmse": 3.2283453981715797,
+            "independent_batteries": 7
+          },
+          "per_battery": {
+            "wheeler2025:Cell1b": {
+              "n": 9,
+              "mae": 1.1728589701073797,
+              "rmse": 1.4207776343179348,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell2c": {
+              "n": 8,
+              "mae": 1.1799818650716611,
+              "rmse": 1.7571101580152653,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell3a": {
+              "n": 10,
+              "mae": 0.7053232943817008,
+              "rmse": 0.86145771204699,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell4c": {
+              "n": 11,
+              "mae": 1.5251809811894523,
+              "rmse": 1.744542822644142,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell5b": {
+              "n": 11,
+              "mae": 0.8770901408645373,
+              "rmse": 1.2177683662559629,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell6a": {
+              "n": 16,
+              "mae": 2.4721265640338417,
+              "rmse": 3.967211137138306,
+              "independent_batteries": 1
+            },
+            "wheeler2025:Cell7a": {
+              "n": 8,
+              "mae": 6.06290533514081,
+              "rmse": 7.149502140815053,
+              "independent_batteries": 1
+            }
+          },
+          "by_soh_range": {
+            "[0,50)": {
+              "n": 11,
+              "mae": 6.1874122487391,
+              "rmse": 7.349786066693192,
+              "independent_batteries": 3
+            },
+            "[50,60)": {
+              "n": 17,
+              "mae": 1.330816614650855,
+              "rmse": 1.8823830049020727,
+              "independent_batteries": 7
+            },
+            "[60,70)": {
+              "n": 16,
+              "mae": 1.026586095087449,
+              "rmse": 1.4315224586006525,
+              "independent_batteries": 7
+            },
+            "[70,80)": {
+              "n": 10,
+              "mae": 1.736939519986349,
+              "rmse": 2.2245494046790792,
+              "independent_batteries": 6
+            },
+            "[80,90)": {
+              "n": 13,
+              "mae": 0.7731975948871835,
+              "rmse": 0.9441068466789735,
+              "independent_batteries": 7
+            },
+            "[90,110)": {
+              "n": 6,
+              "mae": 1.1665516672713068,
+              "rmse": 1.4439414288484471,
+              "independent_batteries": 6
+            }
+          },
+          "macro_battery_mae": 1.9993524501127689
+        }
+      }
+    }
+  },
+  "second_life_rul": {
+    "status": "unavailable_no_justified_service_endpoint",
+    "trained": false
+  }
+}

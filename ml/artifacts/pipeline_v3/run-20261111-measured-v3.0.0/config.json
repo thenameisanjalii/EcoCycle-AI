@@ -1,0 +1,7 @@
+{
+  "dataset": "D:\\MCA\\Sem 5\\Minor Project\\EcoCycle-AI\\EcoCycle-AI\\ml\\data\\wheeler2025_discharge_measured.csv",
+  "output": "ml/artifacts/pipeline_v3/run-20261111-measured-v3.0.0",
+  "seed": 42,
+  "iterations": 500,
+  "threads": 4
+}
