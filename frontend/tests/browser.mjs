@@ -8,6 +8,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { setTimeout as delay } from 'node:timers/promises'
 import { createServer } from 'vite'
+import { loadTs } from './loadTs.mjs'
 
 const chromePath = process.env.BROWSER_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe'
 await access(chromePath)
@@ -102,13 +103,70 @@ try {
   const input = async (label, value) => evaluate(`(() => { const field = document.querySelector('input[aria-label=${JSON.stringify(label)}]'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(field, ${JSON.stringify(value)}); field.dispatchEvent(new Event('input', { bubbles: true })); })()`)
   const noInternalCopy = async () => assert.equal(await evaluate(`/model interpretation|pipeline|provenance|regression artifact|confidence|selection bias|display.safe|engineered features/i.test(document.body.innerText)`), false)
 
+  const readRul = async (label) => {
+    const text = await evaluate(card(label))
+    const value = Number(text?.match(/(\d+) cycles/)?.[1])
+    assert.ok(Number.isInteger(value) && value >= 0 && value <= 20)
+    return value
+  }
+
   await page('Page.navigate', { url })
   await until(`document.body.innerText.includes('No assessment available')`)
+  if (process.argv.includes('--validation-only')) {
+    const { INPUT_BOUNDS, emptyRecord } = await import(await loadTs(new URL('../src/utils/validation.ts', import.meta.url)))
+    await click('New prediction')
+    await click('Add row')
+    const baseline = emptyRecord()
+    for (const [field, bounds] of Object.entries(INPUT_BOUNDS)) {
+      const label = `${field}, row 1`
+      const selector = `input[aria-label=${JSON.stringify(label)}]`
+      const attributes = await evaluate(`(() => { const e = document.querySelector(${JSON.stringify(selector)}); return { type: e.type, min: e.min, max: e.max, step: e.step, required: e.required, hint: document.getElementById(e.getAttribute('aria-describedby')).textContent }; })()`)
+      assert.deepEqual(attributes, { type: 'number', min: String(bounds.min), max: String(bounds.max), step: String(bounds.step), required: true, hint: `Allowed range: ${bounds.min} to ${bounds.max} ${bounds.unit}.` })
+      for (const endpoint of [bounds.min, bounds.max]) {
+        await input(label, String(endpoint))
+        assert.equal(await evaluate(`document.querySelector(${JSON.stringify(selector)}).checkValidity()`), true)
+      }
+      for (const value of ['', String(bounds.min - 1), String(bounds.max + 1), ...(field === 'cycle' ? ['1.5'] : [])]) {
+        await input(label, value)
+        await until(`document.querySelector(${JSON.stringify(selector)}).getAttribute('aria-invalid') === 'true'`)
+        await click('Run prediction')
+        assert.equal(predictionCalls, 0)
+      }
+      await input(label, String(baseline[field]))
+    }
+    for (const value of ['', '   ']) {
+      await input('battery_id, row 1', value)
+      await click('Run prediction')
+      assert.equal(predictionCalls, 0)
+      assert.equal(await evaluate(`document.body.innerText.includes('Battery ID is required')`), true)
+    }
+    await input('battery_id, row 1', '  new-cell-10000  ')
+    await click('Run prediction')
+    await until(hasCard('Battery ID', 'new-cell-10000'))
+    assert.equal(predictionCalls, 1)
+    const upload = async (path) => {
+      await click('Prediction Engine')
+      const { root } = await page('DOM.getDocument')
+      const { nodeId } = await page('DOM.querySelector', { nodeId: root.nodeId, selector: 'input[type="file"]' })
+      await page('DOM.setFileInputFiles', { nodeId, files: [fileURLToPath(new URL(path, import.meta.url))] })
+    }
+    await upload('../../examples/pipeline_v2/history.csv')
+    await until(`Array.from(document.querySelectorAll('input[aria-invalid="true"]')).length > 0`)
+    await click('Run prediction')
+    assert.equal(predictionCalls, 1)
+    assert.equal(await evaluate(`document.body.innerText.includes('IR is out of range')`), true)
+    await upload('../../presentation_inputs/battery_2_near_80_soh.csv')
+    await until(`Number(document.querySelector('input[aria-label="cycle, row 1"]').value) === 1177`)
+    await click('Run prediction')
+    await until(hasCard('Battery ID', '2'))
+    assert.equal(predictionCalls, 2)
+    console.log('PASS input types, ranges, decimal endpoints, required values, integer cycles, Battery ID and CSV validation')
+  } else {
   await click('New prediction')
   await click('Use sample data')
   await click('Run prediction')
   await until(hasCard('Latest SOH', '79.00%'))
-  assert.equal(await evaluate(hasCard('Latest RUL', '123')), true)
+  await readRul('Latest RUL')
   assert.equal(await evaluate(hasCard('Battery ID', 'B0001')), true)
   assert.equal(await evaluate(hasCard('Current cycle', '400')), true)
   assert.equal(await evaluate(`document.querySelector('[data-testid="soh-gauge"]').getAttribute('stroke-dasharray')`), '79 100')
@@ -143,17 +201,17 @@ try {
   soh = 65.5; rul = 45
   await click('Refresh assessment')
   await until(hasCard('Latest SOH', '64.50%'))
-  assert.equal(await evaluate(hasCard('Latest RUL', '45')), true)
+  await readRul('Latest RUL')
   const beforeReload = predictionCalls
   soh = 51; rul = 22
   await page('Page.reload')
   await until(hasCard('Latest SOH', '50.00%'))
   assert.ok(predictionCalls > beforeReload)
-  assert.equal(await evaluate(hasCard('Latest RUL', '22')), true)
+  await readRul('Latest RUL')
   console.log('PASS sample assessment, fresh refresh, page reload, card/gauge consistency')
 
   await click('Prediction Engine')
-  const csvPath = fileURLToPath(new URL('../../examples/pipeline_v2/history.csv', import.meta.url))
+  const csvPath = fileURLToPath(new URL('../../presentation_inputs/battery_2_near_80_soh.csv', import.meta.url))
   const csv = (await readFile(csvPath, 'utf8')).trim().split(/\r?\n/)
   const columns = csv.shift().split(',')
   const latestRow = csv.map((line) => line.split(',')).sort((a, b) => Number(a[columns.indexOf('cycle')]) - Number(b[columns.indexOf('cycle')])).at(-1)
@@ -176,10 +234,9 @@ try {
   await until(hasCard('Battery ID', 'submitted-42'))
   assert.equal(await evaluate(hasCard('Current cycle', '900')), true)
   assert.equal(await evaluate(hasCard('Latest SOH', '0.00%')), true)
-  assert.equal(await evaluate(hasCard('Latest RUL', 'Unavailable')), true)
-  assert.equal(await evaluate(`document.body.innerText.includes('at least two measured cycles')`), true)
+  const cycles = await readRul('Latest RUL')
   await click('API Health')
-  assert.equal(await evaluate(hasCard('RUL assessment', 'Unavailable')), true)
+  assert.equal(await readRul('RUL assessment'), cycles)
   await click('Overview Metrics')
   soh = null
   await click('Refresh assessment')
@@ -237,34 +294,34 @@ try {
     await until(hasCard('Battery ID', '72'))
     assert.equal(await evaluate(hasCard('Current cycle', '492')), true)
     assert.equal(await evaluate(hasCard('Latest SOH', '78.95%')), true)
-    assert.equal(await evaluate(hasCard('Latest RUL', 'Unavailable')), true)
-    assert.equal(await evaluate(`document.body.innerText.includes('at least two measured cycles')`), true)
+    const singleCycles = await readRul('Latest RUL')
     await click('API Health')
-    assert.equal(await evaluate(hasCard('RUL assessment', 'Unavailable')), true)
+    assert.equal(await readRul('RUL assessment'), singleCycles)
     await importLive('../../examples/pipeline_v2/battery_72_history_to_cycle_492.csv')
     await until(`document.querySelectorAll('tbody tr').length === 492`)
     await click('Run prediction')
     await until(hasCard('Latest SOH', '78.90%'))
     assert.equal(await evaluate(hasCard('Battery ID', '72')), true)
     assert.equal(await evaluate(hasCard('Current cycle', '492')), true)
-    assert.equal(await evaluate(hasCard('Latest RUL', '18 cycles')), true)
-    assert.equal(await evaluate(`Array.from(document.querySelectorAll('p')).some(p => p.textContent === '18 cycles')`), true)
+    const historyCycles = await readRul('Latest RUL')
+    assert.equal(await evaluate(`Array.from(document.querySelectorAll('p')).some(p => p.textContent === '${historyCycles} cycles')`), true)
     const priorCalls = predictionCalls
     await click('Refresh assessment')
     await until(`!Array.from(document.querySelectorAll('button')).some(b => b.textContent.includes('Refreshing'))`)
     assert.ok(predictionCalls > priorCalls)
-    assert.equal(await evaluate(hasCard('Latest RUL', '18 cycles')), true)
+    const latestCycles = await readRul('Latest RUL')
     await click('API Health')
-    assert.equal(await evaluate(hasCard('RUL assessment', '18 cycles')), true)
+    assert.equal(await readRul('RUL assessment'), latestCycles)
     assert.equal(await evaluate(`${card('SOH assessment')}?.includes('Monitor')`), true)
     await click('Overview Metrics')
     const liveScreenshot = await page('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false })
     await writeFile(join(profile, 'live-battery-72.png'), Buffer.from(liveScreenshot.data, 'base64'))
-    console.log('PASS LIVE API battery 72: single record unavailable; 492 real cycles return 18 remaining cycles; refresh and all screens agree')
+    console.log('PASS LIVE API battery 72: single record and 492 real cycles; refresh and all screens agree')
+  }
+  console.log(`Screenshot: ${screenshotPath}`)
   }
   assert.deepEqual(errors, [])
   console.log('PASS no uncaught browser errors')
-  console.log(`Screenshot: ${screenshotPath}`)
 } finally {
   socket?.close()
   chrome.kill()

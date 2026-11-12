@@ -1,7 +1,33 @@
 import { TELEMETRY_FIELDS, TelemetryRecord } from '../types'
+import inputBounds from '../../../configs/prediction_input_bounds.json'
 
 export const LEAKAGE_FIELDS = ['QDischarge', 'SOH', 'RUL', 'max_cycle', 'final_cycle', 'terminal_cycle', 'total_cycles']
 export const MAX_RECORDS = 5000
+export const INPUT_BOUNDS = inputBounds.fields
+export type NumericField = keyof typeof INPUT_BOUNDS
+const DECIMAL = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/
+
+export function allowedRange(field: NumericField): string {
+  const bounds = INPUT_BOUNDS[field]
+  return `Allowed range: ${bounds.min} to ${bounds.max} ${bounds.unit}.`
+}
+
+export function inputError(field: string, value: unknown): string {
+  if (field === 'battery_id') {
+    return (typeof value === 'string' && value.trim() !== '') || (typeof value === 'number' && Number.isInteger(value))
+      ? '' : 'Battery ID is required and must be a nonempty string or integer.'
+  }
+  const name = field as NumericField
+  const bounds = INPUT_BOUNDS[name]
+  if (value === null || value === undefined || (typeof value === 'string' && value.trim() === '')) return `${field} is required. ${allowedRange(name)}`
+  if ((typeof value !== 'number' && typeof value !== 'string') || (typeof value === 'string' && !DECIMAL.test(value.trim())) || !Number.isFinite(Number(value))) {
+    return `${field} requires a finite number. ${allowedRange(name)}`
+  }
+  const number = Number(value)
+  if (number < bounds.min || number > bounds.max) return `${field} is out of range. ${allowedRange(name)}`
+  if (field === 'cycle' && !Number.isInteger(number)) return `cycle must be a whole number. ${allowedRange(name)}`
+  return ''
+}
 
 export function validateRecords(input: unknown[]): { records: TelemetryRecord[]; errors: string[] } {
   const errors: string[] = []
@@ -16,22 +42,14 @@ export function validateRecords(input: unknown[]): { records: TelemetryRecord[];
     const source = raw as Record<string, unknown>
     const leaks = Object.keys(source).filter((key) => LEAKAGE_FIELDS.includes(key))
     if (leaks.length) errors.push(`Row ${index + 1}: unsupported field(s): ${leaks.join(', ')}.`)
-    const required = ['QCharge', 'cycle', 'battery_id']
-    const missing = required.filter((field) => source[field] === undefined || source[field] === '' || source[field] === null)
-    if (missing.length) errors.push(`Row ${index + 1}: missing ${missing.join(', ')}.`)
     const normalized = { ...source } as Record<string, number | string>
     TELEMETRY_FIELDS.forEach((field) => {
-      if (field !== 'battery_id' && source[field] !== undefined && source[field] !== '' && source[field] !== null) {
-        const value = Number(source[field])
-        if (!Number.isFinite(value)) errors.push(`Row ${index + 1}: ${field} must be a finite number.`)
-        else normalized[field] = value
-      }
+      const error = inputError(field, source[field])
+      if (error) errors.push(`Row ${index + 1}: ${error}`)
+      else normalized[field] = field === 'battery_id'
+        ? (typeof source[field] === 'string' ? source[field].trim() : source[field]) as number | string
+        : Number(source[field])
     })
-    if (normalized.cycle !== undefined && Number(normalized.cycle) < 1) errors.push(`Row ${index + 1}: cycle must be at least 1.`)
-    const observed = ['IR', 'QCharge', 'Tavg', 'Tmax', 'Tmin', 'chargetime'].filter((field) => source[field] !== undefined && source[field] !== '' && source[field] !== null)
-    if (observed.length < 2) errors.push(`Row ${index + 1}: supply at least two sensor measurements including QCharge.`)
-    if (Number(normalized.QCharge) <= 0) errors.push(`Row ${index + 1}: QCharge must be positive.`)
-    if (source.IR !== undefined && source.IR !== '' && Number(source.IR) < 0) errors.push(`Row ${index + 1}: IR cannot be negative.`)
     return normalized as TelemetryRecord
   }).filter((record): record is TelemetryRecord => record !== null)
   if (new Set(records.map((r) => String(r.battery_id))).size > 1) errors.push('History must contain exactly one battery.')

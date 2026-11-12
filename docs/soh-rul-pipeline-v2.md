@@ -46,8 +46,34 @@ or historical measurements. They are diagnostics, not degraded-cell accuracy.
 Send only actual measurements. Units are IR in ohms, charge capacity in Ah,
 temperatures in Celsius, charge time in **minutes**, and operating cycle count.
 `QDischarge`, SOH/RUL labels, future endpoints and client-engineered features are
-rejected. Nonfinite values are rejected; omitted/null sensor readings are
-explicitly missing.
+rejected. The frontend and HTTP API require every numeric measurement and a
+nonempty Battery ID. Missing, null, nonnumeric, nonfinite and out-of-range
+measurements are rejected before inference. Battery ID may be a string or
+integer, is trimmed when textual, and is not restricted to dataset IDs.
+
+Both validators read `configs/prediction_input_bounds.json`, derived from all
+116,663 master-dataset rows by `python scripts/derive_input_bounds.py`:
+
+| Input | Minimum (inclusive) | Maximum (inclusive) | Input step |
+| --- | ---: | ---: | --- |
+| IR (ohms) | 0.0096521955 | 0.022639817 | Any decimal |
+| QCharge (Ah) | 0.82887155 | 1.9679104 | Any decimal |
+| Tavg (C) | 25.03826830669143 | 41.44028639388188 | Any decimal |
+| Tmax (C) | 25.938044 | 44.662853 | Any decimal |
+| Tmin (C) | 23.404068 | 36.69121943252374 | Any decimal |
+| Charge time (minutes) | 6.474444999999832 | 3934.7051666666666 | Any decimal |
+| Cycle | 1 | 2237 | Whole numbers (1) |
+
+The audit excludes missing/nonfinite/nonpositive measurements and fractional
+cycles. Zero IR excludes 4,922 readings. All three temperature readings are
+excluded for the 123 faulty triplets: zero/dropout readings, saturation values
+outside (0, 100) C, or inconsistent Tmin/Tavg/Tmax ordering. This also excludes
+the corrupted averages associated with saturated sensors. Bounds use the
+remaining original values at full precision; decimal inputs use `step="any"`
+so valid recorded endpoints are not rounded or rejected by browser step rules.
+Recorded charge-time holds and charge-capacity drift are retained: these are
+observations, not null/sentinel codes. The bounds file records the dataset hash
+and exclusion counts. Raw datasets and trained preprocessing are unchanged.
 
 ```json
 {
@@ -63,9 +89,9 @@ The numeric JSON above illustrates units, not a labeled evaluation example.
 Measured CSV examples are in `examples/pipeline_v2/`.
 
 - **single**: one or more independent assessments; outputs one SOH per row,
-  with `rul: null`. Requires measured positive QCharge, known cycle, and at
-  least one other sensor measurement. Other sensors may be missing. A batch
-  of one is supported. No historical features enter this model.
+  with `rul: null`. The HTTP contract requires all seven numeric inputs within
+  the ranges above and a nonempty Battery ID. A batch of one is supported.
+  No historical features enter this model.
 - **history**: at least two observations from exactly one identified battery.
   Order is normalized internally; only the latest cycle is returned. Distinct
   batteries must be submitted separately. Duplicate cycles within a battery
@@ -92,6 +118,8 @@ ignores responses for outdated inputs.
 
 ## Shared preprocessing and charge-time investigation
 
+The HTTP checks above run before inference. Offline preprocessing still supports
+faulted or missing archived readings for training and historical diagnostics.
 `MeasurementPreprocessor` is the sole v2 cleaning/feature implementation for
 training, offline inference and HTTP inference. It is fit on training batteries
 only and serialized with the model. Validation/test never update its state.

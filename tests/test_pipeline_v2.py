@@ -128,13 +128,13 @@ def test_default_bundle_without_environment_from_another_directory(monkeypatch, 
         get_bundle.cache_clear()
 
 
-def test_invalid_explicit_bundle_does_not_use_default(monkeypatch, tmp_path):
+def test_invalid_explicit_bundle_does_not_use_default(monkeypatch, tmp_path, raw):
     monkeypatch.setenv("ECOCYCLE_V2_BUNDLE", str(tmp_path / "missing-bundle"))
     get_bundle.cache_clear()
     try:
         with TestClient(app) as client:
             for response in [client.get("/v2/health"), client.post("/v2/predict", json={
-                "records": [{"QCharge": 1.075, "IR": .016, "cycle": 1}]
+                "records": raw.iloc[:1].to_dict("records")
             })]:
                 assert response.status_code == 503
                 assert "Versioned bundle unavailable" in response.json()["detail"]
@@ -152,12 +152,13 @@ def test_offline_api_exact_parity(client, bundle, raw, contract):
     assert expected["results"][0]["rul"] is None if contract == "single" else expected["results"][0]["rul"] is not None
 
 
-def test_singleton_batch_and_missing_sensors(client):
-    result = client.post("/v2/predict", json={"records": [{"QCharge": 1.05, "IR": .016, "cycle": 50}]})
+def test_singleton_batch_and_missing_sensors(client, raw):
+    result = client.post("/v2/predict", json={"records": raw.iloc[:1].to_dict("records")})
     assert result.status_code == 200
     row = result.json()["results"][0]
     assert row["rul"] is None
-    assert row["reliability"]["status"] == "review_required"
+    missing = client.post("/v2/predict", json={"records": [{"QCharge": 1.05, "IR": .016, "cycle": 50, "battery_id": "A"}]})
+    assert missing.status_code == 422
 
 
 def test_metadata_integer_types_preserved(client, bundle, raw):
@@ -186,12 +187,11 @@ def test_invalid_histories(client, raw, mode):
     assert result.status_code == 422
 
 
-def test_low_capacity_extrapolation_is_explicit(client, raw):
+def test_low_capacity_outside_dataset_is_rejected(client, raw):
     record = raw.iloc[0].to_dict() | {"QCharge": .5}
-    result = client.post("/v2/predict", json={"records": [record]}).json()["results"][0]
-    assert result["reliability"]["status"] == "review_required"
-    assert "QCharge_outside_training_support" in result["reliability"]["warnings"]
-    assert any("50-70" in s for s in result["reliability"]["warnings"])
+    result = client.post("/v2/predict", json={"records": [record]})
+    assert result.status_code == 422
+    assert "Allowed range:" in result.text
 
 
 def test_registry_and_artifact_tampering_rejected(tmp_path, bundle):

@@ -5,8 +5,9 @@ from pathlib import Path
 from typing import Literal
 
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from backend.schemas.measurement_bounds import BOUNDS, validate_battery_id, validate_measurement
 from ml.pipeline_v2.inference import ModelBundle
 
 router = APIRouter(prefix="/v2", tags=["Versioned measurement pipeline"])
@@ -15,15 +16,25 @@ DEFAULT_BUNDLE = Path(__file__).resolve().parents[2] / "ml/artifacts/pipeline_v2
 
 class Measurement(BaseModel):
     model_config = ConfigDict(extra="forbid", allow_inf_nan=False)
-    IR: float | None = None
-    QCharge: float = Field(..., gt=0, le=20, description="Measured charge capacity in Ah; never substituted for QDischarge")
-    Tavg: float | None = None
-    Tmax: float | None = None
-    Tmin: float | None = None
-    chargetime: float | None = Field(None, ge=0, le=100000, description="Minutes, not seconds")
-    cycle: float = Field(..., ge=1, le=100000)
-    battery_id: str | int | None = None
+    IR: float = Field(..., ge=BOUNDS["IR"]["min"], le=BOUNDS["IR"]["max"])
+    QCharge: float = Field(..., ge=BOUNDS["QCharge"]["min"], le=BOUNDS["QCharge"]["max"], description="Measured charge capacity in Ah")
+    Tavg: float = Field(..., ge=BOUNDS["Tavg"]["min"], le=BOUNDS["Tavg"]["max"])
+    Tmax: float = Field(..., ge=BOUNDS["Tmax"]["min"], le=BOUNDS["Tmax"]["max"])
+    Tmin: float = Field(..., ge=BOUNDS["Tmin"]["min"], le=BOUNDS["Tmin"]["max"])
+    chargetime: float = Field(..., ge=BOUNDS["chargetime"]["min"], le=BOUNDS["chargetime"]["max"], description="Minutes, not seconds")
+    cycle: int = Field(..., ge=BOUNDS["cycle"]["min"], le=BOUNDS["cycle"]["max"])
+    battery_id: str | int
     row_id: str | int | None = None
+
+    @field_validator(*BOUNDS, mode="before")
+    @classmethod
+    def validate_numeric_input(cls, value, info):
+        return validate_measurement(info.field_name, value)
+
+    @field_validator("battery_id", mode="before")
+    @classmethod
+    def validate_id(cls, value):
+        return validate_battery_id(value)
 
 
 class MeasurementRequest(BaseModel):

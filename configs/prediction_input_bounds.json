@@ -1,0 +1,57 @@
+{
+  "dataset": "ml/data/master_dataset.csv",
+  "sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
+  "rows": 116663,
+  "exclusions": "Nonfinite/missing and nonpositive readings; temperature triplets outside (0, 100) Celsius or with Tmin > Tavg or Tavg > Tmax; fractional cycles. Recorded charge-time holds and charge-capacity drift are retained.",
+  "fields": {
+    "IR": {
+      "min": 0.0096521955,
+      "max": 0.022639817,
+      "step": "any",
+      "unit": "ohms",
+      "excluded": 4922
+    },
+    "QCharge": {
+      "min": 0.82887155,
+      "max": 1.9679104,
+      "step": "any",
+      "unit": "Ah",
+      "excluded": 0
+    },
+    "Tavg": {
+      "min": 25.03826830669143,
+      "max": 41.44028639388188,
+      "step": "any",
+      "unit": "°C",
+      "excluded": 123
+    },
+    "Tmax": {
+      "min": 25.938044,
+      "max": 44.662853,
+      "step": "any",
+      "unit": "°C",
+      "excluded": 123
+    },
+    "Tmin": {
+      "min": 23.404068,
+      "max": 36.69121943252374,
+      "step": "any",
+      "unit": "°C",
+      "excluded": 123
+    },
+    "chargetime": {
+      "min": 6.474444999999832,
+      "max": 3934.7051666666666,
+      "step": "any",
+      "unit": "minutes",
+      "excluded": 0
+    },
+    "cycle": {
+      "min": 1.0,
+      "max": 2237.0,
+      "step": 1,
+      "unit": "cycles",
+      "excluded": 0
+    }
+  }
+}

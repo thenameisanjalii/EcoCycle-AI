@@ -6,7 +6,7 @@ import { loadTs } from './loadTs.mjs'
 const { displaySOH, displayRUL, mapLatestPrediction, restoreRecords, saveAssessmentRecords, sohHealth, selectPotentialApplications, rulUnavailableReason } = await import(await loadTs(new URL('../src/utils/assessment.ts', import.meta.url)))
 const { validateRecords } = await import(await loadTs(new URL('../src/utils/validation.ts', import.meta.url)))
 const { api } = await import(await loadTs(new URL('../src/services/api.ts', import.meta.url)))
-const records = [10, 20, 30].map((cycle) => ({ battery_id: 'new-battery', cycle, QCharge: 1.2, IR: 0.02 }))
+const records = [10, 20, 30].map((cycle) => ({ battery_id: 'new-battery', cycle, QCharge: 1.2, IR: 0.02, Tmin: 31, Tavg: 34, Tmax: 38, chargetime: 10.3 }))
 const metric = (value) => ({ raw: value, display: value, units: '%' })
 
 test('SOH subtracts exactly one percentage point without changing the returned values', () => {
@@ -68,7 +68,7 @@ test('mismatched, absent, or ambiguous latest results cannot reuse an older pred
 })
 
 test('existing CSV data selects the highest cycle even when input order is reversed', async () => {
-  const text = await readFile(new URL('../../examples/pipeline_v2/history.csv', import.meta.url), 'utf8')
+  const text = await readFile(new URL('../../presentation_inputs/battery_2_near_80_soh.csv', import.meta.url), 'utf8')
   const [header, ...lines] = text.trim().split(/\r?\n/)
   const columns = header.split(',')
   const input = lines.map((line) => Object.fromEntries(line.split(',').map((value, index) => [columns[index], value])))
