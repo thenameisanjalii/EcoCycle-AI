@@ -64,6 +64,7 @@ data/processed/*
 data/features/*
 !data/features/.gitkeep
 
+
 # Model Artifacts & Weights (Keep structure via .gitkeep)
 artifacts/models/soh/*
 !artifacts/models/soh/.gitkeep
@@ -86,6 +87,8 @@ artifacts/feature_metadata/*
 !ml/artifacts/preprocessors/**/*.joblib
 !ml/artifacts/pipeline_v2/**/*.joblib
 !ml/data/*.csv
+ml/data/sources
+
 
 # Logs & Temporary Outputs
 *.log
@@ -96,3 +99,5 @@ frontend/node_modules/
 frontend/dist/
 frontend/build/
 frontend/.next/
+
+
