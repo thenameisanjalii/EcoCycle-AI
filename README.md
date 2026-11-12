@@ -3,7 +3,8 @@
 The measurement-based SOH/RUL pipeline is now **v2**. Start with the
 [v2 contracts, training/startup commands, definitions and limitations](docs/soh-rul-pipeline-v2.md)
 and the [measured evaluation](reports/pipeline_v2/run-20261111-v2.0.1/evaluation.md).
-The frontend uses `/v2/predict` and requires `ECOCYCLE_V2_BUNDLE` on the backend.
+The frontend uses `/v2/predict`. The backend loads the included v2.0.1 bundle
+by default; set `ECOCYCLE_V2_BUNDLE` to select another compatible training run.
 Original CSVs and models are preserved. The API contract below documents the
 legacy compatibility routes: their RUL target is recording end, not failure.
 

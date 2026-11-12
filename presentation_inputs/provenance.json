@@ -2,7 +2,9 @@
   "dataset": "ml/data/master_dataset.csv",
   "dataset_sha256": "0affa1f6084edf7bba9b99736267a14d6fb693de72b16220be6400bcb035ec88",
   "bundle": "ml/artifacts/pipeline_v2/run-20261111-v2.0.1",
-  "selection": "Closest recorded row to 80% measured SOH per held-out battery, then twenty batteries with the smallest absolute SOH distance. No prediction-based selection.",
+  "selection": "Twenty held-out batteries whose closest recorded SOH is nearest 80%. For each, select that observation and the immediately preceding recorded cycle; use the following recorded cycle if the closest observation is the first. Sort each pair chronologically. No prediction-based selection.",
+  "cases_per_battery": 2,
+  "total_cases": 40,
   "battery_ids": [
     88,
     93,
@@ -25,35 +27,215 @@
     117,
     2
   ],
-  "measured_soh": [
-    79.95450646262422,
-    80.04657311375436,
-    80.05736036401538,
-    79.94216806461671,
-    80.1707520770503,
-    81.17003915295213,
-    81.2931122403679,
-    81.34270163782486,
-    81.77993536337539,
-    81.8282264444801,
-    82.03757419879024,
-    82.05694067534486,
-    82.1759690313287,
-    82.34320719517673,
-    82.73376636127824,
-    83.08226569361568,
-    83.15674744341234,
-    83.85769498639213,
-    87.7163610011229,
-    96.02178464586817
+  "cases": [
+    {
+      "battery_id": 88,
+      "cycle": 438.0,
+      "measured_soh": 80.13995327174804
+    },
+    {
+      "battery_id": 88,
+      "cycle": 439.0,
+      "measured_soh": 79.95450646262422
+    },
+    {
+      "battery_id": 93,
+      "cycle": 501.0,
+      "measured_soh": 80.2495284445561
+    },
+    {
+      "battery_id": 93,
+      "cycle": 502.0,
+      "measured_soh": 80.04657311375436
+    },
+    {
+      "battery_id": 53,
+      "cycle": 395.0,
+      "measured_soh": 80.45413257604866
+    },
+    {
+      "battery_id": 53,
+      "cycle": 396.0,
+      "measured_soh": 80.05736036401538
+    },
+    {
+      "battery_id": 75,
+      "cycle": 437.0,
+      "measured_soh": 80.18751600169267
+    },
+    {
+      "battery_id": 75,
+      "cycle": 438.0,
+      "measured_soh": 79.94216806461671
+    },
+    {
+      "battery_id": 72,
+      "cycle": 491.0,
+      "measured_soh": 80.36257016400529
+    },
+    {
+      "battery_id": 72,
+      "cycle": 492.0,
+      "measured_soh": 80.1707520770503
+    },
+    {
+      "battery_id": 22,
+      "cycle": 557.0,
+      "measured_soh": 81.38657489148862
+    },
+    {
+      "battery_id": 22,
+      "cycle": 558.0,
+      "measured_soh": 81.17003915295213
+    },
+    {
+      "battery_id": 30,
+      "cycle": 915.0,
+      "measured_soh": 81.37321657229842
+    },
+    {
+      "battery_id": 30,
+      "cycle": 916.0,
+      "measured_soh": 81.2931122403679
+    },
+    {
+      "battery_id": 24,
+      "cycle": 1012.0,
+      "measured_soh": 81.43533555927914
+    },
+    {
+      "battery_id": 24,
+      "cycle": 1013.0,
+      "measured_soh": 81.34270163782486
+    },
+    {
+      "battery_id": 108,
+      "cycle": 856.0,
+      "measured_soh": 81.8851949723598
+    },
+    {
+      "battery_id": 108,
+      "cycle": 857.0,
+      "measured_soh": 81.77993536337539
+    },
+    {
+      "battery_id": 15,
+      "cycle": 878.0,
+      "measured_soh": 81.90763302227694
+    },
+    {
+      "battery_id": 15,
+      "cycle": 879.0,
+      "measured_soh": 81.8282264444801
+    },
+    {
+      "battery_id": 103,
+      "cycle": 1037.0,
+      "measured_soh": 82.11425657194252
+    },
+    {
+      "battery_id": 103,
+      "cycle": 1038.0,
+      "measured_soh": 82.03757419879024
+    },
+    {
+      "battery_id": 21,
+      "cycle": 532.0,
+      "measured_soh": 82.23801776614343
+    },
+    {
+      "battery_id": 21,
+      "cycle": 533.0,
+      "measured_soh": 82.05694067534486
+    },
+    {
+      "battery_id": 139,
+      "cycle": 1799.0,
+      "measured_soh": 82.2024938908078
+    },
+    {
+      "battery_id": 139,
+      "cycle": 1800.0,
+      "measured_soh": 82.1759690313287
+    },
+    {
+      "battery_id": 107,
+      "cycle": 814.0,
+      "measured_soh": 82.44586238535646
+    },
+    {
+      "battery_id": 107,
+      "cycle": 815.0,
+      "measured_soh": 82.34320719517673
+    },
+    {
+      "battery_id": 104,
+      "cycle": 1076.0,
+      "measured_soh": 82.78142578929419
+    },
+    {
+      "battery_id": 104,
+      "cycle": 1077.0,
+      "measured_soh": 82.73376636127824
+    },
+    {
+      "battery_id": 130,
+      "cycle": 921.0,
+      "measured_soh": 83.22539587260515
+    },
+    {
+      "battery_id": 130,
+      "cycle": 922.0,
+      "measured_soh": 83.08226569361568
+    },
+    {
+      "battery_id": 100,
+      "cycle": 665.0,
+      "measured_soh": 83.19079774189562
+    },
+    {
+      "battery_id": 100,
+      "cycle": 666.0,
+      "measured_soh": 83.15674744341234
+    },
+    {
+      "battery_id": 122,
+      "cycle": 539.0,
+      "measured_soh": 83.9292586153251
+    },
+    {
+      "battery_id": 122,
+      "cycle": 540.0,
+      "measured_soh": 83.85769498639213
+    },
+    {
+      "battery_id": 117,
+      "cycle": 2188.0,
+      "measured_soh": 87.7191066676252
+    },
+    {
+      "battery_id": 117,
+      "cycle": 2189.0,
+      "measured_soh": 87.7163610011229
+    },
+    {
+      "battery_id": 2,
+      "cycle": 1177.0,
+      "measured_soh": 96.05537575147612
+    },
+    {
+      "battery_id": 2,
+      "cycle": 1178.0,
+      "measured_soh": 96.02178464586817
+    }
   ],
   "rows_changed": false,
   "notes": [
     "Full extracted rows retain SOH, QDischarge and legacy RUL for reference only; not an inference upload.",
     "Legacy RUL is cycles to recording end, not observed second-life service failure.",
-    "Import one presentation_inputs CSV at a time: the frontend requires one battery per submission.",
-    "Single-record assessment returns SOH; RUL is unavailable without observed history.",
+    "Import one presentation_inputs CSV at a time: each contains two distinct observed cycles from one battery.",
+    "The API estimates SOH and, when available, RUL for the latest of the two submitted cycles.",
     "Measured SOH near 80% does not guarantee a model prediction of exactly 80%.",
-    "Zero IR values are retained source sensor-fault readings; v2 flags/imputes them rather than treating them as healthy resistance."
+    "Zero IR readings and all other source measurements remain unchanged."
   ]
 }

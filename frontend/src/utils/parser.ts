@@ -20,7 +20,7 @@ export async function parseUpload(file: File): Promise<unknown[]> {
   if (!Array.isArray(records)) throw new Error('JSON must be an array or an object containing a records array.')
   const unknownFields = [...new Set(records.flatMap((record) => Object.keys(record as object)).filter((key) => !TELEMETRY_FIELDS.includes(key as never) && key !== 'row_id'))]
   const leakage = unknownFields.filter((field) => LEAKAGE_FIELDS.includes(field))
-  if (leakage.length) throw new Error(`Data leakage rejected: ${leakage.join(', ')}.`)
-  if (unknownFields.length) throw new Error(`Unsupported field(s): ${unknownFields.join(', ')}. Upload raw telemetry only.`)
+  if (leakage.length) throw new Error(`Unsupported field(s): ${leakage.join(', ')}. Upload battery measurements only.`)
+  if (unknownFields.length) throw new Error(`Unsupported field(s): ${unknownFields.join(', ')}. Upload battery measurements only.`)
   return records
 }

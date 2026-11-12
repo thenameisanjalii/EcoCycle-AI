@@ -110,6 +110,38 @@ def client(monkeypatch, bundle):
     get_bundle.cache_clear()
 
 
+def test_default_bundle_without_environment_from_another_directory(monkeypatch, tmp_path, bundle, raw):
+    monkeypatch.delenv("ECOCYCLE_V2_BUNDLE", raising=False)
+    monkeypatch.chdir(tmp_path)
+    get_bundle.cache_clear()
+    try:
+        with TestClient(app) as client:
+            health = client.get("/v2/health")
+            assert health.status_code == 200, health.text
+            assert health.json()["pipeline_version"] == bundle.registry["version"]
+            for contract in ["single", "history"]:
+                records = raw.iloc[::-1].to_dict("records")
+                response = client.post("/v2/predict", json={"contract": contract, "records": records})
+                assert response.status_code == 200, response.text
+                assert response.json() == bundle.predict(records, contract)
+    finally:
+        get_bundle.cache_clear()
+
+
+def test_invalid_explicit_bundle_does_not_use_default(monkeypatch, tmp_path):
+    monkeypatch.setenv("ECOCYCLE_V2_BUNDLE", str(tmp_path / "missing-bundle"))
+    get_bundle.cache_clear()
+    try:
+        with TestClient(app) as client:
+            for response in [client.get("/v2/health"), client.post("/v2/predict", json={
+                "records": [{"QCharge": 1.075, "IR": .016, "cycle": 1}]
+            })]:
+                assert response.status_code == 503
+                assert "Versioned bundle unavailable" in response.json()["detail"]
+    finally:
+        get_bundle.cache_clear()
+
+
 @pytest.mark.parametrize("contract", ["single", "history"])
 def test_offline_api_exact_parity(client, bundle, raw, contract):
     records = raw.iloc[::-1].to_dict("records")

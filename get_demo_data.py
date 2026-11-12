@@ -1,8 +1,9 @@
-"""Extract genuine held-out observations closest to 80% measured SOH.
+"""Generate two genuine observations for each of twenty held-out batteries.
 
 Run from the project folder: python get_demo_data.py
-The source stores SOH as percent; the twenty closest held-out batteries are
-selected when fewer than twenty fall in the narrow 79.5-80.5% range.
+Use the observation closest to 80% measured SOH and its preceding recorded
+cycle. If it is the first observation, use the next recorded cycle instead.
+Each per-battery CSV is chronological and can be submitted as history.
 """
 import hashlib
 import json
@@ -15,20 +16,55 @@ DATASET = ROOT / "ml/data/master_dataset.csv"
 BUNDLE = ROOT / "ml/artifacts/pipeline_v2/run-20261111-v2.0.1"
 OUTPUT = ROOT / "presentation_test_cases.csv"
 INPUT_DIR = ROOT / "presentation_inputs"
+BATTERY_COUNT = 20
+CASES_PER_BATTERY = 2
 FRONTEND_FIELDS = [
     "IR", "QCharge", "Tavg", "Tmax", "Tmin", "chargetime", "cycle", "battery_id"
 ]
+SELECTION = (
+    "Twenty held-out batteries whose closest recorded SOH is nearest 80%. "
+    "For each, select that observation and the immediately preceding recorded "
+    "cycle; use the following recorded cycle if the closest observation is "
+    "the first. Sort each pair chronologically. No prediction-based selection."
+)
 
 
-def save_without_overwriting(path, content):
-    """Reruns are safe: accept identical outputs, refuse different files."""
+def select_test_cases(df, test_ids, battery_count=BATTERY_COUNT):
+    """Return two unmodified, distinct source rows per selected battery."""
+    held_out = df[df["battery_id"].isin(test_ids)].copy()
+    if held_out.duplicated(["battery_id", "cycle"]).any():
+        raise ValueError("Source contains duplicate battery cycles.")
+    held_out = held_out.sort_values(["battery_id", "cycle"], kind="stable")
+    held_out = held_out.groupby("battery_id", sort=False).filter(
+        lambda group: len(group) >= CASES_PER_BATTERY
+    )
+    if held_out[["SOH", "cycle"]].isna().any().any():
+        raise ValueError("Source SOH and cycle must be present for selection.")
+    anchors = (
+        held_out.assign(_distance_to_80=(held_out["SOH"] - 80).abs())
+        .sort_values(["battery_id", "_distance_to_80", "cycle"], kind="stable")
+        .drop_duplicates(subset=["battery_id"])
+        .sort_values(["_distance_to_80", "battery_id"], kind="stable")
+        .head(battery_count)
+    )
+    if len(anchors) != battery_count:
+        raise ValueError(f"Only {len(anchors)} eligible held-out batteries; need {battery_count}.")
+
+    pairs = []
+    for bid, anchor_cycle in anchors[["battery_id", "cycle"]].itertuples(index=False, name=None):
+        history = held_out.loc[held_out.battery_id == bid]
+        position = int(history.cycle.eq(anchor_cycle).to_numpy().nonzero()[0][0])
+        positions = [position - 1, position] if position > 0 else [0, 1]
+        pairs.append(history.iloc[positions])
+    return pd.concat(pairs, ignore_index=True)
+
+
+def write_generated(path, content):
+    """Refresh this generator's outputs; identical reruns leave files untouched."""
     encoded = content.encode("utf-8")
-    if path.exists():
-        if path.read_bytes() != encoded:
-            raise FileExistsError(f"Existing file differs; preserving it: {path}")
+    if path.exists() and path.read_bytes() == encoded:
         return
-    with path.open("xb") as stream:
-        stream.write(encoded)
+    path.write_bytes(encoded)
 
 
 def main():
@@ -38,77 +74,74 @@ def main():
         raise ValueError("Dataset does not match the saved v2 model's training source.")
     df = pd.read_csv(DATASET)
     test_ids = json.loads((BUNDLE / "splits.json").read_text(encoding="utf-8"))["test"]
-
-    # Select using measured SOH, never model predictions. Keep training and
-    # validation batteries out of presentation test cases. Choose the closest
-    # observed row to 80% for each battery, then retain the twenty closest
-    # held-out batteries. Do not alter rows.
-    held_out = df[df["battery_id"].isin(test_ids)].copy()
-    held_out["_distance_to_80"] = (held_out["SOH"] - 80).abs()
-    test_cases = (
-        held_out.sort_values(["battery_id", "_distance_to_80"])
-        .drop_duplicates(subset=["battery_id"])
-        .sort_values(["_distance_to_80", "battery_id"])
-        .head(20)
-        .drop(columns="_distance_to_80")
-        .copy()
-    )
-    if len(test_cases) != 20:
-        raise ValueError(f"Only {len(test_cases)} eligible held-out batteries; need twenty.")
+    test_cases = select_test_cases(df, test_ids)
+    counts = test_cases.groupby("battery_id").size()
+    if len(counts) != BATTERY_COUNT or not counts.eq(CASES_PER_BATTERY).all():
+        raise ValueError("Expected exactly two observations for each selected battery.")
+    if hashlib.sha256(DATASET.read_bytes()).hexdigest() != source_hash:
+        raise RuntimeError("Source dataset changed during extraction.")
 
     INPUT_DIR.mkdir(exist_ok=True)
-    save_without_overwriting(OUTPUT, test_cases.to_csv(index=False))
-    for _, row in test_cases.iterrows():
-        bid = int(row["battery_id"])
-        inputs = test_cases.loc[test_cases.battery_id == bid, FRONTEND_FIELDS]
-        save_without_overwriting(INPUT_DIR / f"battery_{bid}_near_80_soh.csv", inputs.to_csv(index=False))
+    write_generated(OUTPUT, test_cases.to_csv(index=False))
+    for bid, history in test_cases.groupby("battery_id", sort=False):
+        inputs = history.loc[:, FRONTEND_FIELDS]
+        write_generated(INPUT_DIR / f"battery_{int(bid)}_near_80_soh.csv", inputs.to_csv(index=False))
 
     metadata = {
         "dataset": DATASET.relative_to(ROOT).as_posix(),
         "dataset_sha256": source_hash,
         "bundle": BUNDLE.relative_to(ROOT).as_posix(),
-        "selection": "Closest recorded row to 80% measured SOH per held-out battery, then twenty batteries with the smallest absolute SOH distance. No prediction-based selection.",
-        "battery_ids": [int(bid) for bid in test_cases.battery_id],
-        "measured_soh": [float(value) for value in test_cases.SOH],
+        "selection": SELECTION,
+        "cases_per_battery": CASES_PER_BATTERY,
+        "total_cases": len(test_cases),
+        "battery_ids": [int(bid) for bid in test_cases.battery_id.drop_duplicates()],
+        "cases": [
+            {"battery_id": int(row.battery_id), "cycle": float(row.cycle), "measured_soh": float(row.SOH)}
+            for row in test_cases.itertuples(index=False)
+        ],
         "rows_changed": False,
         "notes": [
             "Full extracted rows retain SOH, QDischarge and legacy RUL for reference only; not an inference upload.",
             "Legacy RUL is cycles to recording end, not observed second-life service failure.",
-            "Import one presentation_inputs CSV at a time: the frontend requires one battery per submission.",
-            "Single-record assessment returns SOH; RUL is unavailable without observed history.",
+            "Import one presentation_inputs CSV at a time: each contains two distinct observed cycles from one battery.",
+            "The API estimates SOH and, when available, RUL for the latest of the two submitted cycles.",
             "Measured SOH near 80% does not guarantee a model prediction of exactly 80%.",
-            "Zero IR values are retained source sensor-fault readings; v2 flags/imputes them rather than treating them as healthy resistance."
+            "Zero IR readings and all other source measurements remain unchanged.",
         ],
     }
-    save_without_overwriting(INPUT_DIR / "provenance.json", json.dumps(metadata, indent=2) + "\n")
-    save_without_overwriting(INPUT_DIR / "README.md", """    # Presentation inputs closest to 80% measured SOH
+    write_generated(INPUT_DIR / "provenance.json", json.dumps(metadata, indent=2) + "\n")
+    write_generated(INPUT_DIR / "README.md", """# Presentation inputs closest to 80% measured SOH
 
 Generated by `python get_demo_data.py` from the exact master CSV used by the
-saved v2 models. Twenty distinct held-out batteries closest to 80% measured
-SOH are selected without selecting on model predictions or modifying any
-measurements. See provenance.json for source hash, IDs and selection.
+saved v2 models. There are 40 genuine observations: two per battery for the
+same twenty held-out battery IDs selected by proximity to 80% measured SOH.
+No measurements or labels are synthesized or modified.
 
-The source has fewer than twenty held-out batteries in the narrow 79.5-80.5%
-range, so the selector fills the set with the next-closest measured SOH
-values. All twenty remain genuine held-out observations.
+Each battery's pair contains its observation closest to 80% measured SOH
+and the preceding recorded cycle. If the closest observation is its first,
+the next recorded cycle is used instead. Pairs are ordered chronologically;
+recorded cycle numbers need not be consecutive. See provenance.json for the
+source hash, selected IDs, cycles, measured SOH and selection rule.
 
-Import one battery_*.csv file at a time into the current frontend. Each has
-all eight frontend fields and omits SOH, RUL and QDischarge. Single-record
-assessment returns SOH only; use genuine history for a history assessment.
-Predicted SOH need not equal the measured SOH used to select these examples.
-Zero IR measurements are source sensor faults and remain unchanged.
+Import one battery_*.csv at a time into the frontend. Each contains two rows
+with the eight accepted measurement fields, omitting SOH, RUL and QDischarge.
+These are history inputs: the API returns the latest-cycle assessment and
+can estimate RUL from the supplied observations. Missing RUL remains
+unavailable; no value is substituted. Two observations provide limited
+history; use the full observed history when available.
 
-The root presentation_test_cases.csv retains the original full rows and
-labels for your presentation reference. Do not upload that file directly:
-targets/discharge capacity are rejected, and it contains different batteries.
+The root presentation_test_cases.csv contains the same 40 source rows with
+all original columns and labels for reference. Do not upload it directly:
+it contains multiple batteries and target/discharge columns.
 Its legacy RUL is time to recording end, not second-life service failure.
-Selection around 80% is a targeted demonstration, not an overall accuracy test.
+
+Rerunning the script refreshes its generated CSVs, README and provenance.
+The source dataset and saved model artifacts are never changed.
 """)
-    if hashlib.sha256(DATASET.read_bytes()).hexdigest() != source_hash:
-        raise RuntimeError("Source dataset changed during extraction.")
-    print(f"Demo test cases successfully saved to {OUTPUT.name}")
+    print(f"Generated {len(test_cases)} test cases: {CASES_PER_BATTERY} cycles x {BATTERY_COUNT} batteries.")
     print(test_cases[["battery_id", "cycle", "SOH"]].to_string(index=False))
-    print("Frontend-ready inputs saved in presentation_inputs/; import one CSV at a time.")
+    print(f"Reference data: {OUTPUT.relative_to(ROOT)}")
+    print("Frontend-ready history: presentation_inputs/ (import one battery CSV at a time).")
 
 
 if __name__ == "__main__":

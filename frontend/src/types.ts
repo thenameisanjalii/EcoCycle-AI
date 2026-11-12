@@ -13,12 +13,18 @@ export type HealthResponse = {
 }
 export type PredictionResponse = {
   status: string
-  metadata?: { battery_id?: string | number; row_id?: string | number }
+  metadata: { battery_id: string | number; cycle: number; row_id?: string | number }
   predictions: {
-    soh: { raw: number; display: number; units: string }
-    rul: { raw: number; display: number; units: string } | null
+    soh: PredictionMetric | null
+    rul: PredictionMetric | null
   }
-  interpretation?: Record<string, unknown> | string
-  models?: Record<string, unknown>
-  reliability?: { status: string; warnings: string[] }
+}
+export type PredictionMetric = { raw?: number | null; display?: number | null; units?: string }
+export type Assessment = { prediction: PredictionResponse; records: TelemetryRecord[]; completedAt: string; potentialApplications: string[] }
+export type PredictionResult = {
+  row_index?: number
+  timestamp?: string
+  metadata?: { battery_id?: string | number; row_id?: string | number; cycle?: number }
+  soh?: PredictionMetric | null
+  rul?: PredictionMetric | null
 }

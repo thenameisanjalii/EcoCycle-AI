@@ -216,9 +216,17 @@ python -m ml.pipeline_v2.train --output ml/artifacts/pipeline_v2/run-20261111-v2
 That path now exists, so rerunning that exact command deliberately refuses to
 overwrite it. Choose `my-run` for a new execution.
 
-Start the backend with the completed bundle (the environment variable is
-required; there is no fallback to a different model version). Restart the
-server when selecting a different bundle:
+The backend defaults to the included
+`ml/artifacts/pipeline_v2/run-20261111-v2.0.1` bundle, resolved relative to the
+repository rather than the terminal's current directory. You can start it with:
+
+```powershell
+python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Set `ECOCYCLE_V2_BUNDLE` to explicitly select another completed, compatible
+bundle. An invalid explicit selection returns 503; it does not fall back to
+another model. Restart the server when changing this selection:
 
 ```powershell
 $env:ECOCYCLE_V2_BUNDLE = (Resolve-Path 'ml/artifacts/pipeline_v2/run-20261111-v2.0.1').Path

@@ -1,6 +1,7 @@
 """Explicit measurement-only and observed-history API contracts."""
 import os
 from functools import lru_cache
+from pathlib import Path
 from typing import Literal
 
 from fastapi import APIRouter, HTTPException
@@ -9,6 +10,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from ml.pipeline_v2.inference import ModelBundle
 
 router = APIRouter(prefix="/v2", tags=["Versioned measurement pipeline"])
+DEFAULT_BUNDLE = Path(__file__).resolve().parents[2] / "ml/artifacts/pipeline_v2/run-20261111-v2.0.1"
 
 
 class Measurement(BaseModel):
@@ -32,9 +34,7 @@ class MeasurementRequest(BaseModel):
 
 @lru_cache(maxsize=1)
 def get_bundle():
-    directory = os.environ.get("ECOCYCLE_V2_BUNDLE")
-    if not directory:
-        raise HTTPException(503, "Set ECOCYCLE_V2_BUNDLE to a completed, versioned training run.")
+    directory = os.environ.get("ECOCYCLE_V2_BUNDLE") or str(DEFAULT_BUNDLE)
     try:
         return ModelBundle(directory)
     except (OSError, ValueError, KeyError) as exc:

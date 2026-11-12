@@ -15,7 +15,7 @@ export function validateRecords(input: unknown[]): { records: TelemetryRecord[];
     }
     const source = raw as Record<string, unknown>
     const leaks = Object.keys(source).filter((key) => LEAKAGE_FIELDS.includes(key))
-    if (leaks.length) errors.push(`Row ${index + 1}: leakage field(s) rejected: ${leaks.join(', ')}.`)
+    if (leaks.length) errors.push(`Row ${index + 1}: unsupported field(s): ${leaks.join(', ')}.`)
     const required = ['QCharge', 'cycle', 'battery_id']
     const missing = required.filter((field) => source[field] === undefined || source[field] === '' || source[field] === null)
     if (missing.length) errors.push(`Row ${index + 1}: missing ${missing.join(', ')}.`)
